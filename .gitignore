@@ -1,1 +1,4 @@
 *.png
+*.firebaserc
+*.firebase
+*.json

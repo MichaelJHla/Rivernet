@@ -12,8 +12,6 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-window.alert("Window is opened");
-
 function submit(){
     var dataSubmit = firebase.database().ref();
 
