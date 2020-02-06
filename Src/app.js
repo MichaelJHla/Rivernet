@@ -17,7 +17,7 @@ window.alert("Window is opened");
 function submit(){
     var dataSubmit = firebase.database().ref();
 
-    dataSubmit.child("Test").set("Test2");
+    dataSubmit.child("ButtonClicked").set("true");
 
     window.alert("Data submitted");
 }
