@@ -1,0 +1,12 @@
+RiverNET is a water quality and quantity monitoring program that uses data from the comminuty in order to
+to check and maintain the ecoligical health of the Yellowstone river. RiverNET is unique to the Yellowstone
+River, using the help of the community to keep the river as healthy as possible so it can continue to be a
+reasource used by generations to come.
+
+RiverNET Tools:
+ -How to install:
+ -How to run software:
+ -How to use software: The RiverNET website includes buttons to sumbit data as well as to the Rivernet Git repository.
+ -Report a bug:
+
+
