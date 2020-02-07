@@ -17,3 +17,6 @@ Developer Tools:
     -Sanity-checking:
  -How to access bug lists:
 
+Other Tools:
+ -Sprint meeting backlog link: https://docs.google.com/spreadsheets/d/1EpcOvnVprBMu9Vie981mnrZOXduwXx0HEIYXjy1ATHs/edit?usp=sharing
+ -Burndown Chart link: https://docs.google.com/spreadsheets/d/1lcPlu2pV-r7wStT2HD_ybs4AN_NLpjhi__2BIypfzw8/edit?usp=sharing
