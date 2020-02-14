@@ -7,3 +7,12 @@ img{
 #entrySet{
     padding: 10px;
 }
+
+input{
+    width: 50px;
+    margin-right: 25px;
+}
+
+#collector, #analyst, #enterer{
+    width: 200px;
+}
