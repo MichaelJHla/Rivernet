@@ -5,20 +5,48 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Rivernet</title>
 </head>
 
-
+<body style="background-color:#3a3a3b;">
 <body>
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
+	<div id="header">	
+    	<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
 
-    <img src="252537_Logo%20sticker%20layout_png.png">
+    	<div class="logo">
+    		<li><a href="index.html"><img src="images/yerc_logo.png" alt="YERC Logo" style="width:60%;height:60%";</li>
+    	</div>
 
-    <button id="submitButton" onclick="submit()">Submit data</button>
+    	<!-- <button id="submitButton" onclick="submit()">Submit data</button> -->
 
-    <script src="app.js"></script>
+   		<script src="app.js"></script>
 
-    <button id="gitButton" onclick="window.open('https://github.com/MichaelJHla/Rivernet')">Git Repository</button>
+   		<div id="header">
+   			<div class="right";>	
+				<ul>
+	     			<li class="currentPage"><a>Home</a></li>
+	     			
+	      			<li><a onclick="window.open('https://github.com/MichaelJHla/Rivernet')">Git Repository</a></li>
 
+	      			<li><a onclick="window.open('https://www.yellowstoneresearch.org/')">YERC Website</a></li>
+	     			
+	  			</ul>
+	  		</div>
+  		</div>	
+      
+
+    	<!-- <button id="gitButton" onclick="window.open('https://github.com/MichaelJHla/Rivernet')">Git Repository</button> -->
+	</div>
+	<h1> Submit Data </h1>
+
+	<div class="buttonRow">
+		<div class="col">
+			<button id="qualityButton"> <a href="subfolder/quality.html">Quality</a></button>
+		</div>
+		<div class="col">
+			<button id="quantityButton"> <a href="subfolder/quantity.html">Quantity</a></button>
+		 </div>
+	</div>
 </body>
 </html>
