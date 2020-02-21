@@ -4,6 +4,23 @@ img{
     height: auto;
 }
 
+h1{
+    font-size: 60px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    color: white;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #b0b0b0;
+}
+#header{
+    text-decoration: none;
+    text-align:right;
+    display: flex;
+    justify-content: space-between;
+}
+
 #entrySet{
     padding: 10px;
 }
