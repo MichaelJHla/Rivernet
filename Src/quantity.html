@@ -4,19 +4,59 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="index.css">
-    <title>Quantity</title>
+    <link rel="stylesheet" href="quantity.css">
+    <title>Rivernet</title>
 </head>
 
-
+<body style="background-color:#3a3a3b;">
 <body>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
-
-    <img src="252537_Logo%20sticker%20layout_png.png">
-
-    <button id="submitButton" onclick="submit()">Submit data</button>
-
+    <img src="images/yerc_logo.png">
     <script src="app.js"></script>
+    <form>
+        <div id="entrySet">
+            <label>Site ID:</label>
+            <input id="siteID">
+        </div>
+        
+        <div id="entrySet">
+            <label>Collector name:</label>
+            <input id="collector">
 
+            <label>Analyst name:</label>
+            <input id="analyst">
+
+            <label>Enterer name:</label>
+            <input id="enterer">
+        </div>
+        
+        <div id="entrySet">
+            <label>Differential pressure (PSI)</label>
+            <input id="difPressure">        
+        </div>
+        
+        <div id="entrySet">
+            <label>Absolute pressure (PSI)</label>
+            <input id="absPressure">
+        </div>
+        
+        <div id="entrySet">
+            <label>Temperature (F)</label>
+            <input id="temp">
+        </div>
+        
+        <div id="entrySet">
+            <label>Water level (ft)</label>
+            <input id="wlevel">
+        </div>
+        
+        <div id="entrySet">
+            <label>Barometric Pressure (PSI)</label>
+            <input id="barPressure">
+        </div>
+       
+    </form>
+    
+    <button onclick="submit()">Submit data</button>
 </body>
 </html>

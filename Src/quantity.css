@@ -1,0 +1,27 @@
+img{
+    max-width: 30%;
+    width: auto;
+    height: auto;
+}
+
+#entrySet{
+    padding: 10px;
+}
+
+input{
+    width: 50px;
+    margin-right: 25px;
+}
+
+#collector, #analyst, #enterer{
+    width: 200px;
+
+}
+
+#difPressure, #absPressure, #temp, #wlevel, #barPressure{
+    width: 100px;
+}
+body{
+	color: white;
+    font-size: 18px;
+}
