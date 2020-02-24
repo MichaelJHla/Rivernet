@@ -7,6 +7,7 @@
     "jshint": "^2.11.0"
   },
   "scripts": {
-    "test": "jshint app.js"
+    "test": "jshint src\app.js"
   }
 }
+
