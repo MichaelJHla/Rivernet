@@ -1,5 +1,5 @@
 {
-  "name": "learn-travis-YOURNAME",
+  "name": "travis_setup",
   "description": "Simple Travis-CI check for JSHint (Code Linting)",
   "author": "your name here :-)",
   "version": "0.0.1",

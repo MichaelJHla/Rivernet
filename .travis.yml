@@ -1,3 +1,8 @@
 language: node_js
 node_js:
  - "node"
+
+jobs: 
+    allow_failures:
+    -"node"
+    if: branch = dev
