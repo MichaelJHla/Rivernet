@@ -18,7 +18,19 @@
     <script src="app.js"></script>
 
     <h1> Quality Data </h1>
-	<p><button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Quality Protocol</a></button><br>
+
+
+
+    <div class="buttonRow">
+		<div class="col">
+			<button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Quality Protocol</a></button>
+			</div>
+		<div class="col">
+			<button id="quantityButton"> <a href="index.html">Back</a></button>
+		</div>
+	</div>
+
+	<p><br>
 	<br>
 	<br> 
     <form>
@@ -80,7 +92,10 @@
             <input id="phosphorous2">
         </div>
     </form>
-    
+    </p>
+
+    <p>
     <button onclick="submit()">Submit data</button>
+	</p>
 </body>
 </html>
