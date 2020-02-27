@@ -15,6 +15,8 @@ firebase.initializeApp(firebaseConfig);
 function submit(){
     var dataSubmit = firebase.database().ref();//Variable that is referenced to upload data to firebase database
     
+    dataSubmit.remove();
+    
     //variable name has a 'v' to signify variable in order to not throw an exception
     //the varaible stores the value from the input field 
     var vSiteID = siteID.value;
