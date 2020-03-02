@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "This json file is used to test our Rivernet web application. It will specifically work on the js scripts we use to connect the front and back end. ",
+  "main": "quantity.js",
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "scripts": {
+    "test": "jshint Src/quantity.js; jshint Src/quality.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelJHla/Rivernet.git"
+  },
+  "author": "William Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelJHla/Rivernet/issues"
+  },
+  "homepage": "https://github.com/MichaelJHla/Rivernet#readme"
+}
