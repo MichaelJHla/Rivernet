@@ -2,9 +2,9 @@
   "name": "test",
   "version": "1.0.0",
   "description": "This json file is used to test our Rivernet web application. It will specifically work on the js scripts we use to connect the front and back end. ",
-  "main": "app.js",
+  "main": "quantity.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jshint ../Src/quantity.js"
   },
   "repository": {
     "type": "git",
