@@ -7,8 +7,7 @@
     "jshint": "^2.6.0"
   },
   "scripts": {
-    "test": "jshint Src/quantity.js 
-	jshint Src/quality.js"
+    "test": "jshint Src/quantity.js; jshint Src/quality.js"
   },
   "repository": {
     "type": "git",
