@@ -26,7 +26,7 @@ function submit(){
     dataSubmit.child("collector").set(vCollector);
     
     var vAnalyst = analyst.value;
-    dataSubmit.child("analyst").set(vAnalyst)
+    dataSubmit.child("analyst").set(vAnalyst);
     
     var vEnterer = enterer.value;
     dataSubmit.child("enterer").set(vEnterer);
