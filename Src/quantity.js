@@ -15,37 +15,63 @@ firebase.initializeApp(firebaseConfig);
 function submit(){
     var dataSubmit = firebase.database().ref();//Variable that is referenced to upload data to firebase database
     
-    dataSubmit.remove();
+    var validInput = true;//Used to represent if all input is valid
     
-    //variable name has a 'v' to signify variable in order to not throw an exception
-    //the varaible stores the value from the input field 
+    //The first 4 variables here do not need to be checked for validity
     var vSiteID = siteID.value;
-    dataSubmit.child("site_ID").set(vSiteID); //Submits the data to the database under the name 'site_ID'
     
     var vCollector = collector.value;
-    dataSubmit.child("collector").set(vCollector);
     
     var vAnalyst = analyst.value;
-    dataSubmit.child("analyst").set(vAnalyst);
     
     var vEnterer = enterer.value;
-    dataSubmit.child("enterer").set(vEnterer);
     
+    //All remaining variables need to be checked to show that they are valid data
+    //the naming convention v+'variable name' is used to differentiate between a value
     var vDifPressure = difPressure.value;
-    dataSubmit.child("differential_pressure").set(vDifPressure);
+    if (isNaN(vDifPressure)){
+        validInput = false;
+    }
     
     var vAbsPressure = absPressure.value;
-    dataSubmit.child("absolute_pressure").set(vAbsPressure);
+    if (isNaN(vAbsPressure)){
+        validInput = false;
+    }
     
     var vTemp = temp.value;
-    dataSubmit.child("temperature").set(vTemp);
+    if (isNaN(vTemp)){
+        validInput = false;
+    }
     
     var vWaterLevel = wlevel.value;
-    dataSubmit.child("water_level").set(vWaterLevel);
+    if (isNaN(vWaterLevel)){
+        validInput = false;
+    }
     
     var vBarPressure = barPressure.value;
-    dataSubmit.child("barometric_pressure").set(vBarPressure);
+    if (isNaN(vBarPressure)){
+        validInput = false;
+    }
     
-    //This is used to tell the user that the data has been uploaded to the database
-    window.alert("Data submitted");
+    if (validInput){ //If all input has been valid up until this point
+        dataSubmit.remove(); //Removes all previous info from the database
+        
+        //Submits the data to the database under the naming convention:
+        // dataSubmit.child(VARIABLE_NAME).set(VARIABLE)
+        dataSubmit.child("site_ID").set(vSiteID);
+        dataSubmit.child("collector").set(vCollector);
+        dataSubmit.child("analyst").set(vAnalyst);
+        dataSubmit.child("enterer").set(vEnterer);
+        dataSubmit.child("differential_pressure").set(vDifPressure);
+        dataSubmit.child("absolute_pressure").set(vAbsPressure);
+        dataSubmit.child("temperature").set(vTemp);
+        dataSubmit.child("water_level").set(vWaterLevel);
+        dataSubmit.child("barometric_pressure").set(vBarPressure);
+
+        //This is used to tell the user that the data has been uploaded to the database succesfully
+        window.alert("Data submitted");
+    } else{ //The user gets notified about invalid input and nothing is submitted
+        window.alert("Invalid input");
+    }
+    
 }
