@@ -15,61 +15,110 @@ firebase.initializeApp(firebaseConfig);
 function submit(){
     var dataSubmit = firebase.database().ref();//Variable that is referenced to upload data to firebase database
     
-    dataSubmit.remove();
+    var validInput = true;//Used to represent if all input is valid
     
-    //variable name has a 'v' to signify variable in order to not throw an exception
-    //the varaible stores the value from the input field 
+    //The first 4 variables here do not need to be checked for validity
     var vSiteID = siteID.value;
-    dataSubmit.child("site_ID").set(vSiteID); //Submits the data to the database under the name 'site_ID'
     
     var vCollector = collector.value;
-    dataSubmit.child("collector").set(vCollector);
     
     var vAnalyst = analyst.value;
-    dataSubmit.child("analyst").set(vAnalyst);
     
     var vEnterer = enterer.value;
-    dataSubmit.child("enterer").set(vEnterer);
     
+    //All remaining variables need to be checked to show that they are valid data
+    //the naming convention v+'variable name' is used to differentiate between a value
     var vNitrate1 = nitrate1.value;
-    dataSubmit.child("nitrate1").set(vNitrate1);
+    if (isNaN(vNitrate1)){
+        validInput = false;
+    }
     
     var vNitrate2 = nitrate2.value;
-    dataSubmit.child("nitrate2").set(vNitrate2);
+    if (isNaN(vNitrate2)){
+        validInput = false;
+    }
     
     var vNitrite1 = nitrite1.value;
-    dataSubmit.child("nitrite1").set(vNitrite1);
+    if (isNaN(vNitrite1)){
+        validInput = false;
+    }
     
     var vNitrite2= nitrite2.value;
-    dataSubmit.child("nitrite2").set(vNitrite2);
+    if (isNaN(vNitrite2)){
+        validInput = false;
+    }
     
     var vOrtho1 = ortho1.value;
-    dataSubmit.child("orthophosphate1").set(vOrtho1);
+    if (isNaN(vOrtho1)){
+        validInput = false;
+    }
     
     var vOrtho2 = ortho2.value;
-    dataSubmit.child("orthophosphate2").set(vOrtho2);
+    if (isNaN(vOrtho2)){
+        validInput = false;
+    }
     
     var vOrtho3 = ortho3.value;
-    dataSubmit.child("orthophosphate3").set(vOrtho3);
+    if (isNaN(vOrtho3)){
+        validInput = false;
+    }
     
     var vph = ph.value;
-    dataSubmit.child("ph").set(vph);
+    if (isNaN(vph)){
+        validInput = false;
+    }
     
     var vtemp = temp.value;
-    dataSubmit.child("temperature").set(vtemp);
+    if(isNaN(vtemp)){
+        validInput = false;
+    }
     
     var vNitrogen1 = nitrogen1.value;
-    dataSubmit.child("nitrogen1").set(vNitrogen1);
+    if (isNaN(vNitrogen1)){
+        validInput = false;
+    }
     
     var vNitrogen2 = nitrogen2.value;
-    dataSubmit.child("nitrogen2").set(vNitrogen2);
+    if (isNaN(vNitrogen2)){
+        validInput = false;
+    }
     
     var vPhosphorous1 = phosphorous1.value;
-    dataSubmit.child("phosphorous1").set(vPhosphorous1);
+    if (isNaN(vPhosphorous1)){
+        validInput = false;
+    }
     
     var vPhosphorous2 = phosphorous2.value;
-    dataSubmit.child("phosphorous2").set(vPhosphorous2);
+    if(isNaN(vPhosphorous2)){
+        validInput = false;
+    }
     
-    //This is used to tell the user that the data has been uploaded to the database
-    window.alert("Data submitted");
+    if (validInput){ //If all input has been valid up until this point
+        dataSubmit.remove(); //Removes all previous info from the database
+        
+        //Submits the data to the database under the naming convention:
+        // dataSubmit.child(VARIABLE_NAME).set(VARIABLE)
+        dataSubmit.child("site_ID").set(vSiteID); //Submits the data to the database under the name 'site_ID'
+        dataSubmit.child("collector").set(vCollector);
+        dataSubmit.child("analyst").set(vAnalyst);
+        dataSubmit.child("enterer").set(vEnterer);
+        dataSubmit.child("nitrate1").set(vNitrate1);
+        dataSubmit.child("nitrate2").set(vNitrate2);
+        dataSubmit.child("nitrite1").set(vNitrite1);
+        dataSubmit.child("nitrite2").set(vNitrite2);
+        dataSubmit.child("orthophosphate1").set(vOrtho1);
+        dataSubmit.child("orthophosphate2").set(vOrtho2);
+        dataSubmit.child("orthophosphate3").set(vOrtho3);
+        dataSubmit.child("ph").set(vph);
+        dataSubmit.child("temperature").set(vtemp);
+        dataSubmit.child("nitrogen1").set(vNitrogen1);
+        dataSubmit.child("nitrogen2").set(vNitrogen2);
+        dataSubmit.child("phosphorous1").set(vPhosphorous1);
+        dataSubmit.child("phosphorous2").set(vPhosphorous2);
+
+        //This is used to tell the user that the data has been uploaded to the database
+        window.alert("Data submitted");
+    } else{ //The user gets notified about invalid input and nothing is submitted
+        window.alert("Invalid input");
+    }
 }
