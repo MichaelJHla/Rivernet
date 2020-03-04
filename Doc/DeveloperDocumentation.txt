@@ -1,21 +1,21 @@
-Our database will be hosted by Firebase.
-Zero-Feature Website is linking to Firebase.
+Our database is hosted by Firebase.
+Beta Release is linking to Firebase.
 
 Developer Tools:
  -How to Obtain Stable Source code: Our source code can currently be found in the git repo linked below:
-  Stable code (https://github.com/MichaelJHla/Rivernet)
+  	Stable code (https://github.com/MichaelJHla/Rivernet)
  -Source Code: Our source code can be pulled for the git repository linked below:
-  Developmental code (https://github.com/MichaelJHla/Rivernet/tree/dev)
+  	Developmental code (https://github.com/MichaelJHla/Rivernet/tree/dev)
  -Directory Layout:
  -How to Build:
  -How to Test:
- -Set up automated build & test:
+ -Set up automated build & test:z
  -Version Control:
     -Updating Revision Numbers:
     -Create .zip files:
     -Copying files to website:
     -Sanity-checking:
- -How to access bug lists:
+ -How to access bug lists: Currently, no user reported bug lists exist. Issues can be viewed on Github.
 
 Other Tools:
  -Sprint meeting backlog link: https://docs.google.com/spreadsheets/d/1EpcOvnVprBMu9Vie981mnrZOXduwXx0HEIYXjy1ATHs/edit?usp=sharing
