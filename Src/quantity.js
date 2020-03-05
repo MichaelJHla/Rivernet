@@ -1,3 +1,5 @@
+const { validateInput } = require{'./util'};
+
 var firebaseConfig = {
     apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
     authDomain: "yerc-rivernet.firebaseapp.com",
@@ -29,19 +31,13 @@ function submit(){
     //All remaining variables need to be checked to show that they are valid data
     //the naming convention v+'variable name' is used to differentiate between a value
     var vDifPressure = difPressure.value;
-    if (isNaN(vDifPressure)){
-        validInput = false;
-    }
+	validInput = validateInput(vDifPressure);
     
     var vAbsPressure = absPressure.value;
-    if (isNaN(vAbsPressure)){
-        validInput = false;
-    }
+    validInput = validateInput(vAbsPressure);
     
     var vTemp = temp.value;
-    if (isNaN(vTemp)){
-        validInput = false;
-    }
+    validInput = validateInput(vTemp);
     
     var vWaterLevel = wlevel.value;
     if (isNaN(vWaterLevel)){
