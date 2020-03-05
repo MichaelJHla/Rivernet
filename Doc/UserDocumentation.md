@@ -20,12 +20,12 @@ be a resource used by generations to come.
 Currently, the RiverNET application is useable off of the RiverNET web service.
 No installation is necessary at this time.
 
-**Running RiverNET software**
+### **Running RiverNET software**
 
 To run software, start by choosing quality or quantity, click on the perspective
 button on the index page. Once page loads, the software is ready to be used.
 
-**Using RiverNET software**
+### **Using RiverNET software**
 
 The RiverNET website includes buttons to submit data as well as to the RiveNET
 Git repository. To add data, fill in the open spaces for the information. Not
@@ -33,6 +33,6 @@ every space needs to be filled out when data is submitted. Once the data is
 submitted, you can leave the page (no notification is currently given that data
 has been submitted).
 
-**Report a bug**
+### **Report a bug**
 
 Currently, no bug reporting system exists.
