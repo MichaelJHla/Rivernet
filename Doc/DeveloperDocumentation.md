@@ -28,9 +28,9 @@ Usually, on each release we merge our dev branch with the master, to reflect our
 ## Testing:
 
 - How to Build: To build our tests ensure that the machine has Jest and JShint installed. These dependencies are listed in the package.json. The local machine requires the code linter JShint to run the basic tests and Jest to run Unit and Integration tests. 
-The command to install JShint globally is: _npm install -g jshint_. The command to install Jshint is: _npm install --save-dev jest_
+The command to install JShint globally is: _npm install -g jshint_. The command to install Jest is: _npm install --save-dev jest_
 
-- How to Test: Tests can be run on local machines by running the command “_npm test_”. The tests will fail unless the local machine has installed the JSHint code linter and Jest. 
+- How to Test: Tests can be run on local machines by running the command _npm test_. The tests will fail unless the local machine has installed the JSHint code linter and Jest. 
 
 - Set up automated build & test: We set up Travis to automatically run the tests as a git push is fulfilled. Travis automatically runs tests every time the Github repo is pushed to. 
 Within a work environment you can run _jest --watch_ to run tests on related code changes automatically. This is very handy as every time you change a function related with a test, that test is automatically ran again. 
