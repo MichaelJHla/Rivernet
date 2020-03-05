@@ -1,4 +1,4 @@
-const { validateInput } = require{'./util'}; //using function from util.js
+const { validateInput } = require('./util'); //using function from util.js
 
 var firebaseConfig = {
     apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
