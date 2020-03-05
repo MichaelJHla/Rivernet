@@ -1,3 +1,5 @@
+const { validateInput } = require('./util'); //using function from util.js
+
 var firebaseConfig = {
     apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
     authDomain: "yerc-rivernet.firebaseapp.com",
@@ -29,69 +31,43 @@ function submit(){
     //All remaining variables need to be checked to show that they are valid data
     //the naming convention v+'variable name' is used to differentiate between a value
     var vNitrate1 = nitrate1.value;
-    if (isNaN(vNitrate1)){
-        validInput = false;
-    }
+    validInput = validateInput(vNitrate1);
     
     var vNitrate2 = nitrate2.value;
-    if (isNaN(vNitrate2)){
-        validInput = false;
-    }
+    validInput = validateInput(vNitrate2);
     
-    var vNitrite1 = nitrite1.value;
-    if (isNaN(vNitrite1)){
-        validInput = false;
-    }
+    var vNitrite3 = nitrite1.value;
+    validInput = validateInput(vNitrite1);
     
-    var vNitrite2= nitrite2.value;
-    if (isNaN(vNitrite2)){
-        validInput = false;
-    }
+    var vNitrite4 = nitrite2.value;
+    validInput = validateInput(vNitrite2);
     
     var vOrtho1 = ortho1.value;
-    if (isNaN(vOrtho1)){
-        validInput = false;
-    }
+    validInput = validateInput(vOrtho1);
     
     var vOrtho2 = ortho2.value;
-    if (isNaN(vOrtho2)){
-        validInput = false;
-    }
+    validInput = validateInput(vOrtho2);
     
     var vOrtho3 = ortho3.value;
-    if (isNaN(vOrtho3)){
-        validInput = false;
-    }
+    validInput = validateInput(vOrtho3);
     
     var vph = ph.value;
-    if (isNaN(vph)){
-        validInput = false;
-    }
+    validInput = validateInput(vph);
     
     var vtemp = temp.value;
-    if(isNaN(vtemp)){
-        validInput = false;
-    }
+    validInput = validateInput(vtemp);
     
     var vNitrogen1 = nitrogen1.value;
-    if (isNaN(vNitrogen1)){
-        validInput = false;
-    }
+    validInput = validateInput(vNitrogen1);
     
     var vNitrogen2 = nitrogen2.value;
-    if (isNaN(vNitrogen2)){
-        validInput = false;
-    }
+    validInput = validateInput(vNitrogen2);
     
     var vPhosphorous1 = phosphorous1.value;
-    if (isNaN(vPhosphorous1)){
-        validInput = false;
-    }
+    validInput = validateInput(vPhosphorous1);
     
     var vPhosphorous2 = phosphorous2.value;
-    if(isNaN(vPhosphorous2)){
-        validInput = false;
-    }
+    validInput = validateInput(vPhosphorous2);
     
     if (validInput){ //If all input has been valid up until this point
         dataSubmit.remove(); //Removes all previous info from the database

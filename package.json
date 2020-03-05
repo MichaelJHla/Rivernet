@@ -9,6 +9,9 @@
   "scripts": {
     "test": "jshint Src/quantity.js; jshint Src/quality.js"
   },
+  "jshintConfig":{
+    "esversion": 6 
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MichaelJHla/Rivernet.git"
