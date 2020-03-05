@@ -1,4 +1,4 @@
-const { validateInput } = require{'./util'};
+const { validateInput } = require{'./util'}; //using function from util.js
 
 var firebaseConfig = {
     apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
@@ -40,14 +40,10 @@ function submit(){
     validInput = validateInput(vTemp);
     
     var vWaterLevel = wlevel.value;
-    if (isNaN(vWaterLevel)){
-        validInput = false;
-    }
+    validInput = validateInput(vWaterLevel);
     
     var vBarPressure = barPressure.value;
-    if (isNaN(vBarPressure)){
-        validInput = false;
-    }
+    validInput = validateInput(vBarPressure);
     
     if (validInput){ //If all input has been valid up until this point
         dataSubmit.remove(); //Removes all previous info from the database
