@@ -6,7 +6,9 @@ notifications:
   email:
     recipients:
       - risause4@gmail.com
-      #- annaji33@gmail.com
-    #if: branch = master
-    on_success: always
+      - annaji33@gmail.com
+    if: branch = master
+    on_success: always # default: change
     on_failure: always # default: always
+    if: branch = dev 
+    on_failure: always
