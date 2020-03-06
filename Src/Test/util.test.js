@@ -20,5 +20,5 @@ test('Should output true for the entire check.', () => {
 	const bool = validateAllQuality(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5); //All #s
 	expect(bool).toBe(true);
 	
-}
+});
 
