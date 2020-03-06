@@ -114,7 +114,7 @@ function submit(){
 		
 		document.getElementById("nitrate1").value="";
 		document.getElementById("nitrate2").value="";
-		document.getElementById("nitrate1").value="";
+		document.getElementById("nitrite1").value="";
 		document.getElementById("nitrite2").value="";
 		document.getElementById("ortho1").value="";
 		document.getElementById("ortho2").value="";
