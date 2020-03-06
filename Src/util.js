@@ -55,7 +55,7 @@
 		
 	}
 	
-	exports.validInput = validInput;
+	exports.validateInput = validateInput;
 	exports.validateAllQuality = validateAllQuality;
 	
 	
