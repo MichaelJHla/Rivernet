@@ -10,7 +10,7 @@ test('Should output true for validate input', () => {
 	
 });
 
-test('Should output true for validate input', () => {
+test('Should output true for validate input on non-empty value', () => {
 	var bool = true;
 	bool = validateInput(55, true);
 	expect(bool).toBe(true);
