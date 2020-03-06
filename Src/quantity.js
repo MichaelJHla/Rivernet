@@ -32,18 +32,24 @@ function submit(){
     //the naming convention v+'variable name' is used to differentiate between a value
     var vDifPressure = difPressure.value;
 	validInput = validateInput(vDifPressure);
+	document.getElementById("difPressure").value=""
+   
     
     var vAbsPressure = absPressure.value;
     validInput = validateInput(vAbsPressure);
+	document.getElementById("absPressure").value=""
     
     var vTemp = temp.value;
     validInput = validateInput(vTemp);
+	document.getElementById("temp").value=""
     
     var vWaterLevel = wlevel.value;
     validInput = validateInput(vWaterLevel);
+	document.getElementById("wlevel").value=""
     
     var vBarPressure = barPressure.value;
     validInput = validateInput(vBarPressure);
+	document.getElementById("barPressure").value=""
     
     if (validInput){ //If all input has been valid up until this point
         dataSubmit.remove(); //Removes all previous info from the database
@@ -65,5 +71,7 @@ function submit(){
     } else{ //The user gets notified about invalid input and nothing is submitted
         window.alert("Invalid input");
     }
+	
+	
     
 }

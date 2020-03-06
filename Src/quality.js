@@ -111,6 +111,20 @@ function submit(){
         dataSubmit.child("nitrogen2").set(nitrogen2.value);
         dataSubmit.child("phosphorous1").set(phosphorous1.value);
         dataSubmit.child("phosphorous2").set(phosphorous2.value);
+		
+		document.getElementById("nitrate1").value=""
+		document.getElementById("nitrate2").value=""
+		document.getElementById("nitrate1").value=""
+		document.getElementById("nitrite2").value=""
+		document.getElementById("ortho1").value=""
+		document.getElementById("ortho2").value=""
+		document.getElementById("ortho3").value=""
+		document.getElementById("ph").value=""
+		document.getElementById("temp").value=""
+		document.getElementById("nitrogen1").value=""
+		document.getElementById("nitrogen2").value=""
+		document.getElementById("phosphorous1").value=""
+		document.getElementById("phosphorous2").value=""
 
         //This is used to tell the user that the data has been uploaded to the database
         window.alert("Data submitted");
