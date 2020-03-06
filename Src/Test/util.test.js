@@ -1,18 +1,38 @@
 const { validateInput, validateAllQuality } = require('.././util');
 
-test('Should output not false for validate input', () => {
+
+//Unit:
+
+test('Should output true for validate input', () => {
 	var bool = true;
-	bool = validateInput(55);
+	bool = validateInput(55, false);
+	expect(bool).toBe(true);
+	
+});
+
+test('Should output true for validate input on non-empty value', () => {
+	var bool = true;
+	bool = validateInput(55, true);
 	expect(bool).toBe(true);
 	
 });
 
 test('Should output false for validate input', () => {
 	
-	const bool = validateInput('no');
+	const bool = validateInput('no', false);
 	expect(bool).toBe(false);
 	
 });
+
+test('Should output false for validate input on empty value', () => {
+	
+	const bool = validateInput(undefined, true);
+	expect(bool).toBe(false);
+	
+});
+
+
+
 
 //Integration:
 
