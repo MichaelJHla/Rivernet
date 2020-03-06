@@ -33,15 +33,20 @@ function submit(){
 	/*
     var vDifPressure = difPressure.value;
 	validInput = validateInput(vDifPressure);
+	
+   
     
     var vAbsPressure = absPressure.value;
     validInput = validateInput(vAbsPressure);
+	
     
     var vTemp = temp.value;
     validInput = validateInput(vTemp);
+	
     
     var vWaterLevel = wlevel.value;
     validInput = validateInput(vWaterLevel);
+	
     
     var vBarPressure = barPressure.value;
     validInput = validateInput(vBarPressure);
@@ -54,6 +59,9 @@ function submit(){
 	wlevel.value, 
 	barPressure.value
 	);
+
+	
+
     
     if (validInput){ //If all input has been valid up until this point
         dataSubmit.remove(); //Removes all previous info from the database
@@ -64,16 +72,20 @@ function submit(){
         dataSubmit.child("collector").set(vCollector);
         dataSubmit.child("analyst").set(vAnalyst);
         dataSubmit.child("enterer").set(vEnterer);
+
         dataSubmit.child("differential_pressure").set(difPressure.value);
         dataSubmit.child("absolute_pressure").set(absPressure.value);
         dataSubmit.child("temperature").set(temp.value);
         dataSubmit.child("water_level").set(wlevel.value);
         dataSubmit.child("barometric_pressure").set(barPressure.value);
 
+
         //This is used to tell the user that the data has been uploaded to the database succesfully
         window.alert("Data submitted");
     } else{ //The user gets notified about invalid input and nothing is submitted
         window.alert("Invalid input");
     }
+	
+	
     
 }
