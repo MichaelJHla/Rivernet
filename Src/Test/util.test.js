@@ -23,3 +23,10 @@ test('Should output true for the entire check.', () => {
 	
 });
 
+test('Should output false for the entire check.', () => {
+	var bool = true;
+	bool = validateAllQuality(5, 5, 5, 'm', 5, 5, 5, 5, 5, 5, 5, 5, 5); //All #s
+	expect(bool).toBe(false);
+	
+});
+

@@ -12,7 +12,8 @@
 		
 		var validInput = true;//Used to represent if all input is valid
 		
-		if(validateInput(n1) &
+		if(
+		validateInput(n1) &
 		validateInput(n2) &
 		validateInput(n3) & 
 		validateInput(n4) & 
