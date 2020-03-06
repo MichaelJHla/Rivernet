@@ -1,4 +1,4 @@
-const { validateInput, validateAllQuality } = require('.././util');
+const { validateInput, validateAllQuality, validateAllQuantity } = require('.././util');
 
 //-----------------------------------------------------------------
 //Unit:

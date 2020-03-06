@@ -79,11 +79,11 @@ function submit(){
         dataSubmit.child("water_level").set(wlevel.value);
         dataSubmit.child("barometric_pressure").set(barPressure.value);
 
-		document.getElementById("difPressure").value=""
-		document.getElementById("absPressure").value=""
-		document.getElementById("temp").value=""
-		document.getElementById("wlevel").value=""
-		document.getElementById("barPressure").value=""
+		document.getElementById("difPressure").value="";
+		document.getElementById("absPressure").value="";
+		document.getElementById("temp").value="";
+		document.getElementById("wlevel").value="";
+		document.getElementById("barPressure").value="";
 
         //This is used to tell the user that the data has been uploaded to the database succesfully
         window.alert("Data submitted");
