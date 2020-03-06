@@ -4,7 +4,7 @@
 		if (isNaN(inputValue)){ //If the value isn't the correct format
         return false;	//Return false
 		}
-		
+		return true;
 	}
 	
 	
@@ -12,9 +12,27 @@
 		
 		var validInput = true;//Used to represent if all input is valid
 		
+		if(validateInput(n1) &
+		validateInput(n2) &
+		validateInput(n3) & 
+		validateInput(n4) & 
+		validateInput(orth1) & 
+		validateInput(orth2) & 
+		validateInput(orth3) & 
+		validateInput(ph) &
+		validateInput(temp) & 
+		validateInput(nitr1) &
+		validateInput(nitr2) & 
+		validateInput(phos1) & 
+		validateInput(phos2) 
+		)
+		{
+			return true; //Then they are all valid.
+		}
+		else {return false;} //One or more is not valid.
 		
-		validInput = validateInput(n1);
     
+		/*
 		//var vNitrate2 = nitrate2.value;
 		validInput = validateInput(n2);
     
@@ -31,7 +49,7 @@
 		validInput = validateInput(orth2);
     
 		//var vOrtho3 = ortho3.value;
-		validInput = validateInput(ortho3);
+		validInput = validateInput(orth3);
     
 		//var vph = ph.value;
 		validInput = validateInput(ph);
@@ -52,7 +70,7 @@
 		validInput = validateInput(phos2);
 			
 		return validInput; //Either True if all valid, false or undefined if one failed.
-		
+		*/
 	}
 	
 	exports.validateInput = validateInput;
