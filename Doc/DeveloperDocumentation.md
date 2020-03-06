@@ -37,8 +37,9 @@ Within a work environment you can run _jest --watch_ to run tests on related cod
 
 ### Setting up automated Notifications: 
 
-- We set up automated messages for members of the team through travis-ci. Travis by default sends email notifications through Github to the commiter if their push failed, but we also set up a process to email ALL members of the team if a build on Master branch fails, or a build changes from fail to success (is fixed).
-we did this with a simple travis command within the .yml: 
+- We set up automated messages for members of the team through travis-ci. Travis by default sends email notifications through Github to the committer if their push failed, but we also set up a process to email ALL members of the team if a build on Master branch fails, or a build changes from fail to success (is fixed).
+we did this with a simple travis command within the .yml (this one notifies everyone when a build is on master, success or fail):
+
 notifications:
 
   email:
@@ -50,6 +51,8 @@ notifications:
       - email@mail.com
 
     if: branch = master
+
+    on_success: always # default: change
 
     on_failure: always # default: always
 

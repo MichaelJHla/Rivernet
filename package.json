@@ -10,8 +10,8 @@
   "scripts": {
     "test": "jshint Src/quantity.js; jshint Src/quality.js; jest"
   },
-  "jshintConfig":{
-	"esversion": 6
+  "jshintConfig": {
+    "esversion": 6
   },
   "repository": {
     "type": "git",
