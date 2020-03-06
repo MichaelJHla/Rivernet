@@ -98,19 +98,19 @@ function submit(){
         dataSubmit.child("collector").set(vCollector);
         dataSubmit.child("analyst").set(vAnalyst);
         dataSubmit.child("enterer").set(vEnterer);
-        dataSubmit.child("nitrate1").set(vNitrate1);
-        dataSubmit.child("nitrate2").set(vNitrate2);
-        dataSubmit.child("nitrite1").set(vNitrite1);
-        dataSubmit.child("nitrite2").set(vNitrite2);
-        dataSubmit.child("orthophosphate1").set(vOrtho1);
-        dataSubmit.child("orthophosphate2").set(vOrtho2);
-        dataSubmit.child("orthophosphate3").set(vOrtho3);
-        dataSubmit.child("ph").set(vph);
-        dataSubmit.child("temperature").set(vtemp);
-        dataSubmit.child("nitrogen1").set(vNitrogen1);
-        dataSubmit.child("nitrogen2").set(vNitrogen2);
-        dataSubmit.child("phosphorous1").set(vPhosphorous1);
-        dataSubmit.child("phosphorous2").set(vPhosphorous2);
+        dataSubmit.child("nitrate1").set(nitrate1.value);
+        dataSubmit.child("nitrate2").set(nitrate2.value);
+        dataSubmit.child("nitrite1").set(nitrate1.value);
+        dataSubmit.child("nitrite2").set(nitrate2.value);
+        dataSubmit.child("orthophosphate1").set(ortho1.value);
+        dataSubmit.child("orthophosphate2").set(ortho2.value);
+        dataSubmit.child("orthophosphate3").set(ortho3.value);
+        dataSubmit.child("ph").set(ph.value);
+        dataSubmit.child("temperature").set(temp.value);
+        dataSubmit.child("nitrogen1").set(nitrogen1.value);
+        dataSubmit.child("nitrogen2").set(nitrogen2.value);
+        dataSubmit.child("phosphorous1").set(phosphorous1.value);
+        dataSubmit.child("phosphorous2").set(phosphorous2.value);
 
         //This is used to tell the user that the data has been uploaded to the database
         window.alert("Data submitted");
