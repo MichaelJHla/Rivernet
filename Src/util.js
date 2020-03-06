@@ -1,11 +1,17 @@
 
 
-	const validateInput =(inputValue) => {
+	const validateInput =(inputValue, notEmpty) => {
 		if (isNaN(inputValue)){ //If the value isn't the correct format
-        return false;	//Return false
+			return false;	//Return false
 		}
+		if (notEmpty && inputValue.length === 0){
+			return false;
+		}
+		
 		return true;
 	}
+	
+	
 	
 	
 	exports.validateAllQuality = (n1, n2, n3, n4, orth1, orth2, orth3, ph, temp, nitr1, nitr2, phos1, phos2 ) => {
@@ -13,24 +19,24 @@
 		var validInput = true;//Used to represent if all input is valid
 		
 		if(
-		validateInput(n1) &
-		validateInput(n2) &
-		validateInput(n3) & 
-		validateInput(n4) & 
-		validateInput(orth1) & 
-		validateInput(orth2) & 
-		validateInput(orth3) & 
-		validateInput(ph) &
-		validateInput(temp) & 
-		validateInput(nitr1) &
-		validateInput(nitr2) & 
-		validateInput(phos1) & 
-		validateInput(phos2) 
+		validateInput(n1, false) && 
+		validateInput(n2, false) && 
+		validateInput(n3, false) && 
+		validateInput(n4, false) && 
+		validateInput(orth1, false) && 
+		validateInput(orth2, false) && 
+		validateInput(orth3, false) && 
+		validateInput(ph, false) && 
+		validateInput(temp, false) && 
+		validateInput(nitr1, false) && 
+		validateInput(nitr2, false) && 
+		validateInput(phos1, false) && 
+		validateInput(phos2, false) 
 		)
 		{
-			return true; //Then they are all valid.
+			return true; //Then they are all valid; return true
 		}
-		else {return false;} //One or more is not valid.
+		else {return false;} //One or more is not valid. Return false.
 		
     
 		/*
