@@ -26,7 +26,7 @@ test('Should output false for validate input', () => {
 
 test('Should output false for validate input on empty value', () => {
 	
-	const bool = validateInput(, true);
+	const bool = validateInput(undefined, true);
 	expect(bool).toBe(false);
 	
 });
