@@ -30,8 +30,10 @@ function submit(){
     
     //All remaining variables need to be checked to show that they are valid data
     //the naming convention v+'variable name' is used to differentiate between a value
-    var vNitrate1 = nitrate1.value;
-    validInput = validateInput(vNitrate1);
+    
+	
+	var vNitrate1 = nitrate1.value;
+    validInput = validateInput(nitrate1.value);
     
     var vNitrate2 = nitrate2.value;
     validInput = validateInput(vNitrate2);
@@ -69,6 +71,7 @@ function submit(){
     var vPhosphorous2 = phosphorous2.value;
     validInput = validateInput(vPhosphorous2);
     
+	
     if (validInput){ //If all input has been valid up until this point
         dataSubmit.remove(); //Removes all previous info from the database
         
