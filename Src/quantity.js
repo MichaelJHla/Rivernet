@@ -32,24 +32,24 @@ function submit(){
     //the naming convention v+'variable name' is used to differentiate between a value
     var vDifPressure = difPressure.value;
 	validInput = validateInput(vDifPressure);
-	document.getElementById("difPressure").value=""
+	
    
     
     var vAbsPressure = absPressure.value;
     validInput = validateInput(vAbsPressure);
-	document.getElementById("absPressure").value=""
+	
     
     var vTemp = temp.value;
     validInput = validateInput(vTemp);
-	document.getElementById("temp").value=""
+	
     
     var vWaterLevel = wlevel.value;
     validInput = validateInput(vWaterLevel);
-	document.getElementById("wlevel").value=""
+	
     
     var vBarPressure = barPressure.value;
     validInput = validateInput(vBarPressure);
-	document.getElementById("barPressure").value=""
+	
     
     if (validInput){ //If all input has been valid up until this point
         dataSubmit.remove(); //Removes all previous info from the database
@@ -65,6 +65,12 @@ function submit(){
         dataSubmit.child("temperature").set(vTemp);
         dataSubmit.child("water_level").set(vWaterLevel);
         dataSubmit.child("barometric_pressure").set(vBarPressure);
+		
+		document.getElementById("difPressure").value=""
+		document.getElementById("absPressure").value=""
+		document.getElementById("temp").value=""
+		document.getElementById("wlevel").value=""
+		document.getElementById("barPressure").value=""
 
         //This is used to tell the user that the data has been uploaded to the database succesfully
         window.alert("Data submitted");
