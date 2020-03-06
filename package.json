@@ -5,6 +5,7 @@
   "main": "quantity.js",
   "devDependencies": {
     "jest": "^23.6.0",
+	"puppeteer": "^1.8.0",
     "jshint": "^2.6.0"
   },
   "scripts": {

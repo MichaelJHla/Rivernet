@@ -1,4 +1,4 @@
-const { validateInput } = require('./util'); //using function from util.js
+const { validateInput, validateAllQuantity } = require('./util'); //using function from util.js
 
 var firebaseConfig = {
     apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
@@ -30,6 +30,7 @@ function submit(){
     
     //All remaining variables need to be checked to show that they are valid data
     //the naming convention v+'variable name' is used to differentiate between a value
+	/*
     var vDifPressure = difPressure.value;
 	validInput = validateInput(vDifPressure);
     
@@ -44,6 +45,15 @@ function submit(){
     
     var vBarPressure = barPressure.value;
     validInput = validateInput(vBarPressure);
+	*/
+	
+	validInput = validateAllQuantity(
+	difPressure.value, 
+	absPressure.value, 
+	temp.value, 
+	wlevel.value, 
+	barPressure.value
+	);
     
     if (validInput){ //If all input has been valid up until this point
         dataSubmit.remove(); //Removes all previous info from the database
@@ -54,11 +64,11 @@ function submit(){
         dataSubmit.child("collector").set(vCollector);
         dataSubmit.child("analyst").set(vAnalyst);
         dataSubmit.child("enterer").set(vEnterer);
-        dataSubmit.child("differential_pressure").set(vDifPressure);
-        dataSubmit.child("absolute_pressure").set(vAbsPressure);
-        dataSubmit.child("temperature").set(vTemp);
-        dataSubmit.child("water_level").set(vWaterLevel);
-        dataSubmit.child("barometric_pressure").set(vBarPressure);
+        dataSubmit.child("differential_pressure").set(difPressure.value);
+        dataSubmit.child("absolute_pressure").set(absPressure.value);
+        dataSubmit.child("temperature").set(temp.value);
+        dataSubmit.child("water_level").set(wlevel.value);
+        dataSubmit.child("barometric_pressure").set(barPressure.value);
 
         //This is used to tell the user that the data has been uploaded to the database succesfully
         window.alert("Data submitted");

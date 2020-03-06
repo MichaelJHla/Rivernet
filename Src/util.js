@@ -11,7 +11,20 @@
 		return true;
 	}
 	
-	
+	exports.validateAllQuantity = (difPres, absPres, temp, wLevel, barPres) => {
+		validateInput(difPres, false) && 
+		validateInput(absPres, false) && 
+		validateInput(temp, false) && 
+		validateInput(wLevel, false) && 
+		validateInput(barPres, false)
+		)
+		{
+			return true; //Then they are all valid; return true
+		}
+		else {return false;} //One or more is not valid. Return false.
+		
+		
+	}
 	
 	
 	exports.validateAllQuality = (n1, n2, n3, n4, orth1, orth2, orth3, ph, temp, nitr1, nitr2, phos1, phos2 ) => {

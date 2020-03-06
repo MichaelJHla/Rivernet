@@ -1,6 +1,6 @@
 const { validateInput, validateAllQuality } = require('.././util');
 
-
+//-----------------------------------------------------------------
 //Unit:
 
 test('Should output true for validate input', () => {
@@ -33,20 +33,44 @@ test('Should output false for validate input on empty value', () => {
 
 
 
-
+//-----------------------------------------------------------------
 //Integration:
 
-test('Should output true for the entire check.', () => {
+//Quality:
+test('Should output true for the entire quality check.', () => {
 	var bool = true;
 	bool = validateAllQuality(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5); //All #s
 	expect(bool).toBe(true);
 	
 });
 
-test('Should output false for the entire check.', () => {
+test('Should output false for the entire quality check.', () => {
 	var bool = true;
-	bool = validateAllQuality(5, 5, 5, 'm', 5, 5, 5, 5, 5, 5, 5, 5, 5); //All #s
+	bool = validateAllQuality(5, 5, 5, 'm', 5, 5, 5, 5, 5, 5, 5, 5, 5);
 	expect(bool).toBe(false);
 	
 });
+
+//------------
+//Quantity:
+test('Should output false for the entire quantity check.', () => {
+	var bool = true;
+	bool = validateAllQuantity(5, 5, 5, 5, 5);
+
+	expect(bool).toBe(true);
+	
+});
+
+test('Should output false for the entire quantity check.', () => {
+	var bool = true;
+	bool = validateAllQuantity(5, 'm', 5, 5, 5);
+
+	expect(bool).toBe(false);
+	
+});
+
+//------------
+
+
+
 
