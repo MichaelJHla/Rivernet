@@ -53,7 +53,7 @@ test('Should output false for the entire quality check.', () => {
 
 //------------
 //Quantity:
-test('Should output false for the entire quantity check.', () => {
+test('Should output true for the entire quantity check.', () => {
 	var bool = true;
 	bool = validateAllQuantity(5, 5, 5, 5, 5);
 
