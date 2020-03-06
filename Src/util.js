@@ -1,6 +1,6 @@
 
 
-	exports.validateInput =(inputValue) => {
+	const validateInput =(inputValue) => {
 		if (isNaN(inputValue)){ //If the value isn't the correct format
         return false;	//Return false
 		}
@@ -54,3 +54,8 @@
 		return validInput; //Either True if all valid, false or undefined if one failed.
 		
 	}
+	
+	exports.validInput = validInput;
+	exports.validateAllQuality = validateAllQuality;
+	
+	
