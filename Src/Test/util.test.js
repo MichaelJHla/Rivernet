@@ -1,4 +1,4 @@
-const { validateInput } = require('./util');
+const { validateInput } = require('.././util');
 
 test('Should output not false for validate input', () => {
 	
