@@ -12,6 +12,7 @@
 	}
 	
 	exports.validateAllQuantity = (difPres, absPres, temp, wLevel, barPres) => {
+		if(
 		validateInput(difPres, false) && 
 		validateInput(absPres, false) && 
 		validateInput(temp, false) && 
