@@ -19,9 +19,38 @@ h1{
 }
 #header{
     text-decoration: none;
-    text-align:right;
+    display: inline-block;
+    text-align:left;
+
+}
+
+#header ul {
+    float: right;
+    position: static;
+    color: white;
+    font-size: 24px;
+    list-style-type: none;
+    font-family: 'Bebas Neue', sans-serif;
+    width: 400px;
+    padding-top: 25px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 9px;
+    clear: both;
+}
+
+#header a:link, #header a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#header a:hover{
+    transition: all .2s linear;
+    animation-name: link;
+    animation-duration: .75s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    color: green;
 }
 
 
@@ -75,6 +104,11 @@ button:hover{
 button a:link, button a:visited {
     color: black;
     text-decoration: none;
+}
+
+.logo{
+    list-style-type: none;
+    float: left;
 }
 
 .col{
