@@ -9,10 +9,10 @@
     "jshint": "^2.6.0"
   },
   "scripts": {
-    "test": "jshint Src/quantity.js; jshint Src/quality.js; jest"
+    "test": "jshint Src/quantity.js; jshint Src/quality.js; jshint Src/util.js;  jest"
   },
   "jshintConfig": {
-    "esversion": 6
+    "esversion": 5
   },
   "repository": {
     "type": "git",
