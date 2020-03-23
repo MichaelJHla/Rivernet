@@ -95,12 +95,9 @@
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../img/CrystalShardBackground.jpg */ "./src/img/CrystalShardBackground.jpg");
 exports = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "h1, h2, h3, h4, h5, p {\r\n  font-family: helvetica;\r\n  color: #3e3e3e;\r\n}\r\n.description {\r\n  font-size: 14px;\r\n  color: #9e9e9e;\r\n}\r\n.awful-selfie{\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  width: 300px;\r\n  height: 300px;\r\n  background-size: 100% auto;\r\n  background-repeat: no-repeat;\r\n}", ""]);
+exports.push([module.i, "button {\r\n    background-color: white;\r\n    border-style: solid;\r\n    border-color: white;\r\n    color: black;\r\n    text-align: center;\r\n    text-decoration: none;\r\n    display: block;\r\n    margin: 0 auto;\r\n    font-family: 'Bebas Neue', sans-serif;\r\n    font-size: 50px;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n}\r\n\r\n    button:hover {\r\n        background-color: green;\r\n        border-style: solid;\r\n        border-color: green;\r\n        color: white;\r\n    }\r\n\r\n    button a:link, button a:visited {\r\n        color: black;\r\n        text-decoration: none;\r\n    }\r\n\r\n\r\nh1 {\r\n    font-size: 60px;\r\n    font-family: 'Bebas Neue', sans-serif;\r\n    text-align: center;\r\n    color: white;\r\n    border-top: solid;\r\n    border-bottom: solid;\r\n    border-width: 1px;\r\n    border-color: #b0b0b0;\r\n}\r\n\r\n#header {\r\n    text-decoration: none;\r\n    display: inline-block;\r\n    text-align: left;\r\n}\r\n\r\n    #header ul {\r\n        float: right;\r\n        position: static;\r\n        color: white;\r\n        font-size: 24px;\r\n        list-style-type: none;\r\n        font-family: 'Bebas Neue', sans-serif;\r\n        width: 400px;\r\n        padding-top: 25px;\r\n        display: flex;\r\n        justify-content: space-between;\r\n        padding-bottom: 9px;\r\n        clear: both;\r\n    }\r\n\r\n    #header a:link, #header a:visited {\r\n        color: white;\r\n        text-decoration: none;\r\n    }\r\n\r\n    #header a:hover {\r\n        transition: all .2s linear;\r\n        animation-name: link;\r\n        animation-duration: .75s;\r\n        animation-delay: 0s;\r\n        animation-iteration-count: 1;\r\n        color: green;\r\n    }\r\n\r\n.logo {\r\n\r\n    list-style-type: none;\r\n    float: left;\r\n    padding-top: 10px;\r\n    padding-left: 25px;\r\n    max-height: 25%;\r\n    max-width: 25%;\r\n}\r\n\r\n.col {\r\n    float: left;\r\n    width: 50%;\r\n}\r\n\r\n.buttonRow:after {\r\n    display: table;\r\n    clear: both;\r\n}\r\n\r\n.right {\r\n    float: right;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -209,51 +206,6 @@ function toComment(sourceMap) {
   var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
   return "/*# ".concat(data, " */");
 }
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = url && url.__esModule ? url.default : url;
-
-  if (typeof url !== 'string') {
-    return url;
-  } // If url is already wrapped in quotes, remove them
-
-
-  if (/^['"].*['"]$/.test(url)) {
-    // eslint-disable-next-line no-param-reassign
-    url = url.slice(1, -1);
-  }
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  } // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-
-
-  if (/["'() \t\n]/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, '\\n'), "\"");
-  }
-
-  return url;
-};
 
 /***/ }),
 
@@ -565,19 +517,6 @@ var exported = content.locals ? content.locals : {};
 
 
 module.exports = exported;
-
-/***/ }),
-
-/***/ "./src/img/CrystalShardBackground.jpg":
-/*!********************************************!*\
-  !*** ./src/img/CrystalShardBackground.jpg ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "d618c75356c23c74270407a7a2ab673c.jpg");
 
 /***/ }),
 
