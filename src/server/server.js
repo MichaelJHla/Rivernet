@@ -9,6 +9,7 @@ const router = express.Router();
 app.use(express.static(DIST_DIR))
 
 
+//Here, we see what page the user is on, and depending on the url extension, send the correct html.
 app.get('*', (req, res) => {
     res.sendFile(HTML_FILE)
 })
@@ -23,6 +24,7 @@ app.get('/quantity', (req, res) => {
 
 
 /*
+//This code is another attempt at solving the issue. 
 router.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
     //__dirname : It will resolve to your project folder.
