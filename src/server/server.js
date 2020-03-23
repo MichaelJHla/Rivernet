@@ -1,26 +1,26 @@
-import path from 'path'
-import express from 'express'
+import path from 'path';
+import express from 'express';
 const app = express(),
-            DIST_DIR = __dirname,
-            HTML_FILE = path.join(DIST_DIR, 'index.html')
+    DIST_DIR = __dirname,
+    HTML_FILE = path.join(DIST_DIR, 'index.html');
 
 const router = express.Router();
 
-app.use(express.static(DIST_DIR))
+app.use(express.static(DIST_DIR));
 
 
 //Here, we see what page the user is on, and depending on the url extension, send the correct html.
 app.get('*', (req, res) => {
-    res.sendFile(HTML_FILE)
-})
+    res.sendFile(HTML_FILE);
+});
 
 app.get('/quality', (req, res) => {
-    res.sendFile(path.join(DIST_DIR, '/quality.html'))
-})
+    res.sendFile(path.join(DIST_DIR, '/quality.html'));
+});
 
 app.get('/quantity', (req, res) => {
-    res.sendFile(path.join(DIST_DIR, '/quantity.html'))
-})
+    res.sendFile(path.join(DIST_DIR, '/quantity.html'));
+});
 
 
 /*
@@ -49,8 +49,8 @@ app.use('/', router);
 */
 
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`App listening to ${PORT}....`)
-    console.log('Press Ctrl+C to quit.')
-})
+    console.log(`App listening to ${PORT}....`);
+    console.log('Press Ctrl+C to quit.');
+});
