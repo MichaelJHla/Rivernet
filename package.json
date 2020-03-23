@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development",
     "start": "node ./dist/server.js",
-    "test": "jshint Src/quantity.js; jshint Src/quality.js; jshint Src/util.js"
+    "test": "jshint src/js/quantity.js; jshint src/js/quality.js; jshint src/js/server.js;"
   },
   "repository": {
     "type": "git",
