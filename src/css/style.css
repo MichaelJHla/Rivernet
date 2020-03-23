@@ -73,13 +73,20 @@ h1 {
     }
 
 .logo {
+    background: url(../img/yerc_logo.png);
+    width: 300px;
+    height: 300px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 
+    
     list-style-type: none;
     float: left;
     padding-top: 10px;
     padding-left: 25px;
     max-height: 25%;
     max-width: 25%;
+        
 }
 
 .col {

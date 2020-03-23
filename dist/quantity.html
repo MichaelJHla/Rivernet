@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <!-- <link rel="stylesheet" href="./css/style.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <title>Quality - Rivernet</title>
+    <title>Quantity - Rivernet</title>
 </head>
 
 <body style="background-color:#3a3a3b;">
@@ -18,22 +18,20 @@
                 <li><a href="index.html"></li>
             </div>
 
-            <!--<script type="module" src="quality.js"></script>-->
+            <!--<script type="module" src="quantity.js"></script>-->
         </div>
 
-        <h1> Quality Data </h1>
 
-
+        <h1> Quantity Data </h1>
 
         <div class="buttonRow">
             <div class="col">
-                <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Quality Protocol</a></button>
+                <button id="quantityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33781bf70d225fec5daf8b/1580431391917/2-RiverNET+Community+Water+QUANTITY+Monitoring+Protocols.pdf')">Quantity Protocol</a></button>
             </div>
             <div class="col">
                 <button id="quantityButton"> <a href="index.html">Back</a></button>
             </div>
         </div>
-
         <p>
             <br>
             <br>
@@ -56,51 +54,35 @@
                 </div>
 
                 <div id="entrySet">
-                    <label>Nitrate:</label>
-                    <input id="nitrate1">
-                    <input id="nitrate2">
+                    <label>Differential pressure (PSI)</label>
+                    <input id="difPressure">
                 </div>
 
                 <div id="entrySet">
-                    <label>Nitrite:</label>
-                    <input id="nitrite1">
-                    <input id="nitrite2">
+                    <label>Absolute pressure (PSI)</label>
+                    <input id="absPressure">
                 </div>
 
                 <div id="entrySet">
-                    <label>Orthophosphate:</label>
-                    <input id="ortho1">
-                    <input id="ortho2">
-                    <input id="ortho3">
-                </div>
-
-                <div id="entrySet">
-                    <label>pH:</label>
-                    <input id="ph">
-
-                </div>
-
-                <div id="entrySet">
-                    <label>Temperature:</label>
+                    <label>Temperature (F)</label>
                     <input id="temp">
                 </div>
 
                 <div id="entrySet">
-                    <label>Nitrogen:</label>
-                    <input id="nitrogen1">
-                    <input id="nitrogen2">
+                    <label>Water level (ft)</label>
+                    <input id="wlevel">
                 </div>
 
                 <div id="entrySet">
-                    <label>Phosphorous</label>
-                    <input id="phosphorous1">
-                    <input id="phosphorous2">
+                    <label>Barometric Pressure (PSI)</label>
+                    <input id="barPressure">
                 </div>
+
             </form>
         </p>
 
         <p>
             <button onclick="submit()">Submit data</button>
         </p>
-    </body>
+    <script type="text/javascript" src="/quantity.js"></script></body>
 </html>

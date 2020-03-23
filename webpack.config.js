@@ -3,7 +3,9 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 module.exports = {
   entry: {
-    main: './src/index.js'
+        main: './src/index.js',
+        quantity: './src/js/quantity.js',
+        quality: './src/js/quality.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -43,8 +45,22 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/html/index.html",
-      filename: "./index.html",
+        filename: "./index.html",
+        chunks: ['index'],
       excludeChunks: [ 'server' ]
-    })
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/html/quantity.html",
+        filename: "./quantity.html",
+        chunks: ['quantity'],
+      excludeChunks: [ 'server' ]
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/html/quality.html",
+        filename: "./quality.html",
+        chunks: ['quality'],
+      excludeChunks: [ 'server' ]
+    }),
+    
   ]
 }
