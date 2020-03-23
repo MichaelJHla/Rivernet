@@ -613,7 +613,8 @@ __webpack_require__.r(__webpack_exports__);
 
  // Log message to console
 
-Object(_logger__WEBPACK_IMPORTED_MODULE_0__["default"])('Welcome to Quality!');
+Object(_logger__WEBPACK_IMPORTED_MODULE_0__["default"])('Welcome to Quality!'); //TODO: 
+//Actually implement all the functionality.
 
 /***/ })
 

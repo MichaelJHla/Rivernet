@@ -6,7 +6,10 @@
   "scripts": {
     "build": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development",
     "start": "node ./dist/server.js",
-    "test": "jshint src/js/quantity.js; jshint src/js/quality.js; jshint src/js/server.js;"
+    "test": "jshint src/js/quantity.js; jshint src/js/quality.js; jshint src/server/server.js;"
+  },
+  "jshintConfig": {
+    "esversion": 6
   },
   "repository": {
     "type": "git",
