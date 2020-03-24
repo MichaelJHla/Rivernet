@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Doc"
+    "\\Doc",
+    "\\src",
+    "\\src\\css",
+    "\\src\\html",
+    "\\src\\img",
+    "\\src\\js",
+    "\\src\\server"
   ],
-  "SelectedNode": "\\webpack.config.js",
+  "SelectedNode": "\\Doc\\DeveloperDocumentation.md",
   "PreviewInSolutionExplorer": false
 }
