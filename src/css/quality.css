@@ -87,6 +87,7 @@ button {
 	margin: 0 auto;
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 50px;
+	cursor: pointer; 
 }
 
 	button:hover {
@@ -125,3 +126,20 @@ button {
 .right {
 	float: right;
 }
+.botButtons button {
+  padding: 10px 24px; 
+  border: 1px solid green; /* Green border */
+  float: left; 
+}
+
+.botButtons button:not(:last-child) {
+  border-right: none; 
+}
+
+
+.botButtons:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
