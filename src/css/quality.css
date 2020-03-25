@@ -24,34 +24,35 @@ h1 {
 	text-align: left;
 }
 
-	#header ul {
-		float: right;
-		position: static;
-		color: white;
-		font-size: 24px;
-		list-style-type: none;
-		font-family: 'Bebas Neue', sans-serif;
-		width: 400px;
-		padding-top: 25px;
-		display: flex;
-		justify-content: space-between;
-		padding-bottom: 9px;
-		clear: both;
+#header ul {
+	float: right;
+	position: static;
+	color: white;
+	font-size: 24px;
+	list-style-type: none;
+	font-family: 'Bebas Neue', sans-serif;
+	width: 400px;
+	padding-top: 25px;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 9px;
+	clear: both;
+	
 	}
 
-	#header a:link, #header a:visited {
-		color: white;
-		text-decoration: none;
-	}
+#header a:link, #header a:visited {
+	color: white;
+	text-decoration: none;
+}
 
-	#header a:hover {
-		transition: all .2s linear;
-		animation-name: link;
-		animation-duration: .75s;
-		animation-delay: 0s;
-		animation-iteration-count: 1;
-		color: green;
-	}
+#header a:hover {
+	transition: all .2s linear;
+	animation-name: link;
+	animation-duration: .75s;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	color: green;
+}
 
 #entrySet {
 	padding: 10px;
@@ -127,19 +128,20 @@ button {
 	float: right;
 }
 .botButtons button {
-  padding: 10px 24px; 
-  border: 1px solid green; /* Green border */
-  float: left; 
+	text-align: center;
+  	padding: 10px 24px; 
+  	border: 1px solid green; /* Green border */
+ 	float: left; 
 }
 
 .botButtons button:not(:last-child) {
-  border-right: none; 
+ 	 border-right: none; 
 }
 
 
 .botButtons:after {
-  content: "";
-  clear: both;
-  display: table;
+  	content: "";
+  	clear: both;
+  	display: table;
 }
 
