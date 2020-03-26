@@ -40,9 +40,15 @@
             <br>
             <form>
                 <div id="entrySet">
-                    <label>Site ID:</label>
-                    <input id="siteID">
-                </div>
+			        <label>Jar Number</label>
+			        <select id = "jarList">
+				        <option value = "Number">#</option>
+				        <option value = "1">1</option>
+				        <option value = "2">2</option>
+				        <option value = "3">3</option>
+				        <option value = "4">4</option>
+			        </select>
+		    	</div>
 
                 <div id="entrySet">
                     <label>Collector name:</label>
@@ -100,7 +106,11 @@
         </p>
 
         <p>
+        	<div class="botButtons">
+        	<button onclick="submitJar()">Enter</button>
+        	<button onclick="editJars()">Edit</button>
             <button onclick="submit()">Submit data</button>
+        	</div>
         </p>
     <script type="text/javascript" src="/quality.js"></script></body>
 </html>
