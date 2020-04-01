@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Quality - Rivernet</title>
+</head>
+
+<body style="background-color:#3a3a3b;">
+    <body>
+        <div id="header">
+            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
+
+            <div class="logo"></div>
+
+            <!--<script type="module" src="quality.js"></script>-->
+        </div>
+
+        <h1> Quality Data </h1>
+
+
+
+        <div class="buttonRow">
+            <div class="col">
+                <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Quality Protocol</a></button>
+            </div>
+            <div class="col">
+                <button id="quantityButton"> <a href="index.html">Back</a></button>
+            </div>
+        </div>
+
+        <p>
+            <br>
+            <br>
+            <br>
+            <form>
+                <div id="entrySet">
+			        <label>Jar Number</label>
+			        <select id = "jarList">
+				        <option value = "Number">#</option>
+				        <option value = "1">1</option>
+				        <option value = "2">2</option>
+				        <option value = "3">3</option>
+				        <option value = "4">4</option>
+			        </select>
+		    	</div>
+
+                <div id="entrySet">
+                    <label>Collector name:</label>
+                    <input id="collector">
+
+                    <label>Analyst name:</label>
+                    <input id="analyst">
+
+                    <label>Enterer name:</label>
+                    <input id="enterer">
+                </div>
+
+                <div id="entrySet">
+                    <label>Nitrate:</label>
+                    <input id="nitrate1">
+                    <input id="nitrate2">
+                    <input id="nitrate3">
+                </div>
+
+                <div id="entrySet">
+                    <label>Nitrite:</label>
+                    <input id="nitrite1">
+                    <input id="nitrite2">
+                    <input id="nitrate3">
+                </div>
+
+                <div id="entrySet">
+                    <label>Orthophosphate:</label>
+                    <input id="ortho1">
+                    <input id="ortho2">
+                    <input id="ortho3">
+                </div>
+
+                <div id="entrySet">
+                    <label>pH:</label>
+                    <input id="ph1">
+                    <input id="ph2">
+                    <input id="ph3">
+
+                </div>
+
+                <div id="entrySet">
+                    <label>Temperature:</label>
+                    <input id="temp1">
+                    <input id="temp2">
+                    <input id="temp3">
+                </div>
+
+                <div id="entrySet">
+                    <label>Nitrogen:</label>
+                    <input id="nitrogen1">
+                    <input id="nitrogen2">
+                    <input id="nitrogen3">
+                </div>
+
+                <div id="entrySet">
+                    <label>Phosphorous</label>
+                    <input id="phosphorous1">
+                    <input id="phosphorous2">
+                    <input id="phosphorous3">
+                </div>
+            </form>
+        </p>
+
+        <p>
+        	<div class="botButtons">
+        	<button onclick="submitJar()">Enter</button>
+        	<button onclick="editJars()">Edit</button>
+            <button onclick="submit()">Submit data</button>
+        	</div>
+        </p>
+    </body>
+</html>

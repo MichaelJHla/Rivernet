@@ -1,4 +1,5 @@
 *.firebaserc
 *.firebase
+*.vs
 
 node_modules
