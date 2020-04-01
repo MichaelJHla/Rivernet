@@ -1,0 +1,126 @@
+img{
+    list-style-type: none;
+    float: left;
+    padding-top: 10px;
+    padding-left: 25px;
+    max-height: 15%;
+    max-width: 15%;
+}
+
+h1{
+    font-size: 60px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    color: white;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #b0b0b0;
+}
+#header{
+    text-decoration: none;
+    display: inline-block;
+    text-align:left;
+
+}
+
+#header ul {
+    float: right;
+    position: static;
+    color: white;
+    font-size: 24px;
+    list-style-type: none;
+    font-family: 'Bebas Neue', sans-serif;
+    width: 400px;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 9px;
+    clear: both;
+}
+
+#header a:link, #header a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#header a:hover{
+    transition: all .2s linear;
+    animation-name: link;
+    animation-duration: .75s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    color: green;
+}
+
+
+#entrySet{
+    padding: 10px;
+}
+
+input{
+    width: 50px;
+    margin-right: 25px;
+}
+
+#collector, #analyst, #enterer{
+    width: 200px;
+
+}
+
+#difPressure, #absPressure, #temp, #wlevel, #barPressure{
+    width: 100px;
+}
+body{
+	color: white;
+    font-size: 18px;
+}
+
+form{
+	background-color: #4B4B4B;
+}
+
+button {
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+}
+
+button:hover{
+
+    background-color: green;
+    border-style: solid;
+    border-color: green;
+    color: white;
+}
+
+button a:link, button a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.logo{
+    list-style-type: none;
+    float: left;
+}
+
+.col{
+    float:left;
+    width: 50%;
+}
+
+.buttonRow:after{
+    display: table;
+    clear: both;
+}
+
+.right{
+    float:right;
+}
