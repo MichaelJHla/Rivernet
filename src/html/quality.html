@@ -25,7 +25,10 @@
 
         <div class="buttonRow">
             <div class="col">
-                <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Quality Protocol</a></button>
+            	<button class="open-button" onclick="openForm()">Add Jar</button>
+            </div>
+            <div class="col">
+                <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Protocol</a></button>
             </div>
             <div class="col">
                 <button id="quantityButton"> <a href="index.html">Back</a></button>
@@ -36,87 +39,108 @@
             <br>
             <br>
             <br>
-            <form>
-                <div id="entrySet">
-			        <label>Jar Number</label>
-			        <select id = "jarList">
-				        <option value = "Number">#</option>
-				        <option value = "1">1</option>
-				        <option value = "2">2</option>
-				        <option value = "3">3</option>
-				        <option value = "4">4</option>
-			        </select>
-		    	</div>
+            
+            <div class="form-popup" id="myForm">
+	            <form action="/action_page.php" class="form-container">
+	                <div id="entrySet">
 
-                <div id="entrySet">
-                    <label>Collector name:</label>
-                    <input id="collector">
+				        <label>Jar Number</label>
+				        <select id = "jarList">
+					        <option value = "Number">#</option>
+					        <option value = "1">1</option>
+					        <option value = "2">2</option>
+					        <option value = "3">3</option>
+					        <option value = "4">4</option>
+				        </select>
+			    	</div>
 
-                    <label>Analyst name:</label>
-                    <input id="analyst">
+	                <div id="entrySet">
+	                    <label>Collector name:</label>
+	                    <input id="collector">
 
-                    <label>Enterer name:</label>
-                    <input id="enterer">
-                </div>
+	                    <label>Analyst name:</label>
+	                    <input id="analyst">
 
-                <div id="entrySet">
-                    <label>Nitrate:</label>
-                    <input id="nitrate1">
-                    <input id="nitrate2">
-                    <input id="nitrate3">
-                </div>
+	                    <label>Enterer name:</label>
+	                    <input id="enterer">
+	                </div>
 
-                <div id="entrySet">
-                    <label>Nitrite:</label>
-                    <input id="nitrite1">
-                    <input id="nitrite2">
-                    <input id="nitrite3">
-                </div>
+	                <div id="entrySet">
+	                    <label>Nitrate:</label>
+	                    <input id="nitrate1">
+	                    <input id="nitrate2">
+	                    <input id="nitrate3">
+	                </div>
 
-                <div id="entrySet">
-                    <label>Orthophosphate:</label>
-                    <input id="ortho1">
-                    <input id="ortho2">
-                    <input id="ortho3">
-                </div>
+	                <div id="entrySet">
+	                    <label>Nitrite:</label>
+	                    <input id="nitrite1">
+	                    <input id="nitrite2">
+	                    <input id="nitrite3">
+	                </div>
 
-                <div id="entrySet">
-                    <label>pH:</label>
-                    <input id="ph1">
-                    <input id="ph2">
-                    <input id="ph3">
+	                <div id="entrySet">
+	                    <label>Orthophosphate:</label>
+	                    <input id="ortho1">
+	                    <input id="ortho2">
+	                    <input id="ortho3">
+	                </div>
 
-                </div>
+	                <div id="entrySet">
+	                    <label>pH:</label>
+	                    <input id="ph1">
+	                    <input id="ph2">
+	                    <input id="ph3">
 
-                <div id="entrySet">
-                    <label>Temperature:</label>
-                    <input id="temp1">
-                    <input id="temp2">
-                    <input id="temp3">
-                </div>
+	                </div>
 
-                <div id="entrySet">
-                    <label>Nitrogen:</label>
-                    <input id="nitrogen1">
-                    <input id="nitrogen2">
-                    <input id="nitrogen3">
-                </div>
+	                <div id="entrySet">
+	                    <label>Temperature:</label>
+	                    <input id="temp1">
+	                    <input id="temp2">
+	                    <input id="temp3">
+	                </div>
 
-                <div id="entrySet">
-                    <label>Phosphorous</label>
-                    <input id="phosphorous1">
-                    <input id="phosphorous2">
-                    <input id="phosphorous3">
-                </div>
-            </form>
+	                <div id="entrySet">
+	                    <label>Nitrogen:</label>
+	                    <input id="nitrogen1">
+	                    <input id="nitrogen2">
+	                    <input id="nitrogen3">
+	                </div>
+
+	                <div id="entrySet">
+	                    <label>Phosphorous</label>
+	                    <input id="phosphorous1">
+	                    <input id="phosphorous2">
+	                    <input id="phosphorous3">
+	                </div>
+
+	                
+        			
+        			<button type="submit" class="btn" onclick="submitJar()">Enter</button>
+	                
+	            </form>
+	        </div>
+
+	        <script>
+				function openForm() {
+				  document.getElementById("myForm").style.display = "block";
+				}
+
+				function closeForm() {
+				  document.getElementById("myForm").style.display = "none";
+				}
+			</script>
         </p>
 
         <p>
-        	<div class="botButtons">
-        	<button onclick="submitJar()">Enter</button>
-        	<button onclick="editJars()">Edit</button>
+        
+        <div class="col2">
+        	<button onclick="editJars()">Edit All</button>
+        </div>
+        <div class="col2">
             <button onclick="submit()">Submit data</button>
-        	</div>
+        </div>
         </p>
     </body>
 </html>

@@ -116,6 +116,11 @@ button {
 
 .col {
 	float: left;
+	width: 33%;
+}
+
+.col2 {
+	float: left;
 	width: 50%;
 }
 
@@ -130,7 +135,7 @@ button {
 .botButtons button {
 	text-align: center;
   	padding: 10px 24px; 
-  	border: 1px solid green; /* Green border */
+  	border: 1px solid green; 
  	float: left; 
 }
 
@@ -143,5 +148,16 @@ button {
   	content: "";
   	clear: both;
   	display: table;
+}
+
+.form-popup {
+  display: none;
+  border: 1px solid #f1f1f1;
+}
+
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
