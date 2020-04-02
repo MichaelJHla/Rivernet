@@ -1,3 +1,6 @@
+/*CSS file for the qualtity page of the RiverNET web application.
+Written by: Anna Jinneman, William Roberts & Jonah Hlastala
+Last updated: 4/3/2020 */
 img {
 	list-style-type: none;
 	float: left;
@@ -7,6 +10,7 @@ img {
 	max-width: 15%;
 }
 
+/*Intended for the title of a page*/
 h1 {
 	font-size: 60px;
 	font-family: 'Bebas Neue', sans-serif;
@@ -23,6 +27,7 @@ h1 {
   	width: 430px;
 }
 
+/*Used in the index.HTML page*/
 h3 {
 	font-size: 60px;
 	font-family: 'Bebas Neue', sans-serif;
@@ -35,6 +40,7 @@ h3 {
 
 }
 
+/*Used for the YERC logo and title for the page.*/
 #header {
 	text-decoration: none;
 	display: inline-block;
@@ -71,6 +77,7 @@ h3 {
 	color: green;
 }
 
+/*Styling for the Jar form (entry sets, box sizes, etc.)*/
 #entrySet {
 	padding: 10px;
 }
@@ -85,7 +92,6 @@ form {
 	border: 1px solid #f1f1f1;
 }
 
-
 input {
 	width: 50px;
 	margin-right: 25px;
@@ -95,6 +101,7 @@ input {
 	width: 200px;
 }
 
+/*General button styling.*/
 button {
 	background-color: white;
 	border-style: solid;
@@ -109,18 +116,20 @@ button {
 	cursor: pointer; 
 }
 
-	button:hover {
-		background-color: green;
-		border-style: solid;
-		border-color: green;
-		color: white;
-	}
+button:hover {
+	background-color: green;
+	border-style: solid;
+	border-color: green;
+	color: white;
+}
 
-	button a:link, button a:visited {
-		color: black;
-		text-decoration: none;
-	}
+button a:link, button a:visited {
+	color: black;
+	text-decoration: none;
+}
 
+
+/*Styling for the YERC logo.*/
 .logo {
 	background: url(../img/yerc_logo.png);
 	width: 250px;
@@ -132,6 +141,7 @@ button {
 	float: left;
 }
 
+/*Below is the CSS needed for the side-by-side buttons*/
 .col {
 	float: left;
 	width: 33%;
@@ -150,6 +160,8 @@ button {
 .right {
 	float: right;
 }
+
+/*CSS to position the 3 bottom buttons correctly.*/
 .botButtons button {
 	text-align: center;
   	padding: 10px 24px; 
@@ -161,18 +173,18 @@ button {
  	 border-right: none; 
 }
 
-
 .botButtons:after {
   	content: "";
   	clear: both;
   	display: table;
 }
 
+/* Below is used for the Jar form pop-up*/
+
 .form-popup {
   display: none;
   border: 1px solid #f1f1f1;
 }
-
 
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;

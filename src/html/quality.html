@@ -1,10 +1,14 @@
 ﻿<!DOCTYPE html>
-
+<!-- HTML file for the qualtity page of the RiverNET web application.
+Written by: Anna Jinneman, William Roberts & Jonah Hlastala
+Last updated: 4/3/2020 -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <!-- <link rel="stylesheet" href="./css/style.css"> -->
+
+    <!-- The needed linking to the free, open-source font used in css. -->
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Quality - Rivernet</title>
 </head>
@@ -13,6 +17,8 @@
     <body>
         <div id="header">
             <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
+
+            <!-- Script from jquery needed for add jar form functionality. -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
             <div class="logo"></div>
@@ -22,9 +28,10 @@
         </div>
 
         
-
+        <!-- Manages the two top buttons, "Back" and "Protocol". -->
         <div class="buttonRow">
             <div class="col2">
+            	<!-- Link to the protocol from the YERC website. -->
                 <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Protocol</a></button>
             </div>
             <div class="col2">
@@ -32,11 +39,16 @@
             </div>
         </div>
 
+        <!-- Needed to get the correct spacing and formatting. -->
         <p>
             <br>
             <br>
             <br>
+
+            <!-- Placeholder for the jar form. -->
             <div id="form-placeholder"></div>
+
+            <!-- The basic form pop-up for each jar. -->
             <div class="form-popup" id="myForm">
 	            <form action="/action_page.php" class="form-container">
 	                <div id="entrySet">
@@ -46,9 +58,6 @@
 				        <label>Site ID</label>
 	                    <input id="siteID"> 
 			    	</div>
-
-			
-
 
 	                <div id="entrySet">
 	                    <label>Collector name:</label>
@@ -114,7 +123,7 @@
 	                </div>
         			
         			
-        			
+        			<!-- Should allow for a temporary save. -->
         			<button type="submit" class="btn">Enter</button>
         			
         			<br>
@@ -122,35 +131,31 @@
 	            </form>
 	        </div>
 
+	        <!-- Script to handle adding a new jar form when the button is clicked. -->
 	        <script type="text/javascript">
 	        	$(document).ready(function() {
-			    //Selector where you will add your questions
 			    var placeholder     = $("#form-placeholder"); 
-			    
-			    // Selector for the button
-			    var add_button      = $("#newquestion"); 
-			    
-			    // Adding new fields when the user click the button
+			    var add_button      = $("#newForm"); 
+
 			    $(add_button).click(function(e){ 
 			        e.preventDefault();
 			        $(placeholder).append($("#myForm").html()); 
 			    });
 			})
 	        </script>
-
-	       
         </p>
 
+        <!-- The bottom 3 buttons on the page, "Add Jar", "Edit All" and "Submit Data". -->
         <p>
             <br>
         <div class="col">
-        	<button id="newquestion">Add Jar</button>
+        	<button id="newForm">Add Jar</button>
         </div>
         <div class="col">
         	<button onclick="editJars()">Edit All</button>
         </div>
         <div class="col">
-            <button onclick="submit()">Submit data</button>
+            <button onclick="submit()">Submit Data</button>
         </div>
         </p>
     </body>
