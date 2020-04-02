@@ -44647,7 +44647,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../img/yerc_logo.png
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "img {\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n\tpadding-top: 10px;\r\n\tpadding-left: 25px;\r\n\tmax-height: 15%;\r\n\tmax-width: 15%;\r\n}\r\n\r\nh1 {\r\n\tfont-size: 60px;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\ttext-align: center;\r\n\tcolor: white;\r\n\tborder-top: solid;\r\n\tborder-bottom: solid;\r\n\tborder-width: 1px;\r\n\tborder-color: #b0b0b0;\r\n}\r\n\r\n#header {\r\n\ttext-decoration: none;\r\n\tdisplay: inline-block;\r\n\ttext-align: left;\r\n}\r\n\r\n#header ul {\r\n\tfloat: right;\r\n\tposition: static;\r\n\tcolor: white;\r\n\tfont-size: 24px;\r\n\tlist-style-type: none;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\twidth: 400px;\r\n\tpadding-top: 25px;\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\tpadding-bottom: 9px;\r\n\tclear: both;\r\n\t\r\n\t}\r\n\r\n#header a:link, #header a:visited {\r\n\tcolor: white;\r\n\ttext-decoration: none;\r\n}\r\n\r\n#header a:hover {\r\n\ttransition: all .2s linear;\r\n\tanimation-name: link;\r\n\tanimation-duration: .75s;\r\n\tanimation-delay: 0s;\r\n\tanimation-iteration-count: 1;\r\n\tcolor: green;\r\n}\r\n\r\n#entrySet {\r\n\tpadding: 10px;\r\n}\r\n\r\nbody {\r\n\tcolor: white;\r\n\tfont-size: 18px;\r\n}\r\n\r\nform {\r\n\tbackground-color: #4B4B4B;\r\n}\r\n\r\n\r\ninput {\r\n\twidth: 50px;\r\n\tmargin-right: 25px;\r\n}\r\n\r\n#collector, #analyst, #enterer {\r\n\twidth: 200px;\r\n}\r\n\r\nbutton {\r\n\tbackground-color: white;\r\n\tborder-style: solid;\r\n\tborder-color: white;\r\n\tcolor: black;\r\n\ttext-align: center;\r\n\ttext-decoration: none;\r\n\tdisplay: block;\r\n\tmargin: 0 auto;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\tfont-size: 50px;\r\n\tcursor: pointer; \r\n}\r\n\r\n\tbutton:hover {\r\n\t\tbackground-color: green;\r\n\t\tborder-style: solid;\r\n\t\tborder-color: green;\r\n\t\tcolor: white;\r\n\t}\r\n\r\n\tbutton a:link, button a:visited {\r\n\t\tcolor: black;\r\n\t\ttext-decoration: none;\r\n\t}\r\n\r\n.logo {\r\n\tbackground: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n\twidth: 300px;\r\n\theight: 300px;\r\n\tbackground-size: 100% auto;\r\n\tbackground-repeat: no-repeat;\r\n\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n}\r\n\r\n.col {\r\n\tfloat: left;\r\n\twidth: 33%;\r\n}\r\n\r\n.col2 {\r\n\tfloat: left;\r\n\twidth: 50%;\r\n}\r\n\r\n.buttonRow:after {\r\n\tdisplay: table;\r\n\tclear: both;\r\n}\r\n\r\n.right {\r\n\tfloat: right;\r\n}\r\n.botButtons button {\r\n\ttext-align: center;\r\n  \tpadding: 10px 24px; \r\n  \tborder: 1px solid green; \r\n \tfloat: left; \r\n}\r\n\r\n.botButtons button:not(:last-child) {\r\n \t border-right: none; \r\n}\r\n\r\n\r\n.botButtons:after {\r\n  \tcontent: \"\";\r\n  \tclear: both;\r\n  \tdisplay: table;\r\n}\r\n\r\n.form-popup {\r\n  display: none;\r\n  border: 1px solid #f1f1f1;\r\n}\r\n\r\n\r\n.form-container input[type=text]:focus, .form-container input[type=password]:focus {\r\n  background-color: #ddd;\r\n  outline: none;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "/*CSS file for the qualtity page of the RiverNET web application.\r\nWritten by: Anna Jinneman, William Roberts & Jonah Hlastala\r\nLast updated: 4/3/2020 */\r\nimg {\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n\tpadding-top: 10px;\r\n\tpadding-left: 25px;\r\n\tmax-height: 15%;\r\n\tmax-width: 15%;\r\n}\r\n\r\n/*Intended for the title of a page*/\r\nh1 {\r\n\tfont-size: 60px;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\ttext-align: center;\r\n\tcolor: white;\r\n\tborder-top: solid;\r\n\tborder-bottom: solid;\r\n\tborder-width: 1px;\r\n\tborder-color: #b0b0b0;\r\n\tfloat: right;\r\n\tposition: static;\r\n  \ttop: 23px;\r\n  \tright: 28px;\r\n  \twidth: 430px;\r\n}\r\n\r\n/*Used in the index.HTML page*/\r\nh3 {\r\n\tfont-size: 60px;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\ttext-align: center;\r\n\tcolor: white;\r\n\tborder-top: solid;\r\n\tborder-bottom: solid;\r\n\tborder-width: 1px;\r\n\tborder-color: #b0b0b0;\r\n\r\n}\r\n\r\n/*Used for the YERC logo and title for the page.*/\r\n#header {\r\n\ttext-decoration: none;\r\n\tdisplay: inline-block;\r\n\ttext-align: left;\r\n}\r\n\r\n#header ul {\r\n\tfloat: right;\r\n\tposition: static;\r\n\tcolor: white;\r\n\tfont-size: 24px;\r\n\tlist-style-type: none;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\twidth: 400px;\r\n\tpadding-top: 25px;\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\tpadding-bottom: 9px;\r\n\tclear: both;\r\n\t\r\n\t}\r\n\r\n#header a:link, #header a:visited {\r\n\tcolor: white;\r\n\ttext-decoration: none;\r\n}\r\n\r\n#header a:hover {\r\n\ttransition: all .2s linear;\r\n\tanimation-name: link;\r\n\tanimation-duration: .75s;\r\n\tanimation-delay: 0s;\r\n\tanimation-iteration-count: 1;\r\n\tcolor: green;\r\n}\r\n\r\n/*Styling for the Jar form (entry sets, box sizes, etc.)*/\r\n#entrySet {\r\n\tpadding: 10px;\r\n}\r\n\r\nbody {\r\n\tcolor: white;\r\n\tfont-size: 18px;\r\n}\r\n\r\nform {\r\n\tbackground-color: #4B4B4B;\r\n\tborder: 1px solid #f1f1f1;\r\n}\r\n\r\ninput {\r\n\twidth: 50px;\r\n\tmargin-right: 25px;\r\n}\r\n\r\n#collector, #analyst, #enterer {\r\n\twidth: 200px;\r\n}\r\n\r\n/*General button styling.*/\r\nbutton {\r\n\tbackground-color: white;\r\n\tborder-style: solid;\r\n\tborder-color: white;\r\n\tcolor: black;\r\n\ttext-align: center;\r\n\ttext-decoration: none;\r\n\tdisplay: block;\r\n\tmargin: 0 auto;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\tfont-size: 50px;\r\n\tcursor: pointer; \r\n}\r\n\r\nbutton:hover {\r\n\tbackground-color: green;\r\n\tborder-style: solid;\r\n\tborder-color: green;\r\n\tcolor: white;\r\n}\r\n\r\nbutton a:link, button a:visited {\r\n\tcolor: black;\r\n\ttext-decoration: none;\r\n}\r\n\r\n\r\n/*Styling for the YERC logo.*/\r\n.logo {\r\n\tbackground: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n\twidth: 250px;\r\n\theight: 250px;\r\n\tbackground-size: 100% auto;\r\n\tbackground-repeat: no-repeat;\r\n\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n}\r\n\r\n/*Below is the CSS needed for the side-by-side buttons*/\r\n.col {\r\n\tfloat: left;\r\n\twidth: 33%;\r\n}\r\n\r\n.col2 {\r\n\tfloat: left;\r\n\twidth: 50%;\r\n}\r\n\r\n.buttonRow:after {\r\n\tdisplay: table;\r\n\tclear: both;\r\n}\r\n\r\n.right {\r\n\tfloat: right;\r\n}\r\n\r\n/*CSS to position the 3 bottom buttons correctly.*/\r\n.botButtons button {\r\n\ttext-align: center;\r\n  \tpadding: 10px 24px; \r\n  \tborder: 1px solid green; \r\n \tfloat: left; \r\n}\r\n\r\n.botButtons button:not(:last-child) {\r\n \t border-right: none; \r\n}\r\n\r\n.botButtons:after {\r\n  \tcontent: \"\";\r\n  \tclear: both;\r\n  \tdisplay: table;\r\n}\r\n\r\n/* Below is used for the Jar form pop-up*/\r\n\r\n.form-popup {\r\n  display: none;\r\n  border: 1px solid #f1f1f1;\r\n}\r\n\r\n.form-container input[type=text]:focus, .form-container input[type=password]:focus {\r\n  background-color: #ddd;\r\n  outline: none;\r\n}\r\n\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -46120,6 +46120,7 @@ function submit() {
   //The first 4 variables here do not need to be checked for validity
 
   var vSiteID = siteID.value;
+  var vJarNum = jarNum.value;
   var vCollector = collector.value;
   var vAnalyst = analyst.value;
   var vEnterer = enterer.value; //All remaining variables need to be checked to show that they are valid data
@@ -46167,7 +46168,7 @@ function submit() {
      */
   //Used to represent if all input is valid
 
-  var validInput = Object(_util__WEBPACK_IMPORTED_MODULE_2__["validateAllQuality"])(nitrate1.value, nitrate2.value, nitrite1.value, nitrite2.value, ortho1.value, ortho2.value, ortho3.value, ph.value, temp.value, nitrogen1.value, nitrogen2.value, phosphorous1.value, phosphorous2.value);
+  var validInput = Object(_util__WEBPACK_IMPORTED_MODULE_2__["validateAllQuality"])(nitrate1.value, nitrate2.value, nitrate3.value, nitrite1.value, nitrite2.value, nitrate3.value, ortho1.value, ortho2.value, ortho3.value, ph1.value, ph2.value, ph3.value, temp1.value, temp2.value, temp3.value, nitrogen1.value, nitrogen2.value, nitrogen3.value, phosphorous1.value, phosphorous2.value, phosphorous3.value);
 
   if (validInput) {
     //If all input has been valid up until this point
@@ -46177,35 +46178,52 @@ function submit() {
 
     dataSubmit.child("site_ID").set(vSiteID); //Submits the data to the database under the name 'site_ID'
 
+    dataSubmit.child("jarNum").set(vJarNum);
     dataSubmit.child("collector").set(vCollector);
     dataSubmit.child("analyst").set(vAnalyst);
     dataSubmit.child("enterer").set(vEnterer);
     dataSubmit.child("nitrate1").set(nitrate1.value);
     dataSubmit.child("nitrate2").set(nitrate2.value);
+    dataSubmit.child("nitrate3").set(nitrate3.value);
     dataSubmit.child("nitrite1").set(nitrate1.value);
     dataSubmit.child("nitrite2").set(nitrate2.value);
+    dataSubmit.child("nitrate3").set(nitrate3.value);
     dataSubmit.child("orthophosphate1").set(ortho1.value);
     dataSubmit.child("orthophosphate2").set(ortho2.value);
     dataSubmit.child("orthophosphate3").set(ortho3.value);
-    dataSubmit.child("ph").set(ph.value);
-    dataSubmit.child("temperature").set(temp.value);
+    dataSubmit.child("ph1").set(ph1.value);
+    dataSubmit.child("ph2").set(ph2.value);
+    dataSubmit.child("ph3").set(ph3.value);
+    dataSubmit.child("temperature1").set(temp1.value);
+    dataSubmit.child("temperature2").set(temp2.value);
+    dataSubmit.child("temperature3").set(temp3.value);
     dataSubmit.child("nitrogen1").set(nitrogen1.value);
     dataSubmit.child("nitrogen2").set(nitrogen2.value);
+    dataSubmit.child("nitrogen3").set(nitrogen3.value);
     dataSubmit.child("phosphorous1").set(phosphorous1.value);
     dataSubmit.child("phosphorous2").set(phosphorous2.value);
+    dataSubmit.child("phosphorous3").set(phosphorous3.value);
     document.getElementById("nitrate1").value = "";
     document.getElementById("nitrate2").value = "";
+    document.getElementById("nitrate3").value = "";
     document.getElementById("nitrite1").value = "";
     document.getElementById("nitrite2").value = "";
+    document.getElementById("nitrate3").value = "";
     document.getElementById("ortho1").value = "";
     document.getElementById("ortho2").value = "";
     document.getElementById("ortho3").value = "";
-    document.getElementById("ph").value = "";
-    document.getElementById("temp").value = "";
+    document.getElementById("ph1").value = "";
+    document.getElementById("ph2").value = "";
+    document.getElementById("ph3").value = "";
+    document.getElementById("temp1").value = "";
+    document.getElementById("temp2").value = "";
+    document.getElementById("temp3").value = "";
     document.getElementById("nitrogen1").value = "";
     document.getElementById("nitrogen2").value = "";
+    document.getElementById("nitrogen3").value = "";
     document.getElementById("phosphorous1").value = "";
-    document.getElementById("phosphorous2").value = ""; //This is used to tell the user that the data has been uploaded to the database
+    document.getElementById("phosphorous2").value = "";
+    document.getElementById("phosphorous3").value = ""; //This is used to tell the user that the data has been uploaded to the database
 
     window.alert("Data submitted");
   } else {

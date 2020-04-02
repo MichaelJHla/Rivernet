@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-
+<!-- HTML file for the qualtity page of the RiverNET web application.
+Written by: Anna Jinneman, William Roberts & Jonah Hlastala
+Last updated: 4/3/2020 -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <!-- <link rel="stylesheet" href="./css/style.css"> -->
+
+    <!-- The needed linking to the free, open-source font used in css. -->
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Quality - Rivernet</title>
 </head>
@@ -14,44 +18,45 @@
         <div id="header">
             <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
 
+            <!-- Script from jquery needed for add jar form functionality. -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
             <div class="logo"></div>
 
+            <h1> Quality Data </h1>
             <!--<script type="module" src="quality.js"></script>-->
         </div>
 
-        <h1> Quality Data </h1>
-
-
-
+        
+        <!-- Manages the two top buttons, "Back" and "Protocol". -->
         <div class="buttonRow">
-            <div class="col">
-            	<button class="open-button" onclick="openForm()">Add Jar</button>
-            </div>
-            <div class="col">
+            <div class="col2">
+            	<!-- Link to the protocol from the YERC website. -->
                 <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Protocol</a></button>
             </div>
-            <div class="col">
+            <div class="col2">
                 <button id="quantityButton"> <a href="index.html">Back</a></button>
             </div>
         </div>
 
+        <!-- Needed to get the correct spacing and formatting. -->
         <p>
             <br>
             <br>
             <br>
-            
+
+            <!-- Placeholder for the jar form. -->
+            <div id="form-placeholder"></div>
+
+            <!-- The basic form pop-up for each jar. -->
             <div class="form-popup" id="myForm">
 	            <form action="/action_page.php" class="form-container">
 	                <div id="entrySet">
-
 				        <label>Jar Number</label>
-				        <select id = "jarList">
-					        <option value = "Number">#</option>
-					        <option value = "1">1</option>
-					        <option value = "2">2</option>
-					        <option value = "3">3</option>
-					        <option value = "4">4</option>
-				        </select>
+				        <input id = "jarNum">  
+
+				        <label>Site ID</label>
+	                    <input id="siteID"> 
 			    	</div>
 
 	                <div id="entrySet">
@@ -61,6 +66,8 @@
 	                    <label>Analyst name:</label>
 	                    <input id="analyst">
 
+	                    <br>
+	                    <br>
 	                    <label>Enterer name:</label>
 	                    <input id="enterer">
 	                </div>
@@ -73,7 +80,7 @@
 	                </div>
 
 	                <div id="entrySet">
-	                    <label>Nitrite:</label>
+	                    <label>Nitrate:</label>
 	                    <input id="nitrite1">
 	                    <input id="nitrite2">
 	                    <input id="nitrite3">
@@ -114,32 +121,41 @@
 	                    <input id="phosphorous2">
 	                    <input id="phosphorous3">
 	                </div>
-
-	                
         			
-        			<button type="submit" class="btn" onclick="submitJar()">Enter</button>
-	                
+        			
+        			<!-- Should allow for a temporary save. -->
+        			<button type="submit" class="btn">Enter</button>
+        			
+        			<br>
+
 	            </form>
 	        </div>
 
-	        <script>
-				function openForm() {
-				  document.getElementById("myForm").style.display = "block";
-				}
+	        <!-- Script to handle adding a new jar form when the button is clicked. -->
+	        <script type="text/javascript">
+	        	$(document).ready(function() {
+			    var placeholder     = $("#form-placeholder"); 
+			    var add_button      = $("#newForm"); 
 
-				function closeForm() {
-				  document.getElementById("myForm").style.display = "none";
-				}
-			</script>
+			    $(add_button).click(function(e){ 
+			        e.preventDefault();
+			        $(placeholder).append($("#myForm").html()); 
+			    });
+			})
+	        </script>
         </p>
 
+        <!-- The bottom 3 buttons on the page, "Add Jar", "Edit All" and "Submit Data". -->
         <p>
-        
-        <div class="col2">
+            <br>
+        <div class="col">
+        	<button id="newForm">Add Jar</button>
+        </div>
+        <div class="col">
         	<button onclick="editJars()">Edit All</button>
         </div>
-        <div class="col2">
-            <button onclick="submit()">Submit data</button>
+        <div class="col">
+            <button onclick="submit()">Submit Data</button>
         </div>
         </p>
     <script type="text/javascript" src="/quality.js"></script></body>
