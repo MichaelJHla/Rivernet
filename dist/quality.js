@@ -44647,7 +44647,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../img/yerc_logo.png
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "img {\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n\tpadding-top: 10px;\r\n\tpadding-left: 25px;\r\n\tmax-height: 15%;\r\n\tmax-width: 15%;\r\n}\r\n\r\nh1 {\r\n\tfont-size: 60px;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\ttext-align: center;\r\n\tcolor: white;\r\n\tborder-top: solid;\r\n\tborder-bottom: solid;\r\n\tborder-width: 1px;\r\n\tborder-color: #b0b0b0;\r\n}\r\n\r\n#header {\r\n\ttext-decoration: none;\r\n\tdisplay: inline-block;\r\n\ttext-align: left;\r\n}\r\n\r\n\t#header ul {\r\n\t\tfloat: right;\r\n\t\tposition: static;\r\n\t\tcolor: white;\r\n\t\tfont-size: 24px;\r\n\t\tlist-style-type: none;\r\n\t\tfont-family: 'Bebas Neue', sans-serif;\r\n\t\twidth: 400px;\r\n\t\tpadding-top: 25px;\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\tpadding-bottom: 9px;\r\n\t\tclear: both;\r\n\t}\r\n\r\n\t#header a:link, #header a:visited {\r\n\t\tcolor: white;\r\n\t\ttext-decoration: none;\r\n\t}\r\n\r\n\t#header a:hover {\r\n\t\ttransition: all .2s linear;\r\n\t\tanimation-name: link;\r\n\t\tanimation-duration: .75s;\r\n\t\tanimation-delay: 0s;\r\n\t\tanimation-iteration-count: 1;\r\n\t\tcolor: green;\r\n\t}\r\n\r\n#entrySet {\r\n\tpadding: 10px;\r\n}\r\n\r\nbody {\r\n\tcolor: white;\r\n\tfont-size: 18px;\r\n}\r\n\r\nform {\r\n\tbackground-color: #4B4B4B;\r\n}\r\n\r\n\r\ninput {\r\n\twidth: 50px;\r\n\tmargin-right: 25px;\r\n}\r\n\r\n#collector, #analyst, #enterer {\r\n\twidth: 200px;\r\n}\r\n\r\nbutton {\r\n\tbackground-color: white;\r\n\tborder-style: solid;\r\n\tborder-color: white;\r\n\tcolor: black;\r\n\ttext-align: center;\r\n\ttext-decoration: none;\r\n\tdisplay: block;\r\n\tmargin: 0 auto;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\tfont-size: 50px;\r\n}\r\n\r\n\tbutton:hover {\r\n\t\tbackground-color: green;\r\n\t\tborder-style: solid;\r\n\t\tborder-color: green;\r\n\t\tcolor: white;\r\n\t}\r\n\r\n\tbutton a:link, button a:visited {\r\n\t\tcolor: black;\r\n\t\ttext-decoration: none;\r\n\t}\r\n\r\n.logo {\r\n\tbackground: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n\twidth: 300px;\r\n\theight: 300px;\r\n\tbackground-size: 100% auto;\r\n\tbackground-repeat: no-repeat;\r\n\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n}\r\n\r\n.col {\r\n\tfloat: left;\r\n\twidth: 50%;\r\n}\r\n\r\n.buttonRow:after {\r\n\tdisplay: table;\r\n\tclear: both;\r\n}\r\n\r\n.right {\r\n\tfloat: right;\r\n}\r\n", ""]);
+exports.push([module.i, "/*CSS file for the qualtity page of the RiverNET web application.\r\nWritten by: Anna Jinneman, William Roberts & Jonah Hlastala\r\nLast updated: 4/3/2020 */\r\nimg {\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n\tpadding-top: 10px;\r\n\tpadding-left: 25px;\r\n\tmax-height: 15%;\r\n\tmax-width: 15%;\r\n}\r\n\r\n/*Intended for the title of a page*/\r\nh1 {\r\n\tfont-size: 60px;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\ttext-align: center;\r\n\tcolor: white;\r\n\tborder-top: solid;\r\n\tborder-bottom: solid;\r\n\tborder-width: 1px;\r\n\tborder-color: #b0b0b0;\r\n\tfloat: right;\r\n\tposition: static;\r\n  \ttop: 23px;\r\n  \tright: 28px;\r\n  \twidth: 750px;\r\n}\r\n\r\n/*Used in the index.HTML page*/\r\nh3 {\r\n\tfont-size: 60px;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\ttext-align: center;\r\n\tcolor: white;\r\n\tborder-top: solid;\r\n\tborder-bottom: solid;\r\n\tborder-width: 1px;\r\n\tborder-color: #b0b0b0;\r\n\r\n}\r\n\r\n/*Used for the YERC logo and title for the page.*/\r\n#header {\r\n\ttext-decoration: none;\r\n\tdisplay: inline-block;\r\n\ttext-align: right;\r\n}\r\n\r\n#header ul {\r\n\tfloat: right;\r\n\tposition: static;\r\n\tcolor: white;\r\n\tfont-size: 24px;\r\n\tlist-style-type: none;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\twidth: 400px;\r\n\tpadding-top: 25px;\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\tclear: both;\r\n}\r\n\r\n#header a:link, #header a:visited {\r\n\tcolor: white;\r\n\ttext-decoration: none;\r\n}\r\n\r\n#header a:hover {\r\n\ttransition: all .2s linear;\r\n\tanimation-name: link;\r\n\tanimation-duration: .75s;\r\n\tanimation-delay: 0s;\r\n\tanimation-iteration-count: 1;\r\n\tcolor: green;\r\n}\r\n\r\n/*Styling for the Jar form (entry sets, box sizes, etc.)*/\r\n#entrySet {\r\n\tpadding: 10px;\r\n}\r\n\r\nbody {\r\n\tcolor: white;\r\n\tfont-size: 18px;\r\n}\r\n\r\nform {\r\n\tbackground-color: #4B4B4B;\r\n\tborder: 1px solid #f1f1f1;\r\n}\r\n\r\ninput {\r\n\twidth: 50px;\r\n\tmargin-right: 25px;\r\n}\r\n\r\n#collector, #analyst, #enterer {\r\n\twidth: 200px;\r\n}\r\n\r\n/*General button styling.*/\r\nbutton {\r\n\tbackground-color: white;\r\n\tborder-style: solid;\r\n\tborder-color: white;\r\n\tcolor: black;\r\n\ttext-align: center;\r\n\ttext-decoration: none;\r\n\tdisplay: block;\r\n\tmargin: 0 auto;\r\n\tfont-family: 'Bebas Neue', sans-serif;\r\n\tfont-size: 50px;\r\n\tcursor: pointer; \r\n}\r\n\r\nbutton:hover {\r\n\tbackground-color: green;\r\n\tborder-style: solid;\r\n\tborder-color: green;\r\n\tcolor: white;\r\n}\r\n\r\nbutton a:link, button a:visited {\r\n\tcolor: black;\r\n\ttext-decoration: none;\r\n}\r\n\r\n\r\n/*Styling for the YERC logo.*/\r\n.logo {\r\n\tbackground: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n\twidth: 250px;\r\n\theight: 250px;\r\n\tbackground-size: 100% auto;\r\n\tbackground-repeat: no-repeat;\r\n\r\n\tlist-style-type: none;\r\n\tfloat: left;\r\n}\r\n\r\n/*Below is the CSS needed for the side-by-side buttons*/\r\n.col {\r\n\tfloat: left;\r\n\twidth: 33%;\r\n}\r\n\r\n.col2 {\r\n\tfloat: left;\r\n\twidth: 50%;\r\n}\r\n\r\n.buttonRow:after {\r\n\tdisplay: table;\r\n\tclear: both;\r\n}\r\n\r\n.right {\r\n\tfloat: right;\r\n}\r\n\r\n/*CSS to position the 3 bottom buttons correctly.*/\r\n.botButtons button {\r\n\ttext-align: center;\r\n  \tpadding: 10px 24px; \r\n  \tborder: 1px solid green; \r\n \tfloat: left; \r\n}\r\n\r\n.botButtons button:not(:last-child) {\r\n \t border-right: none; \r\n}\r\n\r\n.botButtons:after {\r\n  \tcontent: \"\";\r\n  \tclear: both;\r\n  \tdisplay: table;\r\n}\r\n\r\n/* Below is used for the Jar form pop-up*/\r\n\r\n.form-popup {\r\n  display: none;\r\n  border: 1px solid #f1f1f1;\r\n}\r\n\r\n.form-container input[type=text]:focus, .form-container input[type=password]:focus {\r\n  background-color: #ddd;\r\n  outline: none;\r\n}\r\n\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -46036,11 +46036,7 @@ __webpack_require__.r(__webpack_exports__);
 var firebase = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js"); // Log message to console
 
 
-Object(_logger__WEBPACK_IMPORTED_MODULE_0__["default"])('Welcome to Quality!'); //TODO: 
-//Actually implement all the functionality.
-//const { validateInput, validateAllQuality } = require('./util'); //using function from util.js
-
-
+Object(_logger__WEBPACK_IMPORTED_MODULE_0__["default"])('Welcome to Quality!');
 var firebaseConfig = {
   apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
   authDomain: "yerc-rivernet.firebaseapp.com",
@@ -46050,167 +46046,33 @@ var firebaseConfig = {
   messagingSenderId: "634881168606",
   appId: "1:634881168606:web:14164f57364baa842d9e4f",
   measurementId: "G-FH7MS1FE95"
-}; // Initialize Firebase
+};
+firebase.initializeApp(firebaseConfig); //TODO: 
+//Actually implement all the functionality.
 
-firebase.initializeApp(firebaseConfig); //------------------------
-//const validateInput = (inputValue, notEmpty) => {
-//    if (isNaN(inputValue)) { //If the value isn't the correct format
-//        return false;	//Return false
-//    }
-//    if (notEmpty && inputValue.length === 0) {
-//        return false;
-//    }
-//    return true;
-//}
-//const validateAllQuality = (n1, n2, n3, n4, orth1, orth2, orth3, ph, temp, nitr1, nitr2, phos1, phos2) => {
-//    var validInput = true;//Used to represent if all input is valid
-//    if (
-//        validateInput(n1, false) &&
-//        validateInput(n2, false) &&
-//        validateInput(n3, false) &&
-//        validateInput(n4, false) &&
-//        validateInput(orth1, false) &&
-//        validateInput(orth2, false) &&
-//        validateInput(orth3, false) &&
-//        validateInput(ph, false) &&
-//        validateInput(temp, false) &&
-//        validateInput(nitr1, false) &&
-//        validateInput(nitr2, false) &&
-//        validateInput(phos1, false) &&
-//        validateInput(phos2, false)
-//    ) {
-//        return true; //Then they are all valid; return true
-//    }
-//    else { return false; } //One or more is not valid. Return false.
-//	/*
-//	//var vNitrate2 = nitrate2.value;
-//	validInput = validateInput(n2);
-//	//var vNitrite3 = nitrite1.value;
-//	validInput = validateInput(n3);
-//	//var vNitrite4 = nitrite2.value;
-//	validInput = validateInput(n4);
-//	//var vOrtho1 = ortho1.value;
-//	validInput = validateInput(orth1);
-//	//var vOrtho2 = ortho2.value;
-//	validInput = validateInput(orth2);
-//	//var vOrtho3 = ortho3.value;
-//	validInput = validateInput(orth3);
-//	//var vph = ph.value;
-//	validInput = validateInput(ph);
-//	//var vtemp = temp.value;
-//	validInput = validateInput(temp);
-//	//var vNitrogen1 = nitrogen1.value;
-//	validInput = validateInput(nitr1);
-//	//var vNitrogen2 = nitrogen2.value;
-//	validInput = validateInput(nitr2);
-//	//var vPhosphorous1 = phosphorous1.value;
-//	validInput = validateInput(phos1);
-//	//var vPhosphorous2 = phosphorous2.value;
-//	validInput = validateInput(phos2);
-//	return validInput; //Either True if all valid, false or undefined if one failed.
-//	*/
-//}
-////exports.validateInput = validateInput;
-////exports.validateAllQuality = validateAllQuality;
-//	//exports.validateAllQuality = validateAllQuality;
-//------------------------
+
 
 function submit() {
-  var dataSubmit = firebase.database().ref(); //Variable that is referenced to upload data to firebase database
-  //The first 4 variables here do not need to be checked for validity
+  //Get jar number
+  var e = document.getElementById("jarNum");
+  var strUser1 = e.options[e.selectedIndex].value; //Get data point
 
-  var vSiteID = siteID.value;
-  var vCollector = collector.value;
-  var vAnalyst = analyst.value;
-  var vEnterer = enterer.value; //All remaining variables need to be checked to show that they are valid data
-  //the naming convention v+'variable name' is used to differentiate between a value
+  var j = document.getElementById("dataPoint");
+  var strUser2 = j.options[j.selectedIndex].value;
+  var value1 = item1.value;
+  var value2 = item2.value;
+  var value3 = item3.value;
+  var valid = Object(_util__WEBPACK_IMPORTED_MODULE_2__["validateAllQuality"])(value1, value2, value3);
 
-  /*
-  var vNitrate1 = nitrate1.value;
-     validInput = validateInput(nitrate1.value);
-     
-     var vNitrate2 = nitrate2.value;
-     validInput = validateInput(vNitrate2);
-     
-     var vNitrite3 = nitrite1.value;
-     validInput = validateInput(vNitrite1);
-     
-     var vNitrite4 = nitrite2.value;
-     validInput = validateInput(vNitrite2);
-     
-     var vOrtho1 = ortho1.value;
-     validInput = validateInput(vOrtho1);
-     
-     var vOrtho2 = ortho2.value;
-     validInput = validateInput(vOrtho2);
-     
-     var vOrtho3 = ortho3.value;
-     validInput = validateInput(vOrtho3);
-     
-     var vph = ph.value;
-     validInput = validateInput(vph);
-     
-     var vtemp = temp.value;
-     validInput = validateInput(vtemp);
-     
-     var vNitrogen1 = nitrogen1.value;
-     validInput = validateInput(vNitrogen1);
-     
-     var vNitrogen2 = nitrogen2.value;
-     validInput = validateInput(vNitrogen2);
-     
-     var vPhosphorous1 = phosphorous1.value;
-     validInput = validateInput(vPhosphorous1);
-     
-     var vPhosphorous2 = phosphorous2.value;
-     validInput = validateInput(vPhosphorous2);
-     */
-  //Used to represent if all input is valid
+  if (valid) {
+    var dataSubmit = firebase.database().ref("jar" + strUser1 + "/"); //Variable that is referenced to upload data to firebase database
 
-  var validInput = Object(_util__WEBPACK_IMPORTED_MODULE_2__["validateAllQuality"])(nitrate1.value, nitrate2.value, nitrite1.value, nitrite2.value, ortho1.value, ortho2.value, ortho3.value, ph.value, temp.value, nitrogen1.value, nitrogen2.value, phosphorous1.value, phosphorous2.value);
-
-  if (validInput) {
-    //If all input has been valid up until this point
-    dataSubmit.remove(); //Removes all previous info from the database
-    //Submits the data to the database under the naming convention:
-    // dataSubmit.child(VARIABLE_NAME).set(VARIABLE)
-
-    dataSubmit.child("site_ID").set(vSiteID); //Submits the data to the database under the name 'site_ID'
-
-    dataSubmit.child("collector").set(vCollector);
-    dataSubmit.child("analyst").set(vAnalyst);
-    dataSubmit.child("enterer").set(vEnterer);
-    dataSubmit.child("nitrate1").set(nitrate1.value);
-    dataSubmit.child("nitrate2").set(nitrate2.value);
-    dataSubmit.child("nitrite1").set(nitrate1.value);
-    dataSubmit.child("nitrite2").set(nitrate2.value);
-    dataSubmit.child("orthophosphate1").set(ortho1.value);
-    dataSubmit.child("orthophosphate2").set(ortho2.value);
-    dataSubmit.child("orthophosphate3").set(ortho3.value);
-    dataSubmit.child("ph").set(ph.value);
-    dataSubmit.child("temperature").set(temp.value);
-    dataSubmit.child("nitrogen1").set(nitrogen1.value);
-    dataSubmit.child("nitrogen2").set(nitrogen2.value);
-    dataSubmit.child("phosphorous1").set(phosphorous1.value);
-    dataSubmit.child("phosphorous2").set(phosphorous2.value);
-    document.getElementById("nitrate1").value = "";
-    document.getElementById("nitrate2").value = "";
-    document.getElementById("nitrite1").value = "";
-    document.getElementById("nitrite2").value = "";
-    document.getElementById("ortho1").value = "";
-    document.getElementById("ortho2").value = "";
-    document.getElementById("ortho3").value = "";
-    document.getElementById("ph").value = "";
-    document.getElementById("temp").value = "";
-    document.getElementById("nitrogen1").value = "";
-    document.getElementById("nitrogen2").value = "";
-    document.getElementById("phosphorous1").value = "";
-    document.getElementById("phosphorous2").value = ""; //This is used to tell the user that the data has been uploaded to the database
-
-    window.alert("Data submitted");
+    dataSubmit.child(strUser2 + "1").set(value1);
+    dataSubmit.child(strUser2 + "2").set(value2);
+    dataSubmit.child(strUser2 + "3").set(value3);
+    window.alert("Data within valid parameters and added to check page");
   } else {
-    //The user gets notified about invalid input and nothing is submitted
-    window.alert("Invalid input");
+    window.alert("invalid input");
   }
 }
 
@@ -46222,14 +46084,13 @@ window.submit = submit;
 /*!************************!*\
   !*** ./src/js/util.js ***!
   \************************/
-/*! exports provided: validateInput, validateAllQuality, validateAllQuantity */
+/*! exports provided: validateInput, validateAllQuality */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateInput", function() { return validateInput; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateAllQuality", function() { return validateAllQuality; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateAllQuantity", function() { return validateAllQuantity; });
 var validateInput = function validateInput(inputValue, notEmpty) {
   if (isNaN(inputValue)) {
     //If the value isn't the correct format
@@ -46243,8 +46104,10 @@ var validateInput = function validateInput(inputValue, notEmpty) {
   return true;
 };
 
-var validateAllQuantity = function validateAllQuantity(difPres, absPres, temp, wLevel, barPres) {
-  if (validateInput(difPres, false) && validateInput(absPres, false) && validateInput(temp, false) && validateInput(wLevel, false) && validateInput(barPres, false)) {
+var validateAllQuality = function validateAllQuality(value1, value2, value3) {
+  var validInput = true; //Used to represent if all input is valid
+
+  if (validateInput(value1, false) && validateInput(value2, false) && validateInput(value3, false)) {
     return true; //Then they are all valid; return true
   } else {
     return false;
@@ -46252,61 +46115,7 @@ var validateAllQuantity = function validateAllQuantity(difPres, absPres, temp, w
 
 };
 
-var validateAllQuality = function validateAllQuality(n1, n2, n3, n4, orth1, orth2, orth3, ph, temp, nitr1, nitr2, phos1, phos2) {
-  var validInput = true; //Used to represent if all input is valid
 
-  if (validateInput(n1, false) && validateInput(n2, false) && validateInput(n3, false) && validateInput(n4, false) && validateInput(orth1, false) && validateInput(orth2, false) && validateInput(orth3, false) && validateInput(ph, false) && validateInput(temp, false) && validateInput(nitr1, false) && validateInput(nitr2, false) && validateInput(phos1, false) && validateInput(phos2, false)) {
-    return true; //Then they are all valid; return true
-  } else {
-    return false;
-  } //One or more is not valid. Return false.
-
-  /*
-  //var vNitrate2 = nitrate2.value;
-  validInput = validateInput(n2);
-  
-  //var vNitrite3 = nitrite1.value;
-  validInput = validateInput(n3);
-  
-  //var vNitrite4 = nitrite2.value;
-  validInput = validateInput(n4);
-  
-  //var vOrtho1 = ortho1.value;
-  validInput = validateInput(orth1);
-  
-  //var vOrtho2 = ortho2.value;
-  validInput = validateInput(orth2);
-  
-  //var vOrtho3 = ortho3.value;
-  validInput = validateInput(orth3);
-  
-  //var vph = ph.value;
-  validInput = validateInput(ph);
-  
-  //var vtemp = temp.value;
-  validInput = validateInput(temp);
-  
-  //var vNitrogen1 = nitrogen1.value;
-  validInput = validateInput(nitr1);
-  
-  //var vNitrogen2 = nitrogen2.value;
-  validInput = validateInput(nitr2);
-  
-  //var vPhosphorous1 = phosphorous1.value;
-  validInput = validateInput(phos1);
-  
-  //var vPhosphorous2 = phosphorous2.value;
-  validInput = validateInput(phos2);
-  	
-  return validInput; //Either True if all valid, false or undefined if one failed.
-  */
-
-}; //exports.validateInput = validateInput;
-//exports.validateAllQuality = validateAllQuality;
-
-
- //export default validateAllQuality;
-//exports.validateAllQuality = validateAllQuality;
 
 /***/ })
 

@@ -1,3 +1,6 @@
+/*CSS file for the qualtity page of the RiverNET web application.
+Written by: Anna Jinneman, William Roberts & Jonah Hlastala
+Last updated: 4/3/2020 */
 img {
 	list-style-type: none;
 	float: left;
@@ -7,6 +10,7 @@ img {
 	max-width: 15%;
 }
 
+/*Intended for the title of a page*/
 h1 {
 	font-size: 60px;
 	font-family: 'Bebas Neue', sans-serif;
@@ -16,43 +20,62 @@ h1 {
 	border-bottom: solid;
 	border-width: 1px;
 	border-color: #b0b0b0;
+	float: right;
+	position: static;
+  	top: 23px;
+  	right: 28px;
+  	width: 750px;
 }
 
+/*Used in the index.HTML page*/
+h3 {
+	font-size: 60px;
+	font-family: 'Bebas Neue', sans-serif;
+	text-align: center;
+	color: white;
+	border-top: solid;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: #b0b0b0;
+
+}
+
+/*Used for the YERC logo and title for the page.*/
 #header {
 	text-decoration: none;
 	display: inline-block;
-	text-align: left;
+	text-align: right;
 }
 
-	#header ul {
-		float: right;
-		position: static;
-		color: white;
-		font-size: 24px;
-		list-style-type: none;
-		font-family: 'Bebas Neue', sans-serif;
-		width: 400px;
-		padding-top: 25px;
-		display: flex;
-		justify-content: space-between;
-		padding-bottom: 9px;
-		clear: both;
-	}
+#header ul {
+	float: right;
+	position: static;
+	color: white;
+	font-size: 24px;
+	list-style-type: none;
+	font-family: 'Bebas Neue', sans-serif;
+	width: 400px;
+	padding-top: 25px;
+	display: flex;
+	justify-content: space-between;
+	clear: both;
+}
 
-	#header a:link, #header a:visited {
-		color: white;
-		text-decoration: none;
-	}
+#header a:link, #header a:visited {
+	color: white;
+	text-decoration: none;
+}
 
-	#header a:hover {
-		transition: all .2s linear;
-		animation-name: link;
-		animation-duration: .75s;
-		animation-delay: 0s;
-		animation-iteration-count: 1;
-		color: green;
-	}
+#header a:hover {
+	transition: all .2s linear;
+	animation-name: link;
+	animation-duration: .75s;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	color: green;
+}
 
+/*Styling for the Jar form (entry sets, box sizes, etc.)*/
 #entrySet {
 	padding: 10px;
 }
@@ -64,8 +87,8 @@ body {
 
 form {
 	background-color: #4B4B4B;
+	border: 1px solid #f1f1f1;
 }
-
 
 input {
 	width: 50px;
@@ -76,6 +99,7 @@ input {
 	width: 200px;
 }
 
+/*General button styling.*/
 button {
 	background-color: white;
 	border-style: solid;
@@ -87,24 +111,27 @@ button {
 	margin: 0 auto;
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 50px;
+	cursor: pointer; 
 }
 
-	button:hover {
-		background-color: green;
-		border-style: solid;
-		border-color: green;
-		color: white;
-	}
+button:hover {
+	background-color: green;
+	border-style: solid;
+	border-color: green;
+	color: white;
+}
 
-	button a:link, button a:visited {
-		color: black;
-		text-decoration: none;
-	}
+button a:link, button a:visited {
+	color: black;
+	text-decoration: none;
+}
 
+
+/*Styling for the YERC logo.*/
 .logo {
 	background: url(../img/yerc_logo.png);
-	width: 300px;
-	height: 300px;
+	width: 250px;
+	height: 250px;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 
@@ -112,7 +139,13 @@ button {
 	float: left;
 }
 
+/*Below is the CSS needed for the side-by-side buttons*/
 .col {
+	float: left;
+	width: 33%;
+}
+
+.col2 {
 	float: left;
 	width: 50%;
 }
@@ -125,3 +158,34 @@ button {
 .right {
 	float: right;
 }
+
+/*CSS to position the 3 bottom buttons correctly.*/
+.botButtons button {
+	text-align: center;
+  	padding: 10px 24px; 
+  	border: 1px solid green; 
+ 	float: left; 
+}
+
+.botButtons button:not(:last-child) {
+ 	 border-right: none; 
+}
+
+.botButtons:after {
+  	content: "";
+  	clear: both;
+  	display: table;
+}
+
+/* Below is used for the Jar form pop-up*/
+
+.form-popup {
+  display: none;
+  border: 1px solid #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
