@@ -24,7 +24,7 @@ h1 {
 	position: static;
   	top: 23px;
   	right: 28px;
-  	width: 430px;
+  	width: 750px;
 }
 
 /*Used in the index.HTML page*/
@@ -44,7 +44,7 @@ h3 {
 #header {
 	text-decoration: none;
 	display: inline-block;
-	text-align: left;
+	text-align: right;
 }
 
 #header ul {
@@ -58,10 +58,8 @@ h3 {
 	padding-top: 25px;
 	display: flex;
 	justify-content: space-between;
-	padding-bottom: 9px;
 	clear: both;
-	
-	}
+}
 
 #header a:link, #header a:visited {
 	color: white;
