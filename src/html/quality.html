@@ -13,19 +13,19 @@
     <body>
         <div id="header">
             <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
 
             <div class="logo"></div>
 
+            <h1> Quality Data </h1>
             <!--<script type="module" src="quality.js"></script>-->
         </div>
 
-        <h1> Quality Data </h1>
-
-
+        
 
         <div class="buttonRow">
             <div class="col">
-            	<button class="open-button" onclick="openForm()">Add Jar</button>
+            	<button class="open-button" onclick="renderTemplate()">Add Jar</button>
             </div>
             <div class="col">
                 <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Protocol</a></button>
@@ -39,9 +39,9 @@
             <br>
             <br>
             <br>
-            
+            <div id="form-placeholder"></div>
             <div class="form-popup" id="myForm">
-	            <form action="/action_page.php" class="form-container">
+	            <form action="/action_page.php" class="form-container" type="text/x-handlebars-template">
 	                <div id="entrySet">
 
 				        <label>Jar Number</label>
@@ -114,13 +114,39 @@
 	                    <input id="phosphorous2">
 	                    <input id="phosphorous3">
 	                </div>
-
-	                
         			
-        			<button type="submit" class="btn" onclick="submitJar()">Enter</button>
-	                
+        			<div class="col2">
+        			<button id="newquestion">Add Jar</button>
+        			</div>
+        			<div class="col2">
+        			<button type="submit" class="btn" onclick="enterJar()">Enter</button>
+        			</div>
+        			<br>
+		            <br>
+		            <br>
+		            <br>
+            
 	            </form>
 	        </div>
+
+	        <script type="text/javascript">
+	        	var source   = document.getElementById("myForm").innerHTML;
+				var template = Handlebars.compile(source);
+				var context = {questions: q};
+
+				function renderTemplate(){
+				  var html    = template(context);
+				  document.getElementById('form-placeholder').innerHTML = html;
+				}
+
+				//Render the template with the first question
+				renderTemplate();
+
+				//Add an event so when the user clicks the button you add a new question
+				document.getElementById("newquestion").addEventListener('click', function(){
+				      renderTemplate();
+				  });
+	        </script>
 
 	        <script>
 				function openForm() {
@@ -131,9 +157,13 @@
 				  document.getElementById("myForm").style.display = "none";
 				}
 			</script>
+
         </p>
 
         <p>
+        	<br>
+            <br>
+            <br>
         
         <div class="col2">
         	<button onclick="editJars()">Edit All</button>

@@ -16,6 +16,23 @@ h1 {
 	border-bottom: solid;
 	border-width: 1px;
 	border-color: #b0b0b0;
+	float: right;
+	position: static;
+  	top: 23px;
+  	right: 28px;
+  	width: 430px;
+}
+
+h3 {
+	font-size: 60px;
+	font-family: 'Bebas Neue', sans-serif;
+	text-align: center;
+	color: white;
+	border-top: solid;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: #b0b0b0;
+
 }
 
 #header {
