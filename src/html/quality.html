@@ -24,13 +24,10 @@
         
 
         <div class="buttonRow">
-            <div class="col">
-            	<button class="open-button" onclick="renderTemplate()">Add Jar</button>
-            </div>
-            <div class="col">
+            <div class="col2">
                 <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Protocol</a></button>
             </div>
-            <div class="col">
+            <div class="col2">
                 <button id="quantityButton"> <a href="index.html">Back</a></button>
             </div>
         </div>
@@ -115,17 +112,12 @@
 	                    <input id="phosphorous3">
 	                </div>
         			
-        			<div class="col2">
-        			<button id="newquestion">Add Jar</button>
-        			</div>
-        			<div class="col2">
+        			
+        			
         			<button type="submit" class="btn" onclick="enterJar()">Enter</button>
-        			</div>
+        			
         			<br>
-		            <br>
-		            <br>
-		            <br>
-            
+
 	            </form>
 	        </div>
 
@@ -157,18 +149,19 @@
 				  document.getElementById("myForm").style.display = "none";
 				}
 			</script>
-
         </p>
 
         <p>
         	<br>
             <br>
             <br>
-        
-        <div class="col2">
+        <div class="col">
+        	<button id="newquestion" onclick="renderTemplate()">Add Jar</button>
+        </div>
+        <div class="col">
         	<button onclick="editJars()">Edit All</button>
         </div>
-        <div class="col2">
+        <div class="col">
             <button onclick="submit()">Submit data</button>
         </div>
         </p>
