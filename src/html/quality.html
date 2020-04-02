@@ -13,7 +13,7 @@
     <body>
         <div id="header">
             <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
             <div class="logo"></div>
 
@@ -38,18 +38,17 @@
             <br>
             <div id="form-placeholder"></div>
             <div class="form-popup" id="myForm">
-	            <form action="/action_page.php" class="form-container" type="text/x-handlebars-template">
+	            <form action="/action_page.php" class="form-container">
 	                <div id="entrySet">
-
 				        <label>Jar Number</label>
-				        <select id = "jarList">
-					        <option value = "Number">#</option>
-					        <option value = "1">1</option>
-					        <option value = "2">2</option>
-					        <option value = "3">3</option>
-					        <option value = "4">4</option>
-				        </select>
+				        <input id = "jarNum">  
+
+				        <label>Site ID</label>
+	                    <input id="siteID"> 
 			    	</div>
+
+			
+
 
 	                <div id="entrySet">
 	                    <label>Collector name:</label>
@@ -58,6 +57,8 @@
 	                    <label>Analyst name:</label>
 	                    <input id="analyst">
 
+	                    <br>
+	                    <br>
 	                    <label>Enterer name:</label>
 	                    <input id="enterer">
 	                </div>
@@ -70,7 +71,7 @@
 	                </div>
 
 	                <div id="entrySet">
-	                    <label>Nitrite:</label>
+	                    <label>Nitrate:</label>
 	                    <input id="nitrite1">
 	                    <input id="nitrite2">
 	                    <input id="nitrite3">
@@ -122,22 +123,19 @@
 	        </div>
 
 	        <script type="text/javascript">
-	        	var source   = document.getElementById("myForm").innerHTML;
-				var template = Handlebars.compile(source);
-				var context = {questions: q};
-
-				function renderTemplate(){
-				  var html    = template(context);
-				  document.getElementById('form-placeholder').innerHTML = html;
-				}
-
-				//Render the template with the first question
-				renderTemplate();
-
-				//Add an event so when the user clicks the button you add a new question
-				document.getElementById("newquestion").addEventListener('click', function(){
-				      renderTemplate();
-				  });
+	        	$(document).ready(function() {
+			    //Selector where you will add your questions
+			    var placeholder     = $("#form-placeholder"); 
+			    
+			    // Selector for the button
+			    var add_button      = $("#newquestion"); 
+			    
+			    // Adding new fields when the user click the button
+			    $(add_button).click(function(e){ 
+			        e.preventDefault();
+			        $(placeholder).append($("#myForm").html()); 
+			    });
+			})
 	        </script>
 
 	        <script>
@@ -152,11 +150,9 @@
         </p>
 
         <p>
-        	<br>
-            <br>
             <br>
         <div class="col">
-        	<button id="newquestion" onclick="renderTemplate()">Add Jar</button>
+        	<button id="newquestion">Add Jar</button>
         </div>
         <div class="col">
         	<button onclick="editJars()">Edit All</button>

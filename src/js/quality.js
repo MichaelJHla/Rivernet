@@ -125,6 +125,8 @@ function submit() {
 
     //The first 4 variables here do not need to be checked for validity
     var vSiteID = siteID.value;
+	
+	var vJarNum = jarNum.value;
 
     var vCollector = collector.value;
 
@@ -180,17 +182,25 @@ function submit() {
     var validInput = validateAllQuality(
         nitrate1.value,
         nitrate2.value,
+		nitrate3.value,
         nitrite1.value,
         nitrite2.value,
+		nitrate3.value,
         ortho1.value,
         ortho2.value,
         ortho3.value,
-        ph.value,
-        temp.value,
+        ph1.value,
+		ph2.value,
+		ph3.value,
+        temp1.value,
+		temp2.value,
+		temp3.value,
         nitrogen1.value,
         nitrogen2.value,
+		nitrogen3.value,
         phosphorous1.value,
-        phosphorous2.value
+		phosphorous2.value,
+        phosphorous3.value
     );
 
     if (validInput) { //If all input has been valid up until this point
@@ -199,36 +209,53 @@ function submit() {
         //Submits the data to the database under the naming convention:
         // dataSubmit.child(VARIABLE_NAME).set(VARIABLE)
         dataSubmit.child("site_ID").set(vSiteID); //Submits the data to the database under the name 'site_ID'
-        dataSubmit.child("collector").set(vCollector);
+        dataSubmit.child("jarNum").set(vJarNum);
+		dataSubmit.child("collector").set(vCollector);
         dataSubmit.child("analyst").set(vAnalyst);
         dataSubmit.child("enterer").set(vEnterer);
         dataSubmit.child("nitrate1").set(nitrate1.value);
         dataSubmit.child("nitrate2").set(nitrate2.value);
+		dataSubmit.child("nitrate3").set(nitrate3.value);
         dataSubmit.child("nitrite1").set(nitrate1.value);
         dataSubmit.child("nitrite2").set(nitrate2.value);
+		dataSubmit.child("nitrate3").set(nitrate3.value);
         dataSubmit.child("orthophosphate1").set(ortho1.value);
         dataSubmit.child("orthophosphate2").set(ortho2.value);
         dataSubmit.child("orthophosphate3").set(ortho3.value);
-        dataSubmit.child("ph").set(ph.value);
-        dataSubmit.child("temperature").set(temp.value);
+        dataSubmit.child("ph1").set(ph1.value);
+		dataSubmit.child("ph2").set(ph2.value);
+		dataSubmit.child("ph3").set(ph3.value);
+        dataSubmit.child("temperature1").set(temp1.value);
+		dataSubmit.child("temperature2").set(temp2.value);
+		dataSubmit.child("temperature3").set(temp3.value);
         dataSubmit.child("nitrogen1").set(nitrogen1.value);
         dataSubmit.child("nitrogen2").set(nitrogen2.value);
+		dataSubmit.child("nitrogen3").set(nitrogen3.value);
         dataSubmit.child("phosphorous1").set(phosphorous1.value);
         dataSubmit.child("phosphorous2").set(phosphorous2.value);
+		dataSubmit.child("phosphorous3").set(phosphorous3.value);
 
         document.getElementById("nitrate1").value = "";
         document.getElementById("nitrate2").value = "";
+		document.getElementById("nitrate3").value = "";
         document.getElementById("nitrite1").value = "";
         document.getElementById("nitrite2").value = "";
+		document.getElementById("nitrate3").value = "";
         document.getElementById("ortho1").value = "";
         document.getElementById("ortho2").value = "";
         document.getElementById("ortho3").value = "";
-        document.getElementById("ph").value = "";
-        document.getElementById("temp").value = "";
+        document.getElementById("ph1").value = "";
+		document.getElementById("ph2").value = "";
+		document.getElementById("ph3").value = "";
+        document.getElementById("temp1").value = "";
+		document.getElementById("temp2").value = "";
+		document.getElementById("temp3").value = "";
         document.getElementById("nitrogen1").value = "";
         document.getElementById("nitrogen2").value = "";
+		document.getElementById("nitrogen3").value = "";
         document.getElementById("phosphorous1").value = "";
         document.getElementById("phosphorous2").value = "";
+		document.getElementById("phosphorous3").value = "";
 
         //This is used to tell the user that the data has been uploaded to the database
         window.alert("Data submitted");
