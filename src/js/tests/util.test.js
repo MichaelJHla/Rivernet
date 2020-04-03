@@ -66,7 +66,7 @@ test('Should output false for the entire quality check.', () => {
 //-----------------------------------------------------------------
 //E2E (UI testing):
 
-test('should create an element with text and correct class', async (done) => {
+test('should navigate to quantity page and submit inputted data', async (done) => {
 	const browser = await puppeteer.launch({
 		headless: true,
 		//slowMo: 80,
@@ -82,6 +82,8 @@ test('should create an element with text and correct class', async (done) => {
 	await page.type('input#age', '28');
 	await page.click('#btnAddUser');
 	const finalText = await page.$eval('.user-item', el => el.textContent);*/
+
+
 	const pageTitle = await page.title();
 	expect(pageTitle).toBe('Rivernet');
 	
