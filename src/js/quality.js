@@ -16,8 +16,6 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-//TODO: 
-//Actually implement all the functionality.
 
 import { validateInput, validateAllQuality } from "./util";
 
