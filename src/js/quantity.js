@@ -21,7 +21,7 @@ firebase.initializeApp(firebaseConfig);
 import { validateInput, validateAllQuality } from "util";
 
 function uploadAll() {
-    window.alert("Test upload all")
+    window.alert("Test upload all");
 }
 
 function viewData(){
