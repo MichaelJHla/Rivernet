@@ -1,5 +1,12 @@
 *.firebaserc
 *.firebase
-*.vs
 
+
+vs
+coverage
+dist
 node_modules
+
+ProjectSettings.json
+slnx.sqlite
+
