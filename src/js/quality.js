@@ -27,7 +27,7 @@ function submit() {
     //Get data point
     var d = document.getElementById("dataPoint");
     var data = d.options[d.selectedIndex].value;
-    
+	
     var value1 = item1.value;
     var value2 = item2.value;
     var value3 = item3.value;
@@ -36,7 +36,10 @@ function submit() {
     
     if (valid){
         var dataSubmit = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
-        dataSubmit.child(data + "1").set(value1);
+        /* dataSubmit.child(data + "Collector").set(collector);
+		dataSubmit.child(data + "Analyst").set(analyst);
+		dataSubmit.child(data + "Enterer").set(enterer); */
+		dataSubmit.child(data + "1").set(value1);
         dataSubmit.child(data + "2").set(value2);
         dataSubmit.child(data + "3").set(value3);
 
