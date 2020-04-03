@@ -21,7 +21,6 @@ firebase.initializeApp(firebaseConfig);
 import { validateInput, validateAllQuality } from "util";
 
 function viewData(){
-    window.alert("Test view data");
     //Get jar number
     var j = document.getElementById("jarNum");
     var jar = j.options[j.selectedIndex].value;
@@ -57,9 +56,43 @@ function viewData(){
         document.getElementById("phosphorous2").value = currentJar.Phosphorous2;
         document.getElementById("phosphorous3").value = currentJar.Phosphorous3;
     });
+    window.alert("Switched to jar " + jar);
 }
 
 function uploadAll() {
+    //Get jar number
+    var j = document.getElementById("jarNum");
+    var jar = j.options[j.selectedIndex].value;
+    var dataSubmit = firebase.database().ref("jar" + jar +"/");
+    
+    dataSubmit.child("Nitrate1").set(nitrate1.value);
+    dataSubmit.child("Nitrate2").set(nitrate2.value);
+    dataSubmit.child("Nitrate3").set(nitrate3.value);
+    
+    dataSubmit.child("Nitrite1").set(nitrite1.value);
+    dataSubmit.child("Nitrite2").set(nitrite2.value);
+    dataSubmit.child("Nitrite3").set(nitrite3.value);
+    
+    dataSubmit.child("Ortho1").set(ortho1.value);
+    dataSubmit.child("Ortho2").set(ortho2.value);
+    dataSubmit.child("Ortho3").set(ortho3.value);
+    
+    dataSubmit.child("PH1").set(ph1.value);
+    dataSubmit.child("PH2").set(ph2.value);
+    dataSubmit.child("PH3").set(ph3.value);
+    
+    dataSubmit.child("Temp1").set(temp1.value);
+    dataSubmit.child("Temp2").set(temp2.value);
+    dataSubmit.child("Temp3").set(temp3.value);
+    
+    dataSubmit.child("Nitrogen1").set(nitrogen1.value);
+    dataSubmit.child("Nitrogen2").set(nitrogen2.value);
+    dataSubmit.child("Nitrogen3").set(nitrogen3.value);
+    
+    dataSubmit.child("Phosphorous1").set(phosphorous1.value);
+    dataSubmit.child("Phosphorous2").set(phosphorous2.value);
+    dataSubmit.child("Phosphorous3").set(phosphorous3.value);
+    
     window.alert("Test upload all");
 }
 
