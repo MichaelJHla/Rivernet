@@ -24,9 +24,16 @@ test('Should output false for validate input', () => {
 
 });
 
-test('Should output false for validate input on empty value', () => {
+test('Should output false for validate input on empty value (undefined)', () => {
 
 	const bool = validateInput(undefined, true);
+	expect(bool).toBe(false);
+
+});
+
+test('Should output false for validate input on empty value', () => {
+
+	const bool = validateInput("", true);
 	expect(bool).toBe(false);
 
 });
@@ -39,21 +46,21 @@ test('Should output false for validate input on empty value', () => {
 //Quality:
 test('Should output true for the entire quality check.', () => {
 	var bool = true;
-	bool = validateAllQuality(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5); //All #s
+	bool = validateAllQuality(1, 1, 1); //All #s
 	expect(bool).toBe(true);
 
 });
 
 test('Should output false for the entire quality check.', () => {
 	var bool = true;
-	bool = validateAllQuality(5, 5, 5, 'm', 5, 5, 5, 5, 5, 5, 5, 5, 5);
+	bool = validateAllQuality(1, 1, "no");
 	expect(bool).toBe(false);
 
 });
 
 //------------
-//Quantity:
-test('Should output true for the entire quantity check.', () => {
+//Quantity: (Won't be used now)
+/*test('Should output true for the entire quantity check.', () => {
 	var bool = true;
 	bool = validateAllQuantity(5, 5, 5, 5, 5);
 
@@ -67,7 +74,7 @@ test('Should output false for the entire quantity check.', () => {
 
 	expect(bool).toBe(false);
 
-});
+});*/
 
 //------------
 
