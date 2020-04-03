@@ -28,6 +28,10 @@ function viewData(){
     var dataAccess = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     dataAccess.on('value', function(data){
         var currentJar = data.val();
+        document.getElementById("collector").value = currentJar.Collector;
+        document.getElementById("analyst").value = currentJar.Analyst;
+        document.getElementById("enterer").value = currentJar.Enterer;
+        
         document.getElementById("nitrate1").value = currentJar.Nitrate1;
         document.getElementById("nitrate2").value = currentJar.Nitrate2;
         document.getElementById("nitrate3").value = currentJar.Nitrate3;
@@ -65,6 +69,10 @@ function submitEdit() {
     var jar = j.options[j.selectedIndex].value;
     var dataSubmit = firebase.database().ref("jar" + jar +"/");
     
+    dataSubmit.child("Collector").set(collector.value);
+    dataSubmit.child("Analyst").set(analyst.value);
+    dataSubmit.child("Enterer").set(enterer.value);
+    
     dataSubmit.child("Nitrate1").set(nitrate1.value);
     dataSubmit.child("Nitrate2").set(nitrate2.value);
     dataSubmit.child("Nitrate3").set(nitrate3.value);
@@ -101,6 +109,10 @@ function uploadAll(){
     var i;
     for (i = 1; i <= totalJars; i++){
         var dataSubmit = firebase.database().ref("jar" + i +"/");
+        
+        dataSubmit.child("Collector").set("");
+        dataSubmit.child("Analyst").set("");
+        dataSubmit.child("Enterer").set("");
 
         dataSubmit.child("Nitrate1").set("");
         dataSubmit.child("Nitrate2").set("");

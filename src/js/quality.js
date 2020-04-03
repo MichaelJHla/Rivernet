@@ -36,9 +36,10 @@ function submit() {
     
     if (valid){
         var dataSubmit = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
-        /* dataSubmit.child(data + "Collector").set(collector);
-		dataSubmit.child(data + "Analyst").set(analyst);
-		dataSubmit.child(data + "Enterer").set(enterer); */
+        dataSubmit.child("Collector").set(collector.value);
+		dataSubmit.child("Analyst").set(analyst.value);
+		dataSubmit.child("Enterer").set(enterer.value);
+        
 		dataSubmit.child(data + "1").set(value1);
         dataSubmit.child(data + "2").set(value2);
         dataSubmit.child(data + "3").set(value3);
