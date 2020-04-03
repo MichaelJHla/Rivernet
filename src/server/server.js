@@ -14,7 +14,7 @@ const router = express.Router();
 //app.use(express.static(DIST_DIR));
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
-}))
+}));
 
 
 //Here, we see what page the user is on, and depending on the url extension, send the correct html.
@@ -26,7 +26,7 @@ app.get('*', (req, res, next) => {
         res.set('content-type', 'text/html');
         res.send(result);
         res.end();
-    })
+    });
     //res.sendFile(HTML_FILE);
 });
 
@@ -38,7 +38,7 @@ app.get('/quality', (req, res, next) => {
         res.set('content-type', 'text/html');
         res.send(result);
         res.end();
-    })
+    });
     //res.sendFile(path.join(DIST_DIR, '/quality.html'));
 });
 
@@ -50,7 +50,7 @@ app.get('/quantity', (req, res, next) => {
         res.set('content-type', 'text/html');
         res.send(result);
         res.end();
-    })
+    });
     //res.sendFile(path.join(DIST_DIR, '/quantity.html'));
 });
 
