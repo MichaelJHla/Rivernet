@@ -27,3 +27,6 @@ function uploadAll() {
 function viewData(){
     window.alert("Test view data");
 }
+
+window.viewData = viewData;
+window.uploadAll = uploadAll;
