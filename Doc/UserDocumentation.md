@@ -30,11 +30,12 @@ page loads, the software is ready to be used.
 *Add & Submit Data:*
 
 The RiverNET website includes buttons to submit data as well as to the RiveNET
-Git repository. To add data push the “Add Jar” button to create a new jar form
-where you can enter in the perspective information fields. Once entered, submit
-the data (this can be edited later.). Not every space needs to be filled out
-when data is submitted. Once the data is submitted, you can leave the page (no
-notification is currently given that data has been submitted).
+Git repository. To add data, add the collector’s name, enterer’s name and
+analyst’s name to the perspective spots. Then select the correct jar number from
+the dropdown menu, then pick what data field you want to enter. Once entered,
+submit the data (this can be edited later.). Not every space needs to be filled
+out when data is submitted. Once the data is submitted, you can leave the page
+(no notification is currently given that data has been submitted).
 
 *Editing Data:*
 
