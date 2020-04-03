@@ -16,19 +16,17 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-//TODO: 
-//Actually implement all the functionality.
 
 import { validateInput, validateAllQuality } from "./util";
 
 function submit() {
     //Get jar number
-    var e = document.getElementById("jarNum");
-    var strUser1 = e.options[e.selectedIndex].value;
+    var j = document.getElementById("jarNum");
+    var jar = j.options[j.selectedIndex].value;
     
     //Get data point
-    var j = document.getElementById("dataPoint");
-    var strUser2 = j.options[j.selectedIndex].value;
+    var d = document.getElementById("dataPoint");
+    var data = d.options[d.selectedIndex].value;
     
     var value1 = item1.value;
     var value2 = item2.value;
@@ -37,10 +35,10 @@ function submit() {
     var valid = validateAllQuality(value1, value2, value3);
     
     if (valid){
-        var dataSubmit = firebase.database().ref("jar" + strUser1 +"/");//Variable that is referenced to upload data to firebase database
-        dataSubmit.child(strUser2 + "1").set(value1);
-        dataSubmit.child(strUser2 + "2").set(value2);
-        dataSubmit.child(strUser2 + "3").set(value3);
+        var dataSubmit = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
+        dataSubmit.child(data + "1").set(value1);
+        dataSubmit.child(data + "2").set(value2);
+        dataSubmit.child(data + "3").set(value3);
 
         window.alert("Data within valid parameters and added to check page");
     } else {
