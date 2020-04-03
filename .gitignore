@@ -2,7 +2,7 @@
 *.firebase
 
 
-vs
+.vs
 coverage
 dist
 node_modules
