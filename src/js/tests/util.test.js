@@ -68,7 +68,7 @@ test('Should output false for the entire quality check.', () => {
 
 test('should navigate to quantity page and submit inputted data', async (done) => {
 	const browser = await puppeteer.launch({
-		headless: true,
+		headless: false,
 		slowMo: 80,
 		args: ['--no-sandbox', '--disable-setuid-sandbox','--window-size=1920,1080'] //'--window-size=1920,1080' USE:'--no-sandbox', '--disable-setuid-sandbox', 
 	});
@@ -84,7 +84,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	});
 
 	await page.goto(
-		'http://localhost:8080/' 
+		'https://yerc-rivernet.firebaseapp.com/' 
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	
 	
