@@ -80,6 +80,10 @@ h3 {
 	padding: 10px;
 }
 
+#jarNum{
+	position:absolute;
+}
+
 body {
 	color: white;
 	font-size: 18px;
