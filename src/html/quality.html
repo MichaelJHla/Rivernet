@@ -55,7 +55,7 @@ Last updated: 4/3/2020 -->
         </div>
 
         <div id="entrySet">
-            <label>Jar Number</label>
+            <label>Jar Number</label> <!-- Restricts select box size. -->
             <select id="jarNum" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;">
                 <option value = "1">1</option>
                 <option value = "2">2</option>
@@ -90,6 +90,7 @@ Last updated: 4/3/2020 -->
 
             </select> 
 
+            <!-- Temporary fix to strange spacing. Will fix. -->
             <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Point</label>
             <label>Jar Number</label>
             <select id="dataPoint">
