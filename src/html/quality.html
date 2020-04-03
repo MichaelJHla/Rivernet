@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <!-- HTML file for the qualtity page of the RiverNET web application.
-Written by: Anna Jinneman, William Roberts & Jonah Hlastala
+Written by: Jonah Hlastala, Anna Jinneman & William Roberts 
 Last updated: 4/3/2020 -->
 <html lang="en">
 
@@ -28,19 +28,13 @@ Last updated: 4/3/2020 -->
         
         <!-- Manages the two top buttons, "Back" and "Protocol". -->
         <div class="buttonRow">
-            <div class="col2">
-            	<!-- Link to the protocol from the YERC website. -->
+                <!-- Link to the protocol from the YERC website. -->
                 <button id="qualityButton"> <a onclick="window.open('https://static1.squarespace.com/static/5c08491db10598331390f84a/t/5e33774895862d328a5f30b0/1580431180082/1-RiverNET+Community+Water+QUALITY+Monitoring+Protocol.pdf')">Protocol</a></button>
-            </div>
-            <div class="col2">
-                <button id="quantityButton"> <a href="index.html">Back</a></button>
-            </div>
+            
         </div>
 
         <!-- Needed to get the correct spacing and formatting. -->
         <p>
-        <br>
-        <br>
         <br>
         <!-- Entry set for names. -->
         <div id="entrySet">
@@ -116,9 +110,15 @@ Last updated: 4/3/2020 -->
         </div>
         <br>
         <br>
-   
+        <div class="col">
+            <button class="backButton"> <a href="index.html">Back</a></button>
+        </div>
+   		<div class='col'>
             <button onclick="submit()">Submit Data</button>
-        
+        </div>
+        <div class='col'>
+            <button> <a href="quantity.html">Edit Data</a></button>
+        </div>
         </p>
     </body>
 </html>

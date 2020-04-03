@@ -113,7 +113,7 @@ button {
 	text-align: center;
 	text-decoration: none;
 	display: block;
-	margin: 0 auto;
+	margin: auto;
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 50px;
 	cursor: pointer; 
@@ -129,6 +129,13 @@ button:hover {
 button a:link, button a:visited {
 	color: black;
 	text-decoration: none;
+}
+
+
+.backButton:hover {
+	background-color: red;
+	border-color: red;
+	
 }
 
 
@@ -164,23 +171,6 @@ button a:link, button a:visited {
 	float: right;
 }
 
-/*CSS to position the 3 bottom buttons correctly.*/
-.botButtons button {
-	text-align: center;
-  	padding: 10px 24px; 
-  	border: 1px solid green; 
- 	float: left; 
-}
-
-.botButtons button:not(:last-child) {
- 	 border-right: none; 
-}
-
-.botButtons:after {
-  	content: "";
-  	clear: both;
-  	display: table;
-}
 
 /* Below is used for the Jar form pop-up*/
 
