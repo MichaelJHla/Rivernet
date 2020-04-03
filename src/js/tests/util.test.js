@@ -1,4 +1,8 @@
+const puppeteer = require('puppeteer');
 const { validateInput, validateAllQuality, validateAllQuantity } = require('.././util');
+
+import 'core-js/stable';
+import 'regenerator-runtime/runtime'; //Trying htis
 
 //-----------------------------------------------------------------
 //Unit:
@@ -58,26 +62,39 @@ test('Should output false for the entire quality check.', () => {
 
 });
 
-//------------
-//Quantity: (Won't be used now)
-/*test('Should output true for the entire quantity check.', () => {
-	var bool = true;
-	bool = validateAllQuantity(5, 5, 5, 5, 5);
 
-	expect(bool).toBe(true);
+//-----------------------------------------------------------------
+//E2E (UI testing):
 
+test('should create an element with text and correct class', async (done) => {
+	const browser = await puppeteer.launch({
+		headless: true,
+		//slowMo: 80,
+		args: ['--no-sandbox', '--disable-setuid-sandbox']
+	});
+	const page = await browser.newPage();
+	await page.goto(
+		'https://yerc-rivernet.firebaseapp.com/' //file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
+	);
+	/*await page.click('input#name');
+	await page.type('input#name', 'Anna');
+	await page.click('input#age');
+	await page.type('input#age', '28');
+	await page.click('#btnAddUser');
+	const finalText = await page.$eval('.user-item', el => el.textContent);*/
+	const pageTitle = await page.title();
+	expect(pageTitle).toBe('Rivernet');
+	
+	await browser.close();
+	done();
+}, 5000);
+
+//Can use this for hints on testing Firebase:
+/*beforeAll(async () => {
+	await firebase.firestore().enableNetwork();
 });
 
-test('Should output false for the entire quantity check.', () => {
-	var bool = true;
-	bool = validateAllQuantity(5, 'm', 5, 5, 5);
-
-	expect(bool).toBe(false);
-
-});*/
-
-//------------
-
-
-
-
+afterAll(async () => {
+	await firebase.firestore().disableNetwork();
+});
+*/
