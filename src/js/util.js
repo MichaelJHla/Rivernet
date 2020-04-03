@@ -1,3 +1,5 @@
+//This is designed to check each passed input value to see if it is a number
+//If it is not a number, false is returned
 const validateInput = (inputValue, notEmpty) => {
 	if (isNaN(inputValue)) { //If the value isn't the correct format
 		return false;	//Return false
@@ -9,6 +11,7 @@ const validateInput = (inputValue, notEmpty) => {
 	return true;
 }
 
+//This is designed to validate the datapoints and returns true if they are all valid
 const validateAllQuality = (value1, value2, value3) => {
 
 	var validInput = true;//Used to represent if all input is valid
@@ -23,4 +26,4 @@ const validateAllQuality = (value1, value2, value3) => {
 	else { return false; } //One or more is not valid. Return false.
 }
 
-export { validateInput, validateAllQuality};
+export { validateInput, validateAllQuality}; //Used for webpack to export the methods to be used by other files
