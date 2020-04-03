@@ -28,15 +28,6 @@ function submit() {
     var d = document.getElementById("dataPoint");
     var data = d.options[d.selectedIndex].value;
 	
-	var c = document.getElementById("collector");
-	var collector = c.options[c.slectedIndex].value;
-	
-	var a = document.getElementById("analyst");
-	var analyst = a.options[a.slectedIndex].value;
-	
-	var e = document.getElementById("enterer");
-	var enterer = e.options[e.slectedIndex].value;
-    
     var value1 = item1.value;
     var value2 = item2.value;
     var value3 = item3.value;
