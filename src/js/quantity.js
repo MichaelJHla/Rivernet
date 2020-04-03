@@ -59,7 +59,7 @@ function viewData(){
     window.alert("Switched to jar " + jar);
 }
 
-function uploadAll() {
+function submitEdit() {
     //Get jar number
     var j = document.getElementById("jarNum");
     var jar = j.options[j.selectedIndex].value;
@@ -96,5 +96,43 @@ function uploadAll() {
     window.alert("Test upload all");
 }
 
+function uploadAll(){
+    var totalJars = 35;
+    var i;
+    for (i = 1; i <= totalJars; i++){
+        var dataSubmit = firebase.database().ref("jar" + i +"/");
+
+        dataSubmit.child("Nitrate1").set("");
+        dataSubmit.child("Nitrate2").set("");
+        dataSubmit.child("Nitrate3").set("");
+
+        dataSubmit.child("Nitrite1").set("");
+        dataSubmit.child("Nitrite2").set("");
+        dataSubmit.child("Nitrite3").set("");
+
+        dataSubmit.child("Ortho1").set("");
+        dataSubmit.child("Ortho2").set("");
+        dataSubmit.child("Ortho3").set("");
+
+        dataSubmit.child("PH1").set("");
+        dataSubmit.child("PH2").set("");
+        dataSubmit.child("PH3").set("");
+
+        dataSubmit.child("Temp1").set("");
+        dataSubmit.child("Temp2").set("");
+        dataSubmit.child("Temp3").set("");
+
+        dataSubmit.child("Nitrogen1").set("");
+        dataSubmit.child("Nitrogen2").set("");
+        dataSubmit.child("Nitrogen3").set("");
+
+        dataSubmit.child("Phosphorous1").set("");
+        dataSubmit.child("Phosphorous2").set("");
+        dataSubmit.child("Phosphorous3").set("");
+    }
+    window.alert("data submit succesful");
+}
+
 window.viewData = viewData;
+window.submitEdit = submitEdit;
 window.uploadAll = uploadAll;
