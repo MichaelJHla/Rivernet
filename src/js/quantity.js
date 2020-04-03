@@ -101,7 +101,7 @@ function submitEdit() {
     dataSubmit.child("Phosphorous2").set(phosphorous2.value);
     dataSubmit.child("Phosphorous3").set(phosphorous3.value);
     
-    window.alert("Test upload all");
+    window.alert("Edits applied to queue");
 }
 
 function uploadAll(){
