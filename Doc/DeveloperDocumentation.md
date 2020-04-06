@@ -20,7 +20,17 @@ There are two main branches on our Git Repo, a master branch which hosts our sta
 
 ## Building:
 
-- As of now, the Webapp runs as a standalone application (a node.js webapp) hosted on Firebase. It does not need to be built. To run node.js on a local machine one will need to run the _npm start_ command, which will "compile" the package.json and the .js scripts.
+- As of now, the Webapp runs as a standalone application (a node.js webapp) hosted on Firebase. It does not need to be built. If you wish to test the program on your local machine (with the help of node.js) you can run the following commands after cloning:
+
+npm install 
+//This only needs to be run once, the first time you are setting up the project.
+
+npm run build
+//This will build the modules into the /dist directory. The dist directory is what the brower digests.
+
+npm start
+//This command starts the express server on localhost:8080. On dev, webpack-dev-middleware has been set up. Meaning that any change you make on your machine and save, will be automatically sent to the server... All you have to do is refresh!
+Navigate to: http://localhost:8080/ to see the server.
 
 - However, that only means that on each new release we updated the hosted webapp on Firebase. Each release period when we are satisfied with our current Dev branch (or during steps along the way) we upload the project to the Firebase servers, updating the current website with our code. 
 Usually, on each release we merge our dev branch with the master, to reflect our current stable release. This process requires a member of the inner team to complete, someone who has access to the Firebase project. Other test releases are welcome, but each one of these will require a fresh Firebase project and the code connecting each .js to Firebase will need to be updated with the new keys.
@@ -30,10 +40,11 @@ Usually, on each release we merge our dev branch with the master, to reflect our
 - How to Build: To build our tests ensure that the machine has Jest and JShint installed. These dependencies are listed in the package.json. The local machine requires the code linter JShint to run the basic tests and Jest to run Unit and Integration tests. 
 The command to install JShint globally is: _npm install -g jshint_. The command to install Jest is: _npm install --save-dev jest_
 
-- How to Test: Tests can be run on local machines by running the command _npm test_. The tests will fail unless the local machine has installed the JSHint code linter and Jest. 
+- How to Test: Tests can be run on local machines by running the command _npm test_. The tests will fail unless the local machine has installed the JSHint code linter and Jest. In order to use the installed (with npm install) version of 
+jest you can run the command _./node_modules/.bin/jest --coverage_ to run the jest testing suite with the additional coverage parameter. 
 
 - Set up automated build & test: We set up Travis to automatically run the tests as a git push is fulfilled. Travis automatically runs tests every time the Github repo is pushed to. 
-Within a work environment you can run _jest --watch_ to run tests on related code changes automatically. This is very handy as every time you change a function related with a test, that test is automatically ran again. 
+Within a work environment you can run _jest --watch_ (or ./node_modules/.bin/jest --watch to use the npm installed version) to run tests on related code changes automatically. This is very handy as every time you change a function related with a test, that test is automatically ran again. 
 
 ### Setting up automated Notifications: 
 

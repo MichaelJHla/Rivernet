@@ -27,20 +27,29 @@ page loads, the software is ready to be used.
 
 ### Using RiverNET software
 
+The RiverNET web application includes buttons to submit quality data, edit
+recently submitted data and a link to the RiveNET Git repository where the
+latest stable and developmental product is located.
+
 *Add & Submit Data:*
 
-The RiverNET website includes buttons to submit data as well as to the RiveNET
-Git repository. To add data push the “Add Jar” button to create a new jar form
-where you can enter in the perspective information fields. Once entered, submit
-the data (this can be edited later.). Not every space needs to be filled out
-when data is submitted. Once the data is submitted, you can leave the page (no
-notification is currently given that data has been submitted).
+To add data, add the collector’s name, enterer’s name and analyst’s name to the
+perspective spots. Then select the correct jar number from the dropdown menu,
+then pick what data field you want to enter. Once entered, submit the data (this
+can be edited later.). Not every space needs to be filled out when data is
+submitted. Once the data is submitted, you can leave the page (no notification
+is currently given that data has been successfully submitted).
 
 *Editing Data:*
 
-To edit jar number data, begin by pushing the “Edit” button. Here you can go
-through and see recently summited jar data. Find the jar data you want to enter.
+To edit jar number data, begin by pushing the “Edit Data” button from the
+homepage, or from the quality page. Here you can go through and see recently
+summited jar data. Find the jar data you want to edit, and change the field(s)
+needed. Once editing is finished, click the submit data button to save your
+changes to the database.
 
 ### Report a bug
 
-Currently, no bug reporting system exists.
+Currently, no bug reporting system exists. The best way to report a bug is
+through the git repository. Issues can be created and dealt with by the current
+developers.

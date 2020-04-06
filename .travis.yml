@@ -1,7 +1,13 @@
 language: node_js
 node_js:
  - "node"
-
+dist: trusty
+addons:
+  chrome: stable
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+before_script:
+  #- npm run build; npm start
 notifications:
   email:
     recipients:
