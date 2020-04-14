@@ -42,7 +42,7 @@ function submit() {
     var validDate = validateDate(vDate);
     
     if (valid && validDate){//If the data points pass thee validity tests
-        var dataSubmit = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
+        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
         
         //These three lines submit the information regarding the people who interacted with the data
         dataSubmit.child("Collector").set(collector.value);
