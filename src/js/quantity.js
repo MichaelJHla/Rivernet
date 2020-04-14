@@ -20,7 +20,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-import { validateInput, validateAllQuality } from "util";
+import { validateInput, validateAllQuality, validateDate} from "util";
 
 //The purpose of this function is to see what jar the user wants to look at
 // and then pulls up all that info in text boxes so the data can be evaluated and edited
@@ -29,7 +29,9 @@ function viewData(){
     var j = document.getElementById("jarNum");
     var jar = j.options[j.selectedIndex].value;
     
-    var dataAccess = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
+    var vDate = date.value;
+    
+    var dataAccess = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     //This method updated the fields of the text boxes everythime the button is pressed and data is changed
     dataAccess.on('value', function(data){
         var currentJar = data.val();//Used for reading data
@@ -76,8 +78,8 @@ function submitEdit() {
     //Get jar number
     var j = document.getElementById("jarNum");
     var jar = j.options[j.selectedIndex].value;
-    //Bases the name of the child based on which jar is selected
-    var dataSubmit = firebase.database().ref("jar" + jar +"/");
+    var vDate = date.value;
+    var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     
     //The blocks of text below this are broken into categories for readability
     //Each line uploads the data within each textbox to the database
@@ -122,8 +124,9 @@ function submitEdit() {
 function uploadAll(){
     var totalJars = 35;
     var i;
+    var vDate = date.value;
     for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
-        var dataSubmit = firebase.database().ref("jar" + i +"/");
+        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
         
         //Fills each possible field with a blank
         dataSubmit.child("Collector").set("");
