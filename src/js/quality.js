@@ -19,7 +19,7 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);//Config firebase
 
-import { validateInput, validateAllQuality } from "./util";//Impports needed for used functions
+import { validateInput, validateAllQuality, validateDate} from "./util";//Impports needed for used functions
 
 //This funcition is designed to submit the data to the database in the proper format
 function submit() {
@@ -35,11 +35,13 @@ function submit() {
     var value1 = item1.value;
     var value2 = item2.value;
     var value3 = item3.value;
+    var vDate = date.value;
     
     //This calls a method that is used to check the validity of the data points
     var valid = validateAllQuality(value1, value2, value3);
+    var validDate = validateDate(vDate);
     
-    if (valid){//If the data points pass thee validity tests
+    if (valid && validDate){//If the data points pass thee validity tests
         var dataSubmit = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
         
         //These three lines submit the information regarding the people who interacted with the data
@@ -54,9 +56,11 @@ function submit() {
         
         //Allerts the user that the data has been succesfully added
         window.alert("Data within valid parameters and added to check page");
-    } else {
+    } else if(!valid) {
         //If the data is invalid nothing happens other than the user is notified that the data didn't go through properly
         window.alert("invalid input");
+    } else if (!validDate){
+        window.alert("invalid date");
     }
 }
 
