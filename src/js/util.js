@@ -23,22 +23,29 @@ const validateAllQuality = (value1, value2, value3) => {
 	else { return false; } //One or more is not valid. Return false.
 }
 
-const validateDate = (dateVal) => {
-    var validInput = true;
+//This is designed to validate the user entered date to make sure it is a valid date as specified to the user
+const validateDate = (dateVal) => {    
+    var dateArray = dateVal.split("-");//This splits the date into seperate month, day, and year substrings in an array
     
-    if (dateVal.length != 10){
+    //This if statement checks if the array split into the correct amount of items
+    if (dateArray.length != 3){
         return false;
+    }
+    
+    //This if statement checks if each component of the date is the correct length
+    if (dateArray[0].length != 2 && dateArray[1].length != 2 && dateArray[2].length != 4){
+        return false;
+    }
+    
+    //This if statements checks if all the provided date fields are actually numbers
+    if (
+        validateInput(dateArray[0], false) &&
+        validateInput(dateArray[1], false) &&
+        validateInput(dateArray[2], false)
+    ) {
+        return true;
     } else {
-        var dateArray = dateVal.split("-");
-        if (
-            validateInput(dateArray[0], false) &&
-            validateInput(dateArray[1], false) &&
-            validateInput(dateArray[2], false)
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+        return false;
     }
 }
 
