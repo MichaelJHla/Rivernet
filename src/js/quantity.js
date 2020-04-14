@@ -20,7 +20,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-import { validateInput, validateAllQuality, validateDate} from "util";
+import { validateInput, validateAllQuality, validateDate} from "./util";
 
 //The purpose of this function is to see what jar the user wants to look at
 // and then pulls up all that info in text boxes so the data can be evaluated and edited
@@ -30,6 +30,10 @@ function viewData(){
     var jar = j.options[j.selectedIndex].value;
     
     var vDate = date.value;
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format");
+        return;
+    }
     
     var dataAccess = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     //This method updated the fields of the text boxes everythime the button is pressed and data is changed
@@ -78,7 +82,13 @@ function submitEdit() {
     //Get jar number
     var j = document.getElementById("jarNum");
     var jar = j.options[j.selectedIndex].value;
+    
     var vDate = date.value;
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format");
+        return;
+    }
+    
     var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     
     //The blocks of text below this are broken into categories for readability
@@ -124,7 +134,13 @@ function submitEdit() {
 function uploadAll(){
     var totalJars = 35;
     var i;
+    
     var vDate = date.value;
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format");
+        return;
+    }
+    
     for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
         var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
         
