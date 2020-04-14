@@ -21,6 +21,7 @@ Last updated: 4/3/2020 -->
 
 
         <h1> Queued Data to Check</h1>
+        <label>Jar number:</label>
         <select id="jarNum" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;">
             <option value = "1">1</option>
             <option value = "2">2</option>
@@ -58,6 +59,9 @@ Last updated: 4/3/2020 -->
             <option value = "34">34</option>
             <option value = "35">35</option>
         </select>
+        
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter date in format mm-dd-yyyy:</label>
+        <input id="date">
         
         <button onclick="viewData()">View jar data</button>
         
