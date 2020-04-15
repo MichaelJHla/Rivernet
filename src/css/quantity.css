@@ -71,7 +71,7 @@ h4{
     float: left;
     color: white;
     text-align: center;
-    padding: 12px;
+    padding: 20px;
     text-decoration: none;
     font-size: 24px;
     font-family: 'Bebas Neue', sans-serif;
@@ -80,8 +80,8 @@ h4{
 /* Logo */
 .header a.logo {
     background: url(../img/yerc_logo.png);
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     background-size: 100% auto;
     background-repeat: no-repeat;
     margin-bottom: 0px;
@@ -100,6 +100,7 @@ h4{
 .header-right {
   float: right;
 }
+
 
 
 /*Styling for the Jar form (entry sets, box sizes, etc.)*/
