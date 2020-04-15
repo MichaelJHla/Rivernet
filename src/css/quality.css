@@ -30,6 +30,7 @@ h2{
 	font-family: 'Bebas Neue', sans-serif;
 	text-align: center;
 	position: static;
+
 }
 
 
@@ -44,6 +45,19 @@ h3 {
 	border-width: 1px;
 	border-color: #b0b0b0;
 	margin-top: 0px;
+	margin-bottom: 15px;
+}
+
+h4{
+	font-size: 16px;
+	font-weight: lighter;
+	text-align: center;
+	position: static;
+	margin-right: 130px;
+	margin-left: 130px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
 }
 
 /*Used for the YERC logo and title for the page.*/
@@ -109,6 +123,7 @@ body {
 form {
 	background-color: #4B4B4B;
 	border: 1px solid #f1f1f1;
+	margin-top: 0px;
 }
 
 input {
