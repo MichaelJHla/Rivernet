@@ -1,4 +1,4 @@
-/*CSS file for the qualtity page of the RiverNET web application.
+/*CSS file for the Edit page of the RiverNET web application.
 Written by: Jonah Hlastala, Anna Jinneman & William Roberts 
 Last updated: 4/15/2020 */
 img {
@@ -54,7 +54,6 @@ h3 {
     padding: 20px 10px;
 }
 
-/* Style the header links */
 .header a {
     float: left;
     color: white;
@@ -65,7 +64,7 @@ h3 {
     font-family: 'Bebas Neue', sans-serif;
 }
 
-/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+/* Logo */
 .header a.logo {
     background: url(../img/yerc_logo.png);
     width: 150px;
@@ -75,7 +74,6 @@ h3 {
     margin-bottom: 0px;
 }
 
-/* Change the background color on mouse-over */
 .header a:hover {
     transition: all .2s linear;
     animation-name: link;
@@ -86,8 +84,6 @@ h3 {
     cursor: pointer; 
 }
 
-
-/* Float the link section to the right */
 .header-right {
   float: right;
 }
