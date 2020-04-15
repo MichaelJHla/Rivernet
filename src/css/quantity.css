@@ -44,6 +44,7 @@ h3 {
     border-width: 1px;
     border-color: #b0b0b0;
     margin-top: 0px;
+    margin-bottom: 15px;
 }
 
 /*Used for the YERC logo and title for the page.*/
@@ -133,6 +134,7 @@ button {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 50px;
     cursor: pointer; 
+    border-radius: 4px;
 }
 
 button:hover {
