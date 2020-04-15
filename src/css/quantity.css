@@ -1,6 +1,6 @@
-/*CSS file for the edit page of the RiverNET web application.
+/*CSS file for the qualtity page of the RiverNET web application.
 Written by: Jonah Hlastala, Anna Jinneman & William Roberts 
-Last updated: 4/3/2020 */
+Last updated: 4/15/2020 */
 img {
     list-style-type: none;
     float: left;
@@ -10,6 +10,7 @@ img {
     max-width: 15%;
 }
 
+/*Intended for the title of a page*/
 h1 {
     font-size: 60px;
     font-family: 'Bebas Neue', sans-serif;
@@ -19,46 +20,98 @@ h1 {
     border-bottom: solid;
     border-width: 1px;
     border-color: #b0b0b0;
+    float: right;
+    right: 28px;
+    width: 750px;
 }
 
-#header {
+h2{
+    font-size: 30px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    position: static;
+}
+
+
+/*Used in the index.HTML page*/
+h3 {
+    font-size: 60px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    color: white;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #b0b0b0;
+    margin-top: 0px;
+}
+
+/*Used for the YERC logo and title for the page.*/
+
+.header {
+    overflow: hidden;
+    background-color: #3a3a3b;
+    padding: 20px 10px;
+}
+
+/* Style the header links */
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
     text-decoration: none;
-    display: inline-block;
-    text-align: left;
+    font-size: 24px;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
-    #header ul {
-        float: right;
-        position: static;
-        color: white;
-        font-size: 24px;
-        list-style-type: none;
-        font-family: 'Bebas Neue', sans-serif;
-        width: 400px;
-        padding-top: 25px;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 9px;
-        clear: both;
-    }
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+    background: url(../img/yerc_logo.png);
+    width: 150px;
+    height: 150px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+}
 
-    #header a:link, #header a:visited {
-        color: white;
-        text-decoration: none;
-    }
-
-    #header a:hover {
-        transition: all .2s linear;
-        animation-name: link;
-        animation-duration: .75s;
-        animation-delay: 0s;
-        animation-iteration-count: 1;
-        color: green;
-    }
+/* Change the background color on mouse-over */
+.header a:hover {
+    transition: all .2s linear;
+    animation-name: link;
+    animation-duration: .75s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    color: green;
+    cursor: pointer; 
+}
 
 
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+
+/*Styling for the Jar form (entry sets, box sizes, etc.)*/
 #entrySet {
+    text-align: center;
     padding: 10px;
+}
+
+#jarNum{
+    position:absolute;
+}
+
+body {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+form {
+    background-color: #4B4B4B;
+    border: 1px solid #f1f1f1;
 }
 
 input {
@@ -70,19 +123,7 @@ input {
     width: 200px;
 }
 
-#difPressure, #absPressure, #temp, #wlevel, #barPressure {
-    width: 100px;
-}
-
-body {
-    color: white;
-    font-size: 18px;
-}
-
-form {
-    background-color: #4B4B4B;
-}
-
+/*General button styling.*/
 button {
     background-color: white;
     border-style: solid;
@@ -91,9 +132,10 @@ button {
     text-align: center;
     text-decoration: none;
     display: block;
-    margin: 0 auto;
+    margin: auto;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 50px;
+    cursor: pointer; 
 }
 
 button:hover {
@@ -108,22 +150,17 @@ button a:link, button a:visited {
     text-decoration: none;
 }
 
+
 .backButton:hover {
     background-color: red;
     border-color: red;
-    color: white;
+    
 }
 
+
+/*Styling for the YERC logo.*/
 .logo {
-    background: url(../img/yerc_logo.png);
-    width: 300px;
-    height: 300px;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-
-    list-style-type: none;
-    float: left;
-}
+    }
 
 /*Below is the CSS needed for the side-by-side buttons*/
 .col {
@@ -145,11 +182,16 @@ button a:link, button a:visited {
     float: right;
 }
 
-/*Styling for the Jar form (entry sets, box sizes, etc.)*/
-#entrySet {
-    padding: 10px;
+
+/* Below is used for the Jar form pop-up*/
+
+.form-popup {
+  display: none;
+  border: 1px solid #f1f1f1;
 }
 
-#jarNum{
-    position:absolute;
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
+
