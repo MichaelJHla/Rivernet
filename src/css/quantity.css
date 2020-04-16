@@ -169,6 +169,10 @@ button a:link, button a:visited {
     
 }
 
+.viewData{
+    font-size: 30px;
+}
+
 
 /*Styling for the YERC logo.*/
 .logo {
