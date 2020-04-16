@@ -103,6 +103,13 @@ test('Should output false for validate date, no number 3', () => {
 
 });
 
+test('Should output false for validate date, too long a date segment', () => {
+
+	const bool = validateDate("333-12-none");
+	expect(bool).toBe(false);
+
+});
+
 
 
 

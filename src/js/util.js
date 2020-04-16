@@ -44,7 +44,7 @@ const validateDate = (dateVal) => {
     }
     
     //This if statement checks if each component of the date is the correct length
-    if (dateArray[0].length != 2 && dateArray[1].length != 2 && dateArray[2].length != 4){
+    if (dateArray[0].length != 2 || dateArray[1].length != 2 || dateArray[2].length != 4){
         return false;
     }
     
