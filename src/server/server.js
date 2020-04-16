@@ -42,8 +42,8 @@ app.get('/quality', (req, res, next) => {
     //res.sendFile(path.join(DIST_DIR, '/quality.html'));
 });
 
-app.get('/quantity', (req, res, next) => {
-    compiler.outputFileSystem.readFile(path.join(DIST_DIR, '/quantity.html'), (err, result) => {
+app.get('/edit', (req, res, next) => {
+    compiler.outputFileSystem.readFile(path.join(DIST_DIR, '/edit.html'), (err, result) => {
         if (err) {
             return next(err);
         }

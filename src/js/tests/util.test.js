@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const { validateInput, validateAllQuality, validateAllQuantity } = require('.././util');
+const { validateInput, validateAllQuality, validateDate } = require('.././util');
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime'; //Trying htis
@@ -41,6 +41,51 @@ test('Should output false for validate input on empty value', () => {
 	expect(bool).toBe(false);
 
 });
+
+test('Should output true for validate date', () => {
+
+	const bool = validateDate("09-30-1992");
+	expect(bool).toBe(true);
+
+});
+
+test('Should output true for validate date even though crazy date', () => {
+
+	const bool = validateDate("00-00-0000");
+	expect(bool).toBe(true);
+
+});
+
+
+test('Should output false for validate date, no dashes', () => {
+
+	const bool = validateDate("123123123");
+	expect(bool).toBe(false);
+
+});
+
+test('Should output false for validate date, no number', () => {
+
+	const bool = validateDate("no-no-none");
+	expect(bool).toBe(false);
+
+});
+
+test('Should output false for validate date, no number 2', () => {
+
+	const bool = validateDate("12-no-none");
+	expect(bool).toBe(false);
+
+});
+
+test('Should output false for validate date, no number 3', () => {
+
+	const bool = validateDate("12-12-none");
+	expect(bool).toBe(false);
+
+});
+
+
 
 
 
