@@ -206,4 +206,50 @@ button a:link, button a:visited {
   background-color: #ddd;
   outline: none;
 }
+/*Stuff for pop-up*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  font-size: 15px;
+  width: 200px;
+  background-color: black;
+  font-family: serif;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+ 
+
+  position: absolute;
+  z-index: 1;
+
+}
+
+
+.tooltip:hover .tooltiptext {
+    transition-delay:0.5s;
+    visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
 
