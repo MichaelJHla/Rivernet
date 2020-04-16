@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development",
     "start": "node ./dist/server.js",
-    "test": "jshint src/js/quantity.js; jshint src/js/quality.js; jshint src/server/server.js; jest --forceExit"
+    "test": "jshint src/js/edit.js; jshint src/js/quality.js; jshint src/server/server.js; jshint src/js/util.js; jest --forceExit"
   },
   "jshintConfig": {
     "esversion": 6
