@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime'; //Trying htis
 //-----------------------------------------------------------------
 //Unit:
 
+//Validate Input:
 test('Should output true for validate input', () => {
 	var bool = true;
 	bool = validateInput(55, false);
@@ -42,6 +43,23 @@ test('Should output false for validate input on empty value', () => {
 
 });
 
+test('Should output false for validate input on negative value', () => {
+
+	const bool = validateInput(-5, false);
+	expect(bool).toBe(false);
+
+});
+
+test('Should output false for validate input on too high a value', () => {
+
+	const bool = validateInput(100, false);
+	expect(bool).toBe(false);
+
+});
+
+
+
+//Validate Date:
 test('Should output true for validate date', () => {
 
 	const bool = validateDate("09-30-1992");
@@ -81,6 +99,13 @@ test('Should output false for validate date, no number 2', () => {
 test('Should output false for validate date, no number 3', () => {
 
 	const bool = validateDate("12-12-none");
+	expect(bool).toBe(false);
+
+});
+
+test('Should output false for validate date, too long a date segment', () => {
+
+	const bool = validateDate("333-12-none");
 	expect(bool).toBe(false);
 
 });
