@@ -50,98 +50,100 @@ Last updated: 4/15/2020 -->
 
         <!-- Needed to get the correct spacing and formatting. -->
         <p>
-        <br>
-        <!-- Entry set for names. -->
-        <div id="entrySet">
-            <label>Collector name:</label>
-            <input id="collector">
+            <br>
+            <!-- Entry set for names. -->
+            <div id="entrySet">
+                <label>Collector name:</label>
+                <input id="collector">
 
-            <label>Analyst name:</label>
-            <input id="analyst">
+                <label>Analyst name:</label>
+                <input id="analyst">
 
+                <br>
+                <br>
+                <label>Enterer name:</label>
+                <input id="enterer">
+            </div>
+
+            <div id="entrySet">
+                <!-- Jar options from 1-30, can be lessened or increased in the future. -->
+                <label>Jar Number</label> <!-- Restricts select box size. -->
+                <select id="jarNum" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+
+                </select>
+
+                <!-- Temporary fix to strange spacing. Will fix. -->
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Point</label>
+                <label>Jar Number</label>
+                <select id="dataPoint">
+                    <option value="Nitrate">Nitrate</option>
+                    <option value="Nitrite">Nitrite</option>
+                    <option value="Ortho">Orthophosphate</option>
+                    <option value="PH">PH</option>
+                    <option value="Temp">Temperature</option>
+                    <option value="Phosphorous">Phosphorous</option>
+                    <option value="Nitrogen">Nitrogen</option>
+                </select>
+
+                <label>Enter date in format mm-dd-yyyy:</label>
+                <input id="date">
+            </div>
+
+            <!-- Generic input items to be used in quality.js -->
+            <div id="entrySet">
+                <label>Enter values:</label>
+                <input id="item1">
+                <input id="item2">
+                <input id="item3">
+            </div>
             <br>
             <br>
-            <label>Enterer name:</label>
-            <input id="enterer">
-        </div>
+            <div class="col">
+                <button class="backButton"> <a href="index.html">Back</a></button>
+            </div>
+            <div class='col'>
+                <button class="tooltip" id="submit" onclick="submit()">Submit Data<span class="tooltiptext">Click to save the data currently entered into the form.</span></button>
 
-        <div id="entrySet">
-        	<!-- Jar options from 1-30, can be lessened or increased in the future. -->
-            <label>Jar Number</label> <!-- Restricts select box size. -->
-            <select id="jarNum" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;">
-                <option value = "1">1</option>
-                <option value = "2">2</option>
-                <option value = "3">3</option>
-                <option value = "4">4</option>
-                <option value = "5">5</option>
-                <option value = "6">6</option>
-                <option value = "7">7</option>
-                <option value = "8">8</option>
-                <option value = "9">9</option>
-                <option value = "10">10</option>
-                <option value = "11">11</option>
-                <option value = "12">12</option>
-                <option value = "13">13</option>
-                <option value = "14">14</option>
-                <option value = "15">15</option>
-                <option value = "16">16</option>
-                <option value = "17">17</option>
-                <option value = "18">18</option>
-                <option value = "19">19</option>
-                <option value = "20">20</option>
-                <option value = "21">21</option>
-                <option value = "22">22</option>
-                <option value = "23">23</option>
-                <option value = "24">24</option>
-                <option value = "25">25</option>
-                <option value = "26">26</option>
-                <option value = "27">27</option>
-                <option value = "28">28</option>
-                <option value = "29">29</option>
-                <option value = "30">30</option>
-                <option value = "31">31</option>
-                <option value = "32">32</option>
-                <option value = "33">33</option>
-                <option value = "34">34</option>
-                <option value = "35">35</option>
+            </div>
+            <div class='col'>
+                <button class="tooltip">  <a href="edit.html">Edit Data<span class="tooltiptext">Click to go to the edit data page to change any of the data submitted.</span></a></button>
 
-            </select> 
-
-            <!-- Temporary fix to strange spacing. Will fix. -->
-            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Point</label>
-            <label>Jar Number</label>
-            <select id="dataPoint">
-                <option value = "Nitrate">Nitrate</option>
-                <option value = "Nitrite">Nitrite</option>
-                <option value = "Ortho">Orthophosphate</option>
-                <option value = "PH">PH</option>
-                <option value = "Temp">Temperature</option>
-                <option value = "Phosphorous">Phosphorous</option>
-                <option value = "Nitrogen">Nitrogen</option>
-            </select>
-            
-            <label>Enter date in format mm-dd-yyyy:</label>
-            <input id="date">
-        </div>
-
-        <!-- Generic input items to be used in quality.js -->
-        <div id="entrySet">
-            <label>Enter values:</label>
-            <input id="item1">
-            <input id="item2">
-            <input id="item3">
-        </div>
-        <br>
-        <br>
-        <div class="col">
-            <button class="backButton"> <a href="index.html">Back</a></button>
-        </div>
-   		<div class='col'>
-            <button id="submit" onclick="submit()">Submit Data</button>
-        </div>
-        <div class='col'>
-            <button> <a href="edit.html">Edit Data</a></button>
-        </div>
+            </div>
         </p>
     </body>
 </html>
