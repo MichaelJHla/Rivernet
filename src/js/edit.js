@@ -132,15 +132,14 @@ function submitEdit() {
 //After the data is uploaded the information in the database will be refreshed for the next user
 //Currently just the refreshing of the database is implemented
 function uploadAll(){
-    var totalJars = 35;
-    var i;
-    
     var vDate = date.value;
     if(!validateDate(vDate)){
         window.alert("Invalid date format");
         return;
     }
     
+    var totalJars = 35;
+    var i;
     for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
         var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
         
