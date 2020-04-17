@@ -41,21 +41,8 @@ function submit() {
     var valid = validateAllQuality(value1, value2, value3);
     var validDate = validateDate(vDate);
     
-    if (valid && validDate){//If the data points pass thee validity tests
-        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
-        
-        //These three lines submit the information regarding the people who interacted with the data
-        dataSubmit.child("Collector").set(collector.value);
-		dataSubmit.child("Analyst").set(analyst.value);
-		dataSubmit.child("Enterer").set(enterer.value);
-        
-        //These lines submit the data to the database in the proper format
-		dataSubmit.child(data + "1").set(value1);
-        dataSubmit.child(data + "2").set(value2);
-        dataSubmit.child(data + "3").set(value3);
-        
-        //Allerts the user that the data has been succesfully added
-        window.alert("Data within valid parameters and added to check page");
+    if (valid && validDate){//If the data points pass the validity tests
+        checkDate(value1, value2, value3, vDate, jar, data);        
     } else if(!valid) {
         //If the data is invalid nothing happens other than the user is notified that the data didn't go through properly
         window.alert("invalid input");
@@ -64,4 +51,68 @@ function submit() {
     }
 }
 
+function checkDate(value1, value2, value3, vDate, jar, data){
+    return firebase.database().ref().once('value').then(function(snapshot) {
+        var allDateSnapshot = snapshot.val();
+        var allDates = Object.keys(allDateSnapshot);
+        
+        if (!allDates.includes(vDate)){
+            var totalJars = 35;
+            var i;
+            for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
+                var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
+                
+                //Fills each possible field with a blank
+                dataSubmit.child("Collector").set("");
+                dataSubmit.child("Analyst").set("");
+                dataSubmit.child("Enterer").set("");
+
+                dataSubmit.child("Nitrate1").set("");
+                dataSubmit.child("Nitrate2").set("");
+                dataSubmit.child("Nitrate3").set("");
+
+                dataSubmit.child("Nitrite1").set("");
+                dataSubmit.child("Nitrite2").set("");
+                dataSubmit.child("Nitrite3").set("");
+
+                dataSubmit.child("Ortho1").set("");
+                dataSubmit.child("Ortho2").set("");
+                dataSubmit.child("Ortho3").set("");
+
+                dataSubmit.child("PH1").set("");
+                dataSubmit.child("PH2").set("");
+                dataSubmit.child("PH3").set("");
+
+                dataSubmit.child("Temp1").set("");
+                dataSubmit.child("Temp2").set("");
+                dataSubmit.child("Temp3").set("");
+
+                dataSubmit.child("Nitrogen1").set("");
+                dataSubmit.child("Nitrogen2").set("");
+                dataSubmit.child("Nitrogen3").set("");
+
+                dataSubmit.child("Phosphorous1").set("");
+                dataSubmit.child("Phosphorous2").set("");
+                dataSubmit.child("Phosphorous3").set("");
+            }
+        }
+        
+        var finalSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
+        
+        //These three lines submit the information regarding the people who interacted with the data
+        finalSubmit.child("Collector").set(collector.value);
+		finalSubmit.child("Analyst").set(analyst.value);
+		finalSubmit.child("Enterer").set(enterer.value);
+        
+        //These lines submit the data to the database in the proper format
+		finalSubmit.child(data + "1").set(value1);
+        finalSubmit.child(data + "2").set(value2);
+        finalSubmit.child(data + "3").set(value3);
+        
+        //Allerts the user that the data has been succesfully added
+        window.alert("Data within valid parameters and added to check page");
+    });
+}
+
 window.submit = submit; //Needed for webpack
+window.checkDate = checkDate;
