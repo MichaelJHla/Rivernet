@@ -136,6 +136,7 @@ test('Should output false for the entire quality check.', () => {
 //-----------------------------------------------------------------
 //E2E (UI testing):
 
+//Submit Page:
 test('should navigate to quantity page and submit inputted data', async (done) => {
 	const browser = await puppeteer.launch({
 		headless: true,
@@ -156,6 +157,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	await page.goto(
 		'https://yerc-rivernet.firebaseapp.com/' 
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
+	//or https://yerc-rivernet.firebaseapp.com/
 	
 	
 
@@ -180,6 +182,9 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	await page.click('select#dataPoint');
 	await page.type('select#dataPoint', "PH");
 
+	await page.click('input#date');
+	await page.type('input#date', "12-12-1992");
+
 	await page.click('input#item1'); //Input values
 	await page.type('input#item1', "1");
 
@@ -196,6 +201,61 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	expect(pageTitle).toBe('Quality - Rivernet'); 
 	//The test will only succeed if the popup window is dismissed succesfully. All of the data is entered and the submit button is pushed. 
 	
+	await browser.close();
+	done();
+}, 30000);
+
+//Edit Page:
+test('should navigate to edit page and edit jar 1s data', async (done) => {
+	const browser = await puppeteer.launch({
+		headless: true,
+		slowMo: 80,
+		args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1920,1080'] //'--window-size=1920,1080' USE:'--no-sandbox', '--disable-setuid-sandbox', 
+	});
+	const page = await browser.newPage();
+
+	page.on('dialog', async dialog => {
+		console.log(dialog.message());
+
+		//expect(dialog.message()).toBe('Switched to jar 3' || 'Edits applied to data queue');
+		await dialog.accept(); //Handle the Dialog popup.
+
+
+	});
+
+	await page.goto(
+		'https://yerc-rivernet.firebaseapp.com/'
+	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
+	//or https://yerc-rivernet.firebaseapp.com/
+
+
+
+	await page.click("#quantityButton", { waitUntil: 'domcontentloaded' }); //Nav to quality
+
+	//await page.waitForNavigation();
+
+	await page.waitForSelector('input#date');
+	await page.type('input#date', '12-12-1992');
+
+	await page.click('select#jarNum');
+	await page.type('select#jarNum', '3');
+
+	await page.click('button.viewData');
+
+	await page.click('input#ph1'); //Input values
+	await page.type('input#ph1', "2");
+
+	await page.click('button.tooltip');
+
+	const finalText = await page.$eval('input#ph1', el => el.textContent);
+
+	//expect(finalText).toBe('12'); //TODO: Fix this or find some other way to expect something.
+
+
+	const pageTitle = await page.title();
+	expect(pageTitle).toBe('Data Editing - Rivernet');
+	//The test will only succeed if the popup window is dismissed succesfully. All of the data is entered and the submit button is pushed. 
+
 	await browser.close();
 	done();
 }, 30000);
