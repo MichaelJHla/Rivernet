@@ -52,65 +52,70 @@ function submit() {
 }
 
 function checkDate(value1, value2, value3, vDate, jar, data){
+    //This line accesses the data one time rather than listening for many changes
     return firebase.database().ref().once('value').then(function(snapshot) {
-        var allDateSnapshot = snapshot.val();
+        
+        //These two lines are designed to convert all the keys of the database into an array
+        var allDateSnapshot = snapshot.val(); 
         var allDates = Object.keys(allDateSnapshot);
         
-        if (!allDates.includes(vDate)){
+        if (!allDates.includes(vDate)){//If the date trying to be accessed by the user does no exist do the following
             var totalJars = 35;
             var i;
-            for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
-                var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
+            for (i = 1; i <= totalJars; i++){//Iterated through each jar to create an empty version of it
+                //Variable used to reference firebase and to upload empty data for each jar
+                var emptySubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");
                 
                 //Fills each possible field with a blank
-                dataSubmit.child("Collector").set("");
-                dataSubmit.child("Analyst").set("");
-                dataSubmit.child("Enterer").set("");
+                emptySubmit.child("Collector").set("");
+                emptySubmit.child("Analyst").set("");
+                emptySubmit.child("Enterer").set("");
 
-                dataSubmit.child("Nitrate1").set("");
-                dataSubmit.child("Nitrate2").set("");
-                dataSubmit.child("Nitrate3").set("");
+                emptySubmit.child("Nitrate1").set("");
+                emptySubmit.child("Nitrate2").set("");
+                emptySubmit.child("Nitrate3").set("");
 
-                dataSubmit.child("Nitrite1").set("");
-                dataSubmit.child("Nitrite2").set("");
-                dataSubmit.child("Nitrite3").set("");
+                emptySubmit.child("Nitrite1").set("");
+                emptySubmit.child("Nitrite2").set("");
+                emptySubmit.child("Nitrite3").set("");
 
-                dataSubmit.child("Ortho1").set("");
-                dataSubmit.child("Ortho2").set("");
-                dataSubmit.child("Ortho3").set("");
+                emptySubmit.child("Ortho1").set("");
+                emptySubmit.child("Ortho2").set("");
+                emptySubmit.child("Ortho3").set("");
 
-                dataSubmit.child("PH1").set("");
-                dataSubmit.child("PH2").set("");
-                dataSubmit.child("PH3").set("");
+                emptySubmit.child("PH1").set("");
+                emptySubmit.child("PH2").set("");
+                emptySubmit.child("PH3").set("");
 
-                dataSubmit.child("Temp1").set("");
-                dataSubmit.child("Temp2").set("");
-                dataSubmit.child("Temp3").set("");
+                emptySubmit.child("Temp1").set("");
+                emptySubmit.child("Temp2").set("");
+                emptySubmit.child("Temp3").set("");
 
-                dataSubmit.child("Nitrogen1").set("");
-                dataSubmit.child("Nitrogen2").set("");
-                dataSubmit.child("Nitrogen3").set("");
+                emptySubmit.child("Nitrogen1").set("");
+                emptySubmit.child("Nitrogen2").set("");
+                emptySubmit.child("Nitrogen3").set("");
 
-                dataSubmit.child("Phosphorous1").set("");
-                dataSubmit.child("Phosphorous2").set("");
-                dataSubmit.child("Phosphorous3").set("");
+                emptySubmit.child("Phosphorous1").set("");
+                emptySubmit.child("Phosphorous2").set("");
+                emptySubmit.child("Phosphorous3").set("");
             }
         }
         
-        var finalSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
+        //Variable that is referenced to upload user submitted data to firebase database
+        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");
         
         //These three lines submit the information regarding the people who interacted with the data
-        finalSubmit.child("Collector").set(collector.value);
-		finalSubmit.child("Analyst").set(analyst.value);
-		finalSubmit.child("Enterer").set(enterer.value);
+        dataSubmit.child("Collector").set(collector.value);
+		dataSubmit.child("Analyst").set(analyst.value);
+		dataSubmit.child("Enterer").set(enterer.value);
         
         //These lines submit the data to the database in the proper format
-		finalSubmit.child(data + "1").set(value1);
-        finalSubmit.child(data + "2").set(value2);
-        finalSubmit.child(data + "3").set(value3);
+		dataSubmit.child(data + "1").set(value1);
+        dataSubmit.child(data + "2").set(value2);
+        dataSubmit.child(data + "3").set(value3);
         
         //Allerts the user that the data has been succesfully added
-        window.alert("Data within valid parameters and added to check page");
+        window.alert("Data within valid parameters and added to edit page");
     });
 }
 
