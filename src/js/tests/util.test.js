@@ -155,7 +155,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	});
 
 	await page.goto(
-		'http://localhost:8080/index.html' 
+		'https://yerc-rivernet.firebaseapp.com/' 
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	//or https://yerc-rivernet.firebaseapp.com/
 	
