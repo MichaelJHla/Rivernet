@@ -35,46 +35,54 @@ function viewData(){
         return;
     }
     
-    var dataAccess = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
-    //This method updated the fields of the text boxes everythime the button is pressed and data is changed
-    dataAccess.on('value', function(data){
-        var currentJar = data.val();//Used for reading data
+    return firebase.database().ref().once('value').then(function(snapshot) {
         
-        //The blocks of text below this are broken into categories for readability
-        //Each line assigns the value of the text box to the value associated in the database
-        document.getElementById("collector").value = currentJar.Collector;
-        document.getElementById("analyst").value = currentJar.Analyst;
-        document.getElementById("enterer").value = currentJar.Enterer;
+        //These two lines are designed to convert all the keys of the database into an array
+        var allDateSnapshot = snapshot.val(); 
+        var allDates = Object.keys(allDateSnapshot);
+                
+        if (allDates.includes(vDate)){
+            var currentJar = snapshot.child(vDate + "/jar" + jar).val();//Used for reading data
         
-        document.getElementById("nitrate1").value = currentJar.Nitrate1;
-        document.getElementById("nitrate2").value = currentJar.Nitrate2;
-        document.getElementById("nitrate3").value = currentJar.Nitrate3;
-        
-        document.getElementById("nitrite1").value = currentJar.Nitrite1;
-        document.getElementById("nitrite2").value = currentJar.Nitrite2;
-        document.getElementById("nitrite3").value = currentJar.Nitrite3;
-        
-        document.getElementById("ortho1").value = currentJar.Ortho1;
-        document.getElementById("ortho2").value = currentJar.Ortho2;
-        document.getElementById("ortho3").value = currentJar.Ortho3;
-        
-        document.getElementById("ph1").value = currentJar.PH1;
-        document.getElementById("ph2").value = currentJar.PH2;
-        document.getElementById("ph3").value = currentJar.PH3;
-        
-        document.getElementById("temp1").value = currentJar.Temp1;
-        document.getElementById("temp2").value = currentJar.Temp2;
-        document.getElementById("temp3").value = currentJar.Temp3;
-        
-        document.getElementById("nitrogen1").value = currentJar.Nitrogen1;
-        document.getElementById("nitrogen2").value = currentJar.Nitrogen2;
-        document.getElementById("nitrogen3").value = currentJar.Nitrogen3;
-        
-        document.getElementById("phosphorous1").value = currentJar.Phosphorous1;
-        document.getElementById("phosphorous2").value = currentJar.Phosphorous2;
-        document.getElementById("phosphorous3").value = currentJar.Phosphorous3;
+            //The blocks of text below this are broken into categories for readability
+            //Each line assigns the value of the text box to the value associated in the database
+            document.getElementById("collector").value = currentJar.Collector;
+            document.getElementById("analyst").value = currentJar.Analyst;
+            document.getElementById("enterer").value = currentJar.Enterer;
+
+            document.getElementById("nitrate1").value = currentJar.Nitrate1;
+            document.getElementById("nitrate2").value = currentJar.Nitrate2;
+            document.getElementById("nitrate3").value = currentJar.Nitrate3;
+
+            document.getElementById("nitrite1").value = currentJar.Nitrite1;
+            document.getElementById("nitrite2").value = currentJar.Nitrite2;
+            document.getElementById("nitrite3").value = currentJar.Nitrite3;
+
+            document.getElementById("ortho1").value = currentJar.Ortho1;
+            document.getElementById("ortho2").value = currentJar.Ortho2;
+            document.getElementById("ortho3").value = currentJar.Ortho3;
+
+            document.getElementById("ph1").value = currentJar.PH1;
+            document.getElementById("ph2").value = currentJar.PH2;
+            document.getElementById("ph3").value = currentJar.PH3;
+
+            document.getElementById("temp1").value = currentJar.Temp1;
+            document.getElementById("temp2").value = currentJar.Temp2;
+            document.getElementById("temp3").value = currentJar.Temp3;
+
+            document.getElementById("nitrogen1").value = currentJar.Nitrogen1;
+            document.getElementById("nitrogen2").value = currentJar.Nitrogen2;
+            document.getElementById("nitrogen3").value = currentJar.Nitrogen3;
+
+            document.getElementById("phosphorous1").value = currentJar.Phosphorous1;
+            document.getElementById("phosphorous2").value = currentJar.Phosphorous2;
+            document.getElementById("phosphorous3").value = currentJar.Phosphorous3;
+            
+            window.alert("Switched to Jar " + jar);
+        } else {
+            window.alert("No data found for this date");
+        }
     });
-    window.alert("Switched to jar " + jar); //Alerts the user that they have switched which jar they are looking at
 }
 
 //This function is designed to submit all the edits made by the user
