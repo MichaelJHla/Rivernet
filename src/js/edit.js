@@ -30,19 +30,23 @@ function viewData(){
     var jar = j.options[j.selectedIndex].value;
     
     var vDate = date.value;
+    
+    //If the user does not follow proper date format an error message will be provided to the user
     if(!validateDate(vDate)){
         window.alert("Invalid date format");
         return;
     }
     
+    //Used to access the data in the database at a specefic moment
     return firebase.database().ref().once('value').then(function(snapshot) {
         
         //These two lines are designed to convert all the keys of the database into an array
         var allDateSnapshot = snapshot.val(); 
         var allDates = Object.keys(allDateSnapshot);
-                
+        
+        //This if statement runs if the date is represented in the database
         if (allDates.includes(vDate)){
-            var currentJar = snapshot.child(vDate + "/jar" + jar).val();//Used for reading data
+            var currentJar = snapshot.child(vDate + "/jar" + jar).val();//Used for reading data from a specified jar
         
             //The blocks of text below this are broken into categories for readability
             //Each line assigns the value of the text box to the value associated in the database
@@ -78,9 +82,9 @@ function viewData(){
             document.getElementById("phosphorous2").value = currentJar.Phosphorous2;
             document.getElementById("phosphorous3").value = currentJar.Phosphorous3;
             
-            window.alert("Switched to Jar " + jar);
+            window.alert("Switched to Jar " + jar); //Tells the user they have switched jars
         } else {
-            window.alert("No data found for this date");
+            window.alert("No data found for this date");//Tells the user if there is no data associated with a date
         }
     });
 }
