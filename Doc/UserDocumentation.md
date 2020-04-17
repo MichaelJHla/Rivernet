@@ -43,10 +43,14 @@ is currently given that data has been successfully submitted).
 *Editing Data:*
 
 To edit jar number data, begin by pushing the “Edit Data” button from the
-homepage, or from the quality page. Here you can go through and see recently
-summited jar data. Find the jar data you want to edit, and change the field(s)
-needed. Once editing is finished, click the submit data button to save your
-changes to the database.
+homepage, or from the quality page. Use the dropdown menu to select the jar you
+want to edit, then enter the correct date associated with that jar and push the
+view jar data button. Here you can go through and see recently summited jar
+data, edit, and change the field(s) needed. Once editing is finished, click the
+submit edit button to save your changes to the database. If all of your jar data
+is correct, you can push the upload all data button to submit all your jars to
+the final database. Jars cannot be changed when this button is pushed so make
+sure they’re all correct!
 
 ### Report a bug
 
