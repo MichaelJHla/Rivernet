@@ -148,7 +148,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	page.on('dialog', async dialog => {
 		console.log(dialog.message());
 
-		expect(dialog.message()).toBe('Data within valid parameters and added to check page');
+		expect(dialog.message()).toBe('Data within valid parameters and added to edit page');
 		await dialog.accept(); //Handle the Dialog popup.
 
 		
