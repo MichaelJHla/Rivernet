@@ -20,7 +20,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-import { validateInput, validateAllQuality } from "util";
+import { validateInput, validateAllQuality, validateDate} from "./util";
 
 //The purpose of this function is to see what jar the user wants to look at
 // and then pulls up all that info in text boxes so the data can be evaluated and edited
@@ -29,46 +29,64 @@ function viewData(){
     var j = document.getElementById("jarNum");
     var jar = j.options[j.selectedIndex].value;
     
-    var dataAccess = firebase.database().ref("jar" + jar +"/");//Variable that is referenced to upload data to firebase database
-    //This method updated the fields of the text boxes everythime the button is pressed and data is changed
-    dataAccess.on('value', function(data){
-        var currentJar = data.val();//Used for reading data
+    var vDate = date.value;
+    
+    //If the user does not follow proper date format an error message will be provided to the user
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format");
+        return;
+    }
+    
+    //Used to access the data in the database at a specefic moment
+    return firebase.database().ref().once('value').then(function(snapshot) {
         
-        //The blocks of text below this are broken into categories for readability
-        //Each line assigns the value of the text box to the value associated in the database
-        document.getElementById("collector").value = currentJar.Collector;
-        document.getElementById("analyst").value = currentJar.Analyst;
-        document.getElementById("enterer").value = currentJar.Enterer;
+        //These two lines are designed to convert all the keys of the database into an array
+        var allDateSnapshot = snapshot.val(); 
+        var allDates = Object.keys(allDateSnapshot);
         
-        document.getElementById("nitrate1").value = currentJar.Nitrate1;
-        document.getElementById("nitrate2").value = currentJar.Nitrate2;
-        document.getElementById("nitrate3").value = currentJar.Nitrate3;
+        //This if statement runs if the date is represented in the database
+        if (allDates.includes(vDate)){
+            var currentJar = snapshot.child(vDate + "/jar" + jar).val();//Used for reading data from a specified jar
         
-        document.getElementById("nitrite1").value = currentJar.Nitrite1;
-        document.getElementById("nitrite2").value = currentJar.Nitrite2;
-        document.getElementById("nitrite3").value = currentJar.Nitrite3;
-        
-        document.getElementById("ortho1").value = currentJar.Ortho1;
-        document.getElementById("ortho2").value = currentJar.Ortho2;
-        document.getElementById("ortho3").value = currentJar.Ortho3;
-        
-        document.getElementById("ph1").value = currentJar.PH1;
-        document.getElementById("ph2").value = currentJar.PH2;
-        document.getElementById("ph3").value = currentJar.PH3;
-        
-        document.getElementById("temp1").value = currentJar.Temp1;
-        document.getElementById("temp2").value = currentJar.Temp2;
-        document.getElementById("temp3").value = currentJar.Temp3;
-        
-        document.getElementById("nitrogen1").value = currentJar.Nitrogen1;
-        document.getElementById("nitrogen2").value = currentJar.Nitrogen2;
-        document.getElementById("nitrogen3").value = currentJar.Nitrogen3;
-        
-        document.getElementById("phosphorous1").value = currentJar.Phosphorous1;
-        document.getElementById("phosphorous2").value = currentJar.Phosphorous2;
-        document.getElementById("phosphorous3").value = currentJar.Phosphorous3;
+            //The blocks of text below this are broken into categories for readability
+            //Each line assigns the value of the text box to the value associated in the database
+            document.getElementById("collector").value = currentJar.Collector;
+            document.getElementById("analyst").value = currentJar.Analyst;
+            document.getElementById("enterer").value = currentJar.Enterer;
+
+            document.getElementById("nitrate1").value = currentJar.Nitrate1;
+            document.getElementById("nitrate2").value = currentJar.Nitrate2;
+            document.getElementById("nitrate3").value = currentJar.Nitrate3;
+
+            document.getElementById("nitrite1").value = currentJar.Nitrite1;
+            document.getElementById("nitrite2").value = currentJar.Nitrite2;
+            document.getElementById("nitrite3").value = currentJar.Nitrite3;
+
+            document.getElementById("ortho1").value = currentJar.Ortho1;
+            document.getElementById("ortho2").value = currentJar.Ortho2;
+            document.getElementById("ortho3").value = currentJar.Ortho3;
+
+            document.getElementById("ph1").value = currentJar.PH1;
+            document.getElementById("ph2").value = currentJar.PH2;
+            document.getElementById("ph3").value = currentJar.PH3;
+
+            document.getElementById("temp1").value = currentJar.Temp1;
+            document.getElementById("temp2").value = currentJar.Temp2;
+            document.getElementById("temp3").value = currentJar.Temp3;
+
+            document.getElementById("nitrogen1").value = currentJar.Nitrogen1;
+            document.getElementById("nitrogen2").value = currentJar.Nitrogen2;
+            document.getElementById("nitrogen3").value = currentJar.Nitrogen3;
+
+            document.getElementById("phosphorous1").value = currentJar.Phosphorous1;
+            document.getElementById("phosphorous2").value = currentJar.Phosphorous2;
+            document.getElementById("phosphorous3").value = currentJar.Phosphorous3;
+            
+            window.alert("Switched to Jar " + jar); //Tells the user they have switched jars
+        } else {
+            window.alert("No data found for this date");//Tells the user if there is no data associated with a date
+        }
     });
-    window.alert("Switched to jar " + jar); //Alerts the user that they have switched which jar they are looking at
 }
 
 //This function is designed to submit all the edits made by the user
@@ -76,8 +94,14 @@ function submitEdit() {
     //Get jar number
     var j = document.getElementById("jarNum");
     var jar = j.options[j.selectedIndex].value;
-    //Bases the name of the child based on which jar is selected
-    var dataSubmit = firebase.database().ref("jar" + jar +"/");
+    
+    var vDate = date.value;
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format");
+        return;
+    }
+    
+    var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     
     //The blocks of text below this are broken into categories for readability
     //Each line uploads the data within each textbox to the database
@@ -120,10 +144,16 @@ function submitEdit() {
 //After the data is uploaded the information in the database will be refreshed for the next user
 //Currently just the refreshing of the database is implemented
 function uploadAll(){
+    var vDate = date.value;
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format");
+        return;
+    }
+    
     var totalJars = 35;
     var i;
     for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
-        var dataSubmit = firebase.database().ref("jar" + i +"/");
+        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
         
         //Fills each possible field with a blank
         dataSubmit.child("Collector").set("");

@@ -5,7 +5,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 module.exports = {
   entry: {
         main: './src/index.js',
-        quantity: './src/js/quantity.js',
+        edit: './src/js/edit.js',
         quality: './src/js/quality.js'
   },
   output: {
@@ -52,9 +52,9 @@ module.exports = {
       excludeChunks: [ 'server' ]
     }),
     new HtmlWebPackPlugin({
-      template: "./src/html/quantity.html",
-        filename: "./quantity.html",
-        chunks: ['quantity'],
+      template: "./src/html/edit.html",
+        filename: "./edit.html",
+        chunks: ['edit'],
       excludeChunks: [ 'server' ]
     }),
     new HtmlWebPackPlugin({

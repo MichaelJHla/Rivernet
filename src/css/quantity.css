@@ -1,6 +1,6 @@
-/*CSS file for the edit page of the RiverNET web application.
+/*CSS file for the Edit page of the RiverNET web application.
 Written by: Jonah Hlastala, Anna Jinneman & William Roberts 
-Last updated: 4/3/2020 */
+Last updated: 4/15/2020 */
 img {
     list-style-type: none;
     float: left;
@@ -10,6 +10,7 @@ img {
     max-width: 15%;
 }
 
+/*Intended for the title of a page*/
 h1 {
     font-size: 60px;
     font-family: 'Bebas Neue', sans-serif;
@@ -19,46 +20,109 @@ h1 {
     border-bottom: solid;
     border-width: 1px;
     border-color: #b0b0b0;
+    float: right;
+    right: 28px;
+    width: 750px;
 }
 
-#header {
+h2{
+    font-size: 30px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    position: static;
+}
+
+
+/*Used in the index.HTML page*/
+h3 {
+    font-size: 60px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    color: white;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #b0b0b0;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+h4{
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+    position: static;
+    margin-right: 130px;
+    margin-left: 130px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*Used for the YERC logo and title for the page.*/
+
+.header {
+    overflow: hidden;
+    background-color: #3a3a3b;
+    padding: 20px 10px;
+    height: 105px;
+}
+
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 20px;
     text-decoration: none;
-    display: inline-block;
-    text-align: left;
+    font-size: 24px;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
-    #header ul {
-        float: right;
-        position: static;
-        color: white;
-        font-size: 24px;
-        list-style-type: none;
-        font-family: 'Bebas Neue', sans-serif;
-        width: 400px;
-        padding-top: 25px;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 9px;
-        clear: both;
-    }
+/* Logo */
+.header a.logo {
+    background: url(../img/yerc_logo.png);
+    width: 130px;
+    height: 130px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+}
 
-    #header a:link, #header a:visited {
-        color: white;
-        text-decoration: none;
-    }
+.header a:hover {
+    transition: all .2s linear;
+    animation-name: link;
+    animation-duration: .75s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    color: green;
+    cursor: pointer; 
+}
 
-    #header a:hover {
-        transition: all .2s linear;
-        animation-name: link;
-        animation-duration: .75s;
-        animation-delay: 0s;
-        animation-iteration-count: 1;
-        color: green;
-    }
+.header-right {
+  float: right;
+}
 
 
+
+/*Styling for the Jar form (entry sets, box sizes, etc.)*/
 #entrySet {
+    text-align: center;
     padding: 10px;
+}
+
+#jarNum{
+    position:absolute;
+}
+
+body {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+form {
+    background-color: #4B4B4B;
+    border: 1px solid #f1f1f1;
+    margin-top: 0px;
 }
 
 input {
@@ -70,19 +134,7 @@ input {
     width: 200px;
 }
 
-#difPressure, #absPressure, #temp, #wlevel, #barPressure {
-    width: 100px;
-}
-
-body {
-    color: white;
-    font-size: 18px;
-}
-
-form {
-    background-color: #4B4B4B;
-}
-
+/*General button styling.*/
 button {
     background-color: white;
     border-style: solid;
@@ -91,9 +143,11 @@ button {
     text-align: center;
     text-decoration: none;
     display: block;
-    margin: 0 auto;
+    margin: auto;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 50px;
+    cursor: pointer; 
+    border-radius: 4px;
 }
 
 button:hover {
@@ -108,22 +162,21 @@ button a:link, button a:visited {
     text-decoration: none;
 }
 
+
 .backButton:hover {
     background-color: red;
     border-color: red;
-    color: white;
+    margin-bottom: 10px;
 }
 
+.viewData{
+    font-size: 30px;
+}
+
+
+/*Styling for the YERC logo.*/
 .logo {
-    background: url(../img/yerc_logo.png);
-    width: 300px;
-    height: 300px;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-
-    list-style-type: none;
-    float: left;
-}
+    }
 
 /*Below is the CSS needed for the side-by-side buttons*/
 .col {
@@ -145,11 +198,62 @@ button a:link, button a:visited {
     float: right;
 }
 
-/*Styling for the Jar form (entry sets, box sizes, etc.)*/
-#entrySet {
-    padding: 10px;
+
+/* Below is used for the Jar form pop-up*/
+
+.form-popup {
+  display: none;
+  border: 1px solid #f1f1f1;
 }
 
-#jarNum{
-    position:absolute;
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
+/*Stuff for pop-up*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  font-size: 15px;
+  width: 200px;
+  background-color: black;
+  font-family: serif;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+ 
+
+  position: absolute;
+  z-index: 1;
+
+}
+
+
+.tooltip:hover .tooltiptext {
+    transition-delay:0.5s;
+    visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+
