@@ -140,55 +140,9 @@ function submitEdit() {
     window.alert("Edits applied to data queue"); //Alerts the user that their changed were applied succesfully
 }
 
-//This fucntion is going to integrate directly with the database that is used by YERC
-//After the data is uploaded the information in the database will be refreshed for the next user
-//Currently just the refreshing of the database is implemented
+//This functionis temporarily blank in order to be built out differently than previous or removed at a later date
 function uploadAll(){
-    var vDate = date.value;
-    if(!validateDate(vDate)){
-        window.alert("Invalid date format");
-        return;
-    }
-    
-    var totalJars = 35;
-    var i;
-    for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
-        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
-        
-        //Fills each possible field with a blank
-        dataSubmit.child("Collector").set("");
-        dataSubmit.child("Analyst").set("");
-        dataSubmit.child("Enterer").set("");
-
-        dataSubmit.child("Nitrate1").set("");
-        dataSubmit.child("Nitrate2").set("");
-        dataSubmit.child("Nitrate3").set("");
-
-        dataSubmit.child("Nitrite1").set("");
-        dataSubmit.child("Nitrite2").set("");
-        dataSubmit.child("Nitrite3").set("");
-
-        dataSubmit.child("Ortho1").set("");
-        dataSubmit.child("Ortho2").set("");
-        dataSubmit.child("Ortho3").set("");
-
-        dataSubmit.child("PH1").set("");
-        dataSubmit.child("PH2").set("");
-        dataSubmit.child("PH3").set("");
-
-        dataSubmit.child("Temp1").set("");
-        dataSubmit.child("Temp2").set("");
-        dataSubmit.child("Temp3").set("");
-
-        dataSubmit.child("Nitrogen1").set("");
-        dataSubmit.child("Nitrogen2").set("");
-        dataSubmit.child("Nitrogen3").set("");
-
-        dataSubmit.child("Phosphorous1").set("");
-        dataSubmit.child("Phosphorous2").set("");
-        dataSubmit.child("Phosphorous3").set("");
-    }
-    window.alert("data submit succesful"); //Alerts the user that the submit was succesful
+    //Add funcionality for amphora
 }
 
 //These liens are needed for webpack
