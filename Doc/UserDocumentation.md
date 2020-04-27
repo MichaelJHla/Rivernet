@@ -1,19 +1,13 @@
-User Guide
-==========
+# User Guide
 
 RiverNET
 
 Guide Description: This user guide will provide step by step instructions for
 installing, running and using the RiverNET web application.
 
-Introduction: Why Use RiverNET?
--------------------------------
+## Introduction
 
-RiverNET is a water quality and quantity monitoring program that uses data from
-the community in order to check and maintain the ecological health of the
-Yellowstone river. RiverNET is unique to the Yellowstone River, using the help
-of the community to keep the river as healthy as possible so it can continue to
-be a resource used by generations to come.
+Why should you use RiverNET? RiverNET is a water quality and quantity monitoring program that uses data from the community in order to check and maintain the ecological health of the Yellowstone river. RiverNET is unique to the Yellowstone River, using the help of the community to keep the river as healthy as possible so it can continue to be a resource used by generations to come.
 
 ### Installation
 
