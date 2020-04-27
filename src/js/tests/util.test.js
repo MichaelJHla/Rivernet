@@ -163,7 +163,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 
 	await page.click("#qualityButton", { waitUntil: 'domcontentloaded' }); //Nav to quality
 
-	//await page.waitForNavigation();
+	
 
 	await page.waitForSelector('input#collector');
 
@@ -217,7 +217,11 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 	page.on('dialog', async dialog => {
 		console.log(dialog.message());
 
-		//expect(dialog.message()).toBe('Switched to jar 3' || 'Edits applied to data queue');
+		if (dialog.message() == 'Switched to Jar 3') {
+			//await dialog.accept(); //Handle the Dialog popup.
+		}
+		else {expect(dialog.message()).toBe('Edits applied to data queue');}
+
 		await dialog.accept(); //Handle the Dialog popup.
 
 
@@ -230,9 +234,9 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 
 
 
-	await page.click("#quantityButton", { waitUntil: 'domcontentloaded' }); //Nav to quality
+	await page.click("#quantityButton", { waitUntil: 'domcontentloaded' }); //Nav to edit
 
-	//await page.waitForNavigation();
+	
 
 	await page.waitForSelector('input#date');
 	await page.type('input#date', '12-12-1992');
@@ -249,12 +253,9 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 
 	const finalText = await page.$eval('input#ph1', el => el.textContent);
 
-	//expect(finalText).toBe('12'); //TODO: Fix this or find some other way to expect something.
-
-
 	const pageTitle = await page.title();
 	expect(pageTitle).toBe('Data Editing - Rivernet');
-	//The test will only succeed if the popup window is dismissed succesfully. All of the data is entered and the submit button is pushed. 
+	//The test will only succeed if the popup window is dismissed succesfully, meaning the Edits were all deemed legal and the edit was submitted. 
 
 	await browser.close();
 	done();
