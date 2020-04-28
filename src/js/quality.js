@@ -1,23 +1,12 @@
 //These imports are needed for the program to run properly
 import logMessage from './logger';
 import '../css/quality.css';
-var firebase = require('firebase');
+//var firebase = require('firebase/app'); //The old
+//var database = require('firebase/database');
+import {getDatabaseReference} from './firebaseLoad';
 // Log message to console
 logMessage('Welcome to Quality!');
 
-//All of the firebase information needed to interact with the database
-var firebaseConfig = {
-    apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
-    authDomain: "yerc-rivernet.firebaseapp.com",
-    databaseURL: "https://yerc-rivernet.firebaseio.com",
-    projectId: "yerc-rivernet",
-    storageBucket: "yerc-rivernet.appspot.com",
-    messagingSenderId: "634881168606",
-    appId: "1:634881168606:web:14164f57364baa842d9e4f",
-    measurementId: "G-FH7MS1FE95"
-};
-
-firebase.initializeApp(firebaseConfig);//Config firebase
 
 import { validateInput, validateAllQuality, validateDate} from "./util";//Impports needed for used functions
 
@@ -53,7 +42,7 @@ function submit() {
 
 function checkDate(value1, value2, value3, vDate, jar, data){
     //This line accesses the data one time rather than listening for many changes
-    return firebase.database().ref().once('value').then(function(snapshot) {
+    return getDatabaseReference().ref().once('value').then(function(snapshot) {
         
         //These two lines are designed to convert all the keys of the database into an array
         var allDateSnapshot = snapshot.val(); 
@@ -102,7 +91,7 @@ function checkDate(value1, value2, value3, vDate, jar, data){
         }
         
         //Variable that is referenced to upload user submitted data to firebase database
-        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");
+        var dataSubmit = getDatabaseReference().ref(vDate + "/" + "jar" + jar +"/");
         
         //These three lines submit the information regarding the people who interacted with the data
         dataSubmit.child("Collector").set(collector.value);

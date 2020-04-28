@@ -139,17 +139,18 @@ test('Should output false for the entire quality check.', () => {
 //Submit Page:
 test('should navigate to quantity page and submit inputted data', async (done) => {
 	const browser = await puppeteer.launch({
-		headless: true,
+		headless: false,
 		slowMo: 80,
 		args: ['--no-sandbox', '--disable-setuid-sandbox','--window-size=1920,1080'] //'--window-size=1920,1080' USE:'--no-sandbox', '--disable-setuid-sandbox', 
 	});
 	const page = await browser.newPage();
 
 	page.on('dialog', async dialog => {
-		console.log(dialog.message());
+		//console.log(dialog.message());
 
 		expect(dialog.message()).toBe('Data within valid parameters and added to edit page');
-		await dialog.accept(); //Handle the Dialog popup.
+
+		//await dialog.accept(); //Handle the Dialog popup.
 
 		
 	});
