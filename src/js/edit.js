@@ -9,6 +9,8 @@ import { validateInput, validateAllQuality, validateDate} from "./util";
 // Log message to console
 logMessage('Welcome to Data Check!');
 
+//The purpose of this function is for the user to be able to check if a date exists in the database. It will change the jars of 
+// the dropdown box to match the names of the jars in the database
 function checkDate(){
     var vDate = date.value; //Assigns the date value to a variable for ease of use
     if(!validateDate(vDate)){
@@ -23,8 +25,9 @@ function checkDate(){
         var allDateSnapshot = snapshot.val(); 
         var allDates = Object.keys(allDateSnapshot);
         
-        if (allDates.includes(vDate)){//If the date trying to be accessed by the user does no exist do the following
+        if (allDates.includes(vDate)){//If the date trying to be accessed by the user exists, do the following
             window.alert("Data present for this date.");
+            //Add functionality to change the dropdown box items to that of the jar names in the database
         } else {
             window.alert("No data associated with this date. Please change date to a previously submitted date.");
         }
