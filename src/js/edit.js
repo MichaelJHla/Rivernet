@@ -88,7 +88,7 @@ function submitEdit() {
         return;
     }
     
-    var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
+    var dataSubmit = getDatabaseReference().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     
     //The blocks of text below this are broken into categories for readability
     //Each line uploads the data within each textbox to the database
