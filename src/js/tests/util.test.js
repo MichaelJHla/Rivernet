@@ -139,7 +139,7 @@ test('Should output false for the entire quality check.', () => {
 //Submit Page:
 test('should navigate to quantity page and submit inputted data', async (done) => {
 	const browser = await puppeteer.launch({
-		headless: false,
+		headless: true,
 		slowMo: 80,
 		args: ['--no-sandbox', '--disable-setuid-sandbox','--window-size=1920,1080'] //'--window-size=1920,1080' USE:'--no-sandbox', '--disable-setuid-sandbox', 
 	});
