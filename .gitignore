@@ -1,7 +1,9 @@
 *.firebaserc
 *.firebase
+*.rules.json
 
 
+firebase.json
 .vs
 coverage
 dist
