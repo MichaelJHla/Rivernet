@@ -32,9 +32,9 @@ function submit() {
         checkSubmission(value1, value2, value3, vDate, jar, data);        
     } else if(!valid) {
         //If the data is invalid nothing happens other than the user is notified that the data didn't go through properly
-        window.alert("invalid input");
+        window.alert("Invalid input. The data is not a number.");
     } else if (!validDate){
-        window.alert("invalid date");
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
     }
 }
 
@@ -72,14 +72,18 @@ function checkSubmission(value1, value2, value3, vDate, jar, data){
 //This function is designed to check to see if the date exists in the database. If it does not, 35 jars are initialized as blank
 //If it does, nothing happens to the database
 function checkDate(){
+    var vDate = date.value; //Assigns the date value to a variable for ease of use
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
+        return;
+    }
+    
     //This line accesses the data one time rather than listening for many changes
     return getDatabaseReference().ref().once('value').then(function(snapshot) {
         
         //These two lines are designed to convert all the keys of the database into an array
         var allDateSnapshot = snapshot.val(); 
         var allDates = Object.keys(allDateSnapshot);
-        
-        var vDate = date.value; //Assigns the date value to a variable for ease of use
         
         if (!allDates.includes(vDate)){//If the date trying to be accessed by the user does no exist do the following
             var totalJars = 35;
@@ -122,9 +126,9 @@ function checkDate(){
                 emptySubmit.child("Phosphorous3").set("");
                 
             }
-            window.alert("Date initialized for the first time");
+            window.alert("Date initialized for the first time.");
         } else {
-            window.alert("This date already exists, and the user is switched to the date");
+            window.alert("This date already exists. All new data will be written in this date. Please rewrite the date and resubmit in order to access a new date.");
         }
     });
 }
