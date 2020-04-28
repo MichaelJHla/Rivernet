@@ -9,6 +9,28 @@ import { validateInput, validateAllQuality, validateDate} from "./util";
 // Log message to console
 logMessage('Welcome to Data Check!');
 
+function checkDate(){
+    var vDate = date.value; //Assigns the date value to a variable for ease of use
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
+        return;
+    }
+    
+    //This line accesses the data one time rather than listening for many changes
+    return getDatabaseReference().ref().once('value').then(function(snapshot) {
+        
+        //These two lines are designed to convert all the keys of the database into an array
+        var allDateSnapshot = snapshot.val(); 
+        var allDates = Object.keys(allDateSnapshot);
+        
+        if (!allDates.includes(vDate)){//If the date trying to be accessed by the user does no exist do the following
+            window.alert("No data associated with this date. Please change date to a previously submitted date.");
+        } else {
+            window.alert("Data present for this date.");
+        }
+    });
+}
+
 //The purpose of this function is to see what jar the user wants to look at
 // and then pulls up all that info in text boxes so the data can be evaluated and edited
 function viewData(){
@@ -20,7 +42,7 @@ function viewData(){
     
     //If the user does not follow proper date format an error message will be provided to the user
     if(!validateDate(vDate)){
-        window.alert("Invalid date format");
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
         return;
     }
     
@@ -84,7 +106,7 @@ function submitEdit() {
     
     var vDate = date.value;
     if(!validateDate(vDate)){
-        window.alert("Invalid date format");
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
         return;
     }
     
@@ -136,3 +158,4 @@ function uploadAll(){
 window.viewData = viewData;
 window.submitEdit = submitEdit;
 window.uploadAll = uploadAll;
+window.checkDate = checkDate;
