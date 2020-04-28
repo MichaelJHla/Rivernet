@@ -2,7 +2,6 @@
 import logMessage from './logger';
 import '../css/quality.css';
 //var firebase = require('firebase/app'); //The old
-//var database = require('firebase/database');
 import {getDatabaseReference} from './firebaseLoad';
 // Log message to console
 logMessage('Welcome to Quality!');

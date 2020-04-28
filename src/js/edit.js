@@ -2,11 +2,11 @@
 import logMessage from './logger';
 import '../css/quantity.css';
 
-import {getDatabaseReference} from './firebaseLoad';
-// Log message to console
+import {getDatabaseReference, getAuth} from './firebaseLoad';
+
 
 import { validateInput, validateAllQuality, validateDate} from "./util";
-
+// Log message to console
 logMessage('Welcome to Data Check!');
 
 //The purpose of this function is to see what jar the user wants to look at
