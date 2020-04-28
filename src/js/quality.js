@@ -52,7 +52,7 @@ function checkDate(value1, value2, value3, vDate, jar, data){
             var i;
             for (i = 1; i <= totalJars; i++){//Iterated through each jar to create an empty version of it
                 //Variable used to reference firebase and to upload empty data for each jar
-                var emptySubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");
+                var emptySubmit = getDatabaseReference().ref(vDate + "/" + "jar" + i +"/");
                 
                 //Fills each possible field with a blank
                 emptySubmit.child("Collector").set("");
