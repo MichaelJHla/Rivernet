@@ -23,10 +23,10 @@ function checkDate(){
         var allDateSnapshot = snapshot.val(); 
         var allDates = Object.keys(allDateSnapshot);
         
-        if (!allDates.includes(vDate)){//If the date trying to be accessed by the user does no exist do the following
-            window.alert("No data associated with this date. Please change date to a previously submitted date.");
-        } else {
+        if (allDates.includes(vDate)){//If the date trying to be accessed by the user does no exist do the following
             window.alert("Data present for this date.");
+        } else {
+            window.alert("No data associated with this date. Please change date to a previously submitted date.");
         }
     });
 }
