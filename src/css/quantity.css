@@ -1,6 +1,6 @@
 /*CSS file for the Edit page of the RiverNET web application.
 Written by: Jonah Hlastala, Anna Jinneman & William Roberts 
-Last updated: 4/15/2020 */
+Last updated: 4/29/2020 */
 img {
     list-style-type: none;
     float: left;
@@ -167,6 +167,11 @@ button a:link, button a:visited {
     background-color: red;
     border-color: red;
     margin-bottom: 10px;
+}
+
+.findDate {
+    font-size: 30px;
+    
 }
 
 .viewData{

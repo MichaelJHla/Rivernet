@@ -1,13 +1,19 @@
-# User Guide
+User Guide
+==========
 
 RiverNET
 
 Guide Description: This user guide will provide step by step instructions for
 installing, running and using the RiverNET web application.
 
-## Introduction
+Introduction
+------------
 
-Why should you use RiverNET? RiverNET is a water quality and quantity monitoring program that uses data from the community in order to check and maintain the ecological health of the Yellowstone river. RiverNET is unique to the Yellowstone River, using the help of the community to keep the river as healthy as possible so it can continue to be a resource used by generations to come.
+Why should you use RiverNET? RiverNET is a water quality and quantity monitoring
+program that uses data from the community in order to check and maintain the
+ecological health of the Yellowstone river. RiverNET is unique to the
+Yellowstone River, using the help of the community to keep the river as healthy
+as possible so it can continue to be a resource used by generations to come.
 
 ### Installation
 
@@ -27,12 +33,14 @@ latest stable and developmental product is located.
 
 *Add & Submit Data:*
 
-To add data, add the collector’s name, enterer’s name and analyst’s name to the
+To add data first enter the correct jar date and click the “Use this Date”
+button then add the collector’s name, enterer’s name and analyst’s name to the
 perspective spots. Then select the correct jar number from the dropdown menu,
 then pick what data field you want to enter. Once entered, submit the data (this
 can be edited later.). Not every space needs to be filled out when data is
-submitted. Once the data is submitted, you can leave the page (no notification
-is currently given that data has been successfully submitted).
+submitted. Once the data is submitted the 3 data fields you entered will be
+cleared and a pop-up will appear notifying you that submission was successful,
+after which you can leave the page .
 
 *Editing Data:*
 
