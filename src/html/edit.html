@@ -41,14 +41,16 @@ Last updated: 4/29/2020 -->
 
 
         <h3> Queued Data to Check</h3>
-        <h4>To edit jar select the jar number you wish to edit using the dropdown, add the correct data associated with that jar number, then click the View Jar Data button. Here you can go through and see recently submited jar data and change the field(s) needed. Once editing is finished, click the submit data button to save your changes to the database.</h4>
+        <h4>To edit jar enter the correct date that the jar was collected, then select the jar number you wish to edit using the dropdown and click the View Jar Data button. Here you can go through and see recently submited jar data and change the field(s) needed. Once editing is finished, click the submit data button to save your changes to the database.</h4>
         <hr size="1">
         <br>
         <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter date in format mm-dd-yyyy:</label>
         <input id="date">
         <br>
         <br>
-        <button class="findDate" onclick="checkDate()">Use This Date</button>
+
+
+        <button class="tooltip" id="findDate" onclick="checkDate()">Use This Date<span class="tooltiptext">Click to bring up all jars from entered date.</span></button><br>
         <br>
 
     </div>
