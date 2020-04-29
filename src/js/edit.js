@@ -150,6 +150,7 @@ function submitEdit() {
     dataSubmit.child("Phosphorous3").set(phosphorous3.value);
     
     window.alert("Edits applied to data queue"); //Alerts the user that their changed were applied succesfully
+
 }
 
 //This functionis temporarily blank in order to be built out differently than previous or removed at a later date

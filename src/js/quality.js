@@ -29,7 +29,11 @@ function submit() {
     var validDate = validateDate(vDate);
     
     if (valid && validDate){//If the data points pass the validity tests
-        checkSubmission(value1, value2, value3, vDate, jar, data);        
+        checkSubmission(value1, value2, value3, vDate, jar, data);
+		document.getElementById('item1').value = '';
+		document.getElementById('item2').value = '';
+		document.getElementById('item3').value = '';
+        
     } else if(!valid) {
         //If the data is invalid nothing happens other than the user is notified that the data didn't go through properly
         window.alert("Invalid input. The data is not a number.");
@@ -65,6 +69,7 @@ function checkSubmission(value1, value2, value3, vDate, jar, data){
 
             //Allerts the user that the data has been succesfully added
             window.alert("Data within valid parameters and added to edit page");
+
         }
     });
 }
