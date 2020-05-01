@@ -15,7 +15,7 @@ const validateInput = (inputValue, notEmpty, date) => {
         return false; //Shouldn't be negative.
     }
 
-    if (inputValue > 70 && !date) {
+    if (inputValue > 90 && !date) {
         return false; //The highest value should be Temperature, and that shouldn't get this high. This value can be changed to fit needs.
     }
 

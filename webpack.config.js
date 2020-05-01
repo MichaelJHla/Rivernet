@@ -30,7 +30,7 @@ module.exports = {
         use: [
           {
             loader: "html-loader",
-            //options: { minimize: true }
+            //options: { minimize: true } //Can set this to minimize (or uglify) the code.
           }
         ]
       },
@@ -48,7 +48,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/html/index.html",
         filename: "./index.html",
-        //chunks: ['index'], //This shouldn't be here, but I'll keep it anyway.
       excludeChunks: [ 'server' ]
     }),
     new HtmlWebPackPlugin({

@@ -11,7 +11,7 @@ const app = express(),
 
 const router = express.Router();
 
-//app.use(express.static(DIST_DIR));
+//We tell express that we are using webpack to bundle our modules.
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
 }));
@@ -27,7 +27,7 @@ app.get('*', (req, res, next) => {
         res.send(result);
         res.end();
     });
-    //res.sendFile(HTML_FILE);
+    //res.sendFile(HTML_FILE); //remnant of code before Webpack
 });
 
 app.get('/quality', (req, res, next) => {
@@ -51,36 +51,10 @@ app.get('/edit', (req, res, next) => {
         res.send(result);
         res.end();
     });
-    //res.sendFile(path.join(DIST_DIR, '/quantity.html'));
+    
 });
 
-
-/*
-//This code is another attempt at solving the issue. 
-router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-    //__dirname : It will resolve to your project folder.
-});
-
-router.get('/quality', function (req, res) {
-    res.sendFile(path.join(__dirname + '/quality.html'));
-});
-
-router.get('/quantity', function (req, res) {
-    res.sendFile(path.join(__dirname + '/quantity.html'));
-});
-
-//add the router
-app.use(express.static(__dirname + '/html'));
-//Store all HTML files in view folder.
-app.use(express.static(__dirname + '/css'));
-//Store all JS and CSS in Scripts folder.
-app.use(express.static(__dirname + '/js'));
-
-app.use('/', router);
-*/
-
-
+//Serve the app to localhost:8080
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`App listening to ${PORT}....`);

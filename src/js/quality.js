@@ -6,7 +6,7 @@ import {getDatabaseReference} from './firebaseLoad';
 // Log message to console
 logMessage('Welcome to Quality!');
 
-import { validateInput, validateAllQuality, validateDate} from "./util";//Impports needed for used functions
+import {validateAllQuality, validateDate} from "./util";//Impports needed for used functions
 
 //This funcition is designed to submit the data to the database in the proper format
 function submit() {
@@ -19,9 +19,9 @@ function submit() {
     var data = d.options[d.selectedIndex].value;
 	
     //Assigns the three data fields to variables
-    var value1 = item1.value;
-    var value2 = item2.value;
-    var value3 = item3.value;
+    var value1 = item1.value; //item1/2/3 are document variables within the HTML, we convert them to values here before testing them 
+    var value2 = item2.value; //(mostly for ease of use)
+    var value3 = item3.value; //This is mostly to keep it general, the items can be any of the parameters.
     var vDate = date.value;
     
     //This calls a method that is used to check the validity of the data points
@@ -91,7 +91,7 @@ function checkDate(){
         var allDates = Object.keys(allDateSnapshot);
         
         if (!allDates.includes(vDate)){//If the date trying to be accessed by the user does no exist do the following
-            var totalJars = 35;
+            var totalJars = 35; //This will later be set to how many jars their other app collected via an API call.
             var i;
             for (i = 1; i <= totalJars; i++){//Iterated through each jar to create an empty version of it
                 //Variable used to reference firebase and to upload empty data for each jar

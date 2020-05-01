@@ -2,10 +2,10 @@
 import logMessage from './logger';
 import '../css/quantity.css';
 
-import {getDatabaseReference, getAuth} from './firebaseLoad';
+import {getDatabaseReference} from './firebaseLoad';
 
 
-import { validateInput, validateAllQuality, validateDate} from "./util";
+import {validateDate} from "./util";
 // Log message to console
 logMessage('Welcome to Data Check!');
 
