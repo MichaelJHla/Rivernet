@@ -2,7 +2,10 @@ const puppeteer = require('puppeteer');
 const { validateInput, validateAllQuality, validateDate } = require('.././util');
 
 import 'core-js/stable';
-import 'regenerator-runtime/runtime'; //Trying htis
+import 'regenerator-runtime/runtime';
+
+// This module contains all of the tests for the ulil.js module, as well as the system (e2e) tests for our webapp. 
+// All the functionality of the functions within that module are tested at 100% coverage. 
 
 //-----------------------------------------------------------------
 //Unit:
@@ -135,40 +138,45 @@ test('Should output false for the entire quality check.', () => {
 
 //-----------------------------------------------------------------
 //E2E (UI testing):
+//These tests use puppeteer to handle system tests. Puppeteer is a powerful testing tool that offers endless ways of testing your website. We have set up these tests to
+//automatically run with Travis, but you can also run them manually with the other jest tests. If you want to test your local changes before changing them, set the page.goto to 
+//http://localhost:8080/
 
 //Submit Page:
-test('should navigate to quantity page and submit inputted data', async (done) => {
+test('should navigate to quality page and submit inputted data', async (done) => {
 	const browser = await puppeteer.launch({
-		headless: true,
-		slowMo: 80,
+		headless: true, //We want it to be headless, otherwise it won't run in Travis. 
+		slowMo: 80, //This is useful for when we are watching the test in non-headless mode.
 		args: ['--no-sandbox', '--disable-setuid-sandbox','--window-size=1920,1080'] //'--window-size=1920,1080' USE:'--no-sandbox', '--disable-setuid-sandbox', 
 	});
-	const page = await browser.newPage();
+	const page = await browser.newPage(); //This command creates a new broswer page. 
 
 	page.on('dialog', async dialog => {
-		console.log(dialog.message());
+		//When a dialog popup appears on the screen, like after the submit button is pressed, this takes care of it. 
 
 		expect(dialog.message()).toBe('Data within valid parameters and added to edit page');
-		await dialog.accept(); //Handle the Dialog popup.
+
+		//await dialog.accept(); //Handle the Dialog popup.
 
 		
 	});
 
 	await page.goto(
-		'https://yerc-rivernet.firebaseapp.com/' 
+		'https://dev-yerc-rivernet.firebaseapp.com/' 
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	//or https://yerc-rivernet.firebaseapp.com/
+	// or for local changes: http://localhost:8080/
 	
 	
 
-	await page.click("#qualityButton", { waitUntil: 'domcontentloaded' }); //Nav to quality
+	await page.click("#qualityButton", { waitUntil: 'domcontentloaded' }); //Nav to quality page
 
-	//await page.waitForNavigation();
+	
 
-	await page.waitForSelector('input#collector');
+	await page.waitForSelector('input#collector'); //Make sure to wait for the page to load before doing commands.
 
 	await page.click('input#collector');
-	await page.type('input#collector', 'Anna');
+	await page.type('input#collector', 'Anna'); //page.type commands the browser to type into specified document fields.
 
 	await page.click('input#analyst');
 	await page.type('input#analyst', 'Anna');
@@ -185,7 +193,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	await page.click('input#date');
 	await page.type('input#date', "12-12-1992");
 
-	await page.click('input#item1'); //Input values
+	await page.click('input#item1'); //item1,2,3 are the input fields.
 	await page.type('input#item1', "1");
 
 	await page.click('input#item2');
@@ -197,8 +205,8 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	await page.click('#submit'); //Click the sumbit button! 
 
 
-	const pageTitle = await page.title();
-	expect(pageTitle).toBe('Quality - Rivernet'); 
+	const pageTitle = await page.title(); 
+	expect(pageTitle).toBe('Quality - Rivernet');  //This is not the full test (see the dialog popup above), just another check to make sure stuff isn't broken.
 	//The test will only succeed if the popup window is dismissed succesfully. All of the data is entered and the submit button is pushed. 
 	
 	await browser.close();
@@ -215,24 +223,31 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 	const page = await browser.newPage();
 
 	page.on('dialog', async dialog => {
-		console.log(dialog.message());
+		
 
-		//expect(dialog.message()).toBe('Switched to jar 3' || 'Edits applied to data queue');
+		if (dialog.message() == 'Switched to Jar 3') {
+			//await dialog.accept(); //Handle the Dialog popup.
+		}
+		else if (dialog.message() == 'Data present for this date.') {
+			
+		} 
+		else {expect(dialog.message()).toBe('Edits applied to data queue');}
+
 		await dialog.accept(); //Handle the Dialog popup.
 
 
 	});
 
 	await page.goto(
-		'https://yerc-rivernet.firebaseapp.com/'
+		'https://dev-yerc-rivernet.firebaseapp.com/'
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
-	//or https://yerc-rivernet.firebaseapp.com/
+	//or https://dev-yerc-rivernet.firebaseapp.com/
 
 
 
-	await page.click("#quantityButton", { waitUntil: 'domcontentloaded' }); //Nav to quality
+	await page.click("#quantityButton", { waitUntil: 'domcontentloaded' }); //Nav to edit
 
-	//await page.waitForNavigation();
+	
 
 	await page.waitForSelector('input#date');
 	await page.type('input#date', '12-12-1992');
@@ -245,27 +260,15 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 	await page.click('input#ph1'); //Input values
 	await page.type('input#ph1', "2");
 
-	await page.click('button.tooltip');
+	await page.click('button#submit.tooltip');
 
 	const finalText = await page.$eval('input#ph1', el => el.textContent);
 
-	//expect(finalText).toBe('12'); //TODO: Fix this or find some other way to expect something.
-
-
 	const pageTitle = await page.title();
 	expect(pageTitle).toBe('Data Editing - Rivernet');
-	//The test will only succeed if the popup window is dismissed succesfully. All of the data is entered and the submit button is pushed. 
+	//The test will only succeed if the popup window is dismissed succesfully, meaning the Edits were all deemed legal and the edit was submitted. 
 
 	await browser.close();
 	done();
 }, 30000);
 
-//Can use this for hints on testing Firebase:
-/*beforeAll(async () => {
-	await firebase.firestore().enableNetwork();
-});
-
-afterAll(async () => {
-	await firebase.firestore().disableNetwork();
-});
-*/

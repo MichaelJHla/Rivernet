@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <!-- HTML file for the qualtity page of the RiverNET web application.
 Written by: Jonah Hlastala, Anna Jinneman & William Roberts 
-Last updated: 4/15/2020 -->
+Last updated: 4/29/2020 -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <!-- Gets rid of error dealing with tab icon. -->
     <link rel="shortcut icon" href="#" />
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    
 
     <!-- The needed linking to the free, open-source font used in css. -->
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -42,15 +42,22 @@ Last updated: 4/15/2020 -->
             
 
             <h3> Submit Quality Data </h3>
-            <!--<script type="module" src="quality.js"></script>-->
-             <h4>To add data, add the collector, enterer and analyst’s name to the perspective spots. Names only need to be entered once for multiple jars. Then select the correct jar number from the dropdown menu, then pick what data field you want to enter. Once entered, submit the data (this can be edited later.). Not every space needs to be filled out when data is submitted. Once the data is submitted, you can leave the page.</h4>
+            
+             <h4>To add data enter the correct date the jar was collected, then add the collector, enterer and analyst’s name to the perspective spots. Names only need to be entered once for multiple jars. Then select the correct jar number from the dropdown menu, then pick what data field you want to enter. Once entered, submit the data (this can be edited later.). Not every space needs to be filled out when data is submitted. Once the data is submitted, you can leave the page.</h4>
           <hr size="1">
         </div>
 
 
         <!-- Needed to get the correct spacing and formatting. -->
         <p>
-            <br>
+        <label>Enter date in format mm-dd-yyyy:</label>
+        <input id="date">
+        <br>
+        <br>
+        <button class="findDate" onclick="checkDate()">Use This Date</button>
+
+        
+            
             <!-- Entry set for names. -->
             <div id="entrySet">
                 <label>Collector name:</label>
@@ -68,7 +75,7 @@ Last updated: 4/15/2020 -->
             <div id="entrySet">
                 <!-- Jar options from 1-30, can be lessened or increased in the future. -->
                 <label>Jar Number</label> <!-- Restricts select box size. -->
-                <select id="jarNum" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;">
+                <select id="jarNum" onmousedown="if(this.options.length>8){this.size=6;}" onchange='this.size=0;' onblur="this.size=0;">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -107,7 +114,7 @@ Last updated: 4/15/2020 -->
 
                 </select>
 
-                <!-- Temporary fix to strange spacing. Will fix. -->
+                
                 <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Point</label>
                 <label>Jar Number</label>
                 <select id="dataPoint">
@@ -119,9 +126,6 @@ Last updated: 4/15/2020 -->
                     <option value="Phosphorous">Phosphorous</option>
                     <option value="Nitrogen">Nitrogen</option>
                 </select>
-
-                <label>Enter date in format mm-dd-yyyy:</label>
-                <input id="date">
             </div>
 
             <!-- Generic input items to be used in quality.js -->
@@ -140,10 +144,16 @@ Last updated: 4/15/2020 -->
                 <button class="tooltip" id="submit" onclick="submit()">Submit Data<span class="tooltiptext">Click to save the data currently entered into the form.</span></button>
 
             </div>
+        
             <div class='col'>
                 <button class="tooltip">  <a href="edit.html">Edit Data<span class="tooltiptext">Click to go to the edit data page to change any of the data submitted.</span></a></button>
 
             </div>
+        </p>
+        <p>
+        <br>
+        </p>
+        <h4>&nbsp;</h4>
         </p>
     </body>
 </html>

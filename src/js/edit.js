@@ -1,26 +1,38 @@
 //These imports are needed for the program to run properly
 import logMessage from './logger';
 import '../css/quantity.css';
-var firebase = require('firebase');
+
+import {getDatabaseReference} from './firebaseLoad';
+
+
+import {validateDate} from "./util";
 // Log message to console
 logMessage('Welcome to Data Check!');
 
-//All of the firebase information needed to interact with the database
-var firebaseConfig = {
-    apiKey: "AIzaSyCK_wBNL7Fhpj7ZC0cDlZ3EhnTvbbYiE24",
-    authDomain: "yerc-rivernet.firebaseapp.com",
-    databaseURL: "https://yerc-rivernet.firebaseio.com",
-    projectId: "yerc-rivernet",
-    storageBucket: "yerc-rivernet.appspot.com",
-    messagingSenderId: "634881168606",
-    appId: "1:634881168606:web:14164f57364baa842d9e4f",
-    measurementId: "G-FH7MS1FE95"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-import { validateInput, validateAllQuality, validateDate} from "./util";
+//The purpose of this function is for the user to be able to check if a date exists in the database. It will change the jars of 
+// the dropdown box to match the names of the jars in the database
+function checkDate(){
+    var vDate = date.value; //Assigns the date value to a variable for ease of use
+    if(!validateDate(vDate)){
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
+        return;
+    }
+    
+    //This line accesses the data one time rather than listening for many changes
+    return getDatabaseReference().ref().once('value').then(function(snapshot) {
+        
+        //These two lines are designed to convert all the keys of the database into an array
+        var allDateSnapshot = snapshot.val(); 
+        var allDates = Object.keys(allDateSnapshot);
+        
+        if (allDates.includes(vDate)){//If the date trying to be accessed by the user exists, do the following
+            window.alert("Data present for this date.");
+            //Add functionality to change the dropdown box items to that of the jar names in the database
+        } else {
+            window.alert("No data associated with this date. Please change date to a previously submitted date.");
+        }
+    });
+}
 
 //The purpose of this function is to see what jar the user wants to look at
 // and then pulls up all that info in text boxes so the data can be evaluated and edited
@@ -33,12 +45,12 @@ function viewData(){
     
     //If the user does not follow proper date format an error message will be provided to the user
     if(!validateDate(vDate)){
-        window.alert("Invalid date format");
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
         return;
     }
     
     //Used to access the data in the database at a specefic moment
-    return firebase.database().ref().once('value').then(function(snapshot) {
+    return getDatabaseReference().ref().once('value').then(function(snapshot) {
         
         //These two lines are designed to convert all the keys of the database into an array
         var allDateSnapshot = snapshot.val(); 
@@ -97,11 +109,11 @@ function submitEdit() {
     
     var vDate = date.value;
     if(!validateDate(vDate)){
-        window.alert("Invalid date format");
+        window.alert("Invalid date format. Please format the date as mm-dd-yyyy");
         return;
     }
     
-    var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
+    var dataSubmit = getDatabaseReference().ref(vDate + "/" + "jar" + jar +"/");//Variable that is referenced to upload data to firebase database
     
     //The blocks of text below this are broken into categories for readability
     //Each line uploads the data within each textbox to the database
@@ -138,60 +150,16 @@ function submitEdit() {
     dataSubmit.child("Phosphorous3").set(phosphorous3.value);
     
     window.alert("Edits applied to data queue"); //Alerts the user that their changed were applied succesfully
+
 }
 
-//This fucntion is going to integrate directly with the database that is used by YERC
-//After the data is uploaded the information in the database will be refreshed for the next user
-//Currently just the refreshing of the database is implemented
+//This functionis temporarily blank in order to be built out differently than previous or removed at a later date
 function uploadAll(){
-    var vDate = date.value;
-    if(!validateDate(vDate)){
-        window.alert("Invalid date format");
-        return;
-    }
-    
-    var totalJars = 35;
-    var i;
-    for (i = 1; i <= totalJars; i++){//Iterated through each jar to empty it
-        var dataSubmit = firebase.database().ref(vDate + "/" + "jar" + i +"/");//Variable that is referenced to upload data to firebase database
-        
-        //Fills each possible field with a blank
-        dataSubmit.child("Collector").set("");
-        dataSubmit.child("Analyst").set("");
-        dataSubmit.child("Enterer").set("");
-
-        dataSubmit.child("Nitrate1").set("");
-        dataSubmit.child("Nitrate2").set("");
-        dataSubmit.child("Nitrate3").set("");
-
-        dataSubmit.child("Nitrite1").set("");
-        dataSubmit.child("Nitrite2").set("");
-        dataSubmit.child("Nitrite3").set("");
-
-        dataSubmit.child("Ortho1").set("");
-        dataSubmit.child("Ortho2").set("");
-        dataSubmit.child("Ortho3").set("");
-
-        dataSubmit.child("PH1").set("");
-        dataSubmit.child("PH2").set("");
-        dataSubmit.child("PH3").set("");
-
-        dataSubmit.child("Temp1").set("");
-        dataSubmit.child("Temp2").set("");
-        dataSubmit.child("Temp3").set("");
-
-        dataSubmit.child("Nitrogen1").set("");
-        dataSubmit.child("Nitrogen2").set("");
-        dataSubmit.child("Nitrogen3").set("");
-
-        dataSubmit.child("Phosphorous1").set("");
-        dataSubmit.child("Phosphorous2").set("");
-        dataSubmit.child("Phosphorous3").set("");
-    }
-    window.alert("data submit succesful"); //Alerts the user that the submit was succesful
+    //Add funcionality for amphora
 }
 
 //These liens are needed for webpack
 window.viewData = viewData;
 window.submitEdit = submitEdit;
 window.uploadAll = uploadAll;
+window.checkDate = checkDate;
