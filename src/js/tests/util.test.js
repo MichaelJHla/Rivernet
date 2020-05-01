@@ -162,7 +162,7 @@ test('should navigate to quality page and submit inputted data', async (done) =>
 	});
 
 	await page.goto(
-		'http://localhost:8080' 
+		'https://yerc-rivernet.firebaseapp.com/' 
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	//or https://yerc-rivernet.firebaseapp.com/
 	// or for local changes: http://localhost:8080/
@@ -216,7 +216,7 @@ test('should navigate to quality page and submit inputted data', async (done) =>
 //Edit Page:
 test('should navigate to edit page and edit jar 1s data', async (done) => {
 	const browser = await puppeteer.launch({
-		headless: false,
+		headless: true,
 		slowMo: 80,
 		args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1920,1080'] //'--window-size=1920,1080' USE:'--no-sandbox', '--disable-setuid-sandbox', 
 	});
@@ -239,7 +239,7 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 	});
 
 	await page.goto(
-		'http://localhost:8080'
+		'https://yerc-rivernet.firebaseapp.com/'
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	//or https://yerc-rivernet.firebaseapp.com/
 
