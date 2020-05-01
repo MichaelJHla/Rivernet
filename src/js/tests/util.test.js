@@ -162,7 +162,7 @@ test('should navigate to quality page and submit inputted data', async (done) =>
 	});
 
 	await page.goto(
-		'https://yerc-rivernet.firebaseapp.com/' 
+		'https://dev-yerc-rivernet.firebaseapp.com/' 
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	//or https://yerc-rivernet.firebaseapp.com/
 	// or for local changes: http://localhost:8080/
@@ -228,7 +228,7 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 		if (dialog.message() == 'Switched to Jar 3') {
 			//await dialog.accept(); //Handle the Dialog popup.
 		}
-		else if (dialog.message() == 'Switched to Jar 3') {
+		else if (dialog.message() == 'Data present for this date.') {
 			
 		} 
 		else {expect(dialog.message()).toBe('Edits applied to data queue');}
@@ -239,9 +239,9 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 	});
 
 	await page.goto(
-		'https://yerc-rivernet.firebaseapp.com/'
+		'https://dev-yerc-rivernet.firebaseapp.com/'
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
-	//or https://yerc-rivernet.firebaseapp.com/
+	//or https://dev-yerc-rivernet.firebaseapp.com/
 
 
 
@@ -260,7 +260,7 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 	await page.click('input#ph1'); //Input values
 	await page.type('input#ph1', "2");
 
-	await page.click('button.tooltip');
+	await page.click('button#submit.tooltip');
 
 	const finalText = await page.$eval('input#ph1', el => el.textContent);
 
