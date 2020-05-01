@@ -143,7 +143,7 @@ test('Should output false for the entire quality check.', () => {
 //http://localhost:8080/
 
 //Submit Page:
-test('should navigate to quantity page and submit inputted data', async (done) => {
+test('should navigate to quality page and submit inputted data', async (done) => {
 	const browser = await puppeteer.launch({
 		headless: true, //We want it to be headless, otherwise it won't run in Travis. 
 		slowMo: 80, //This is useful for when we are watching the test in non-headless mode.
@@ -162,7 +162,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 	});
 
 	await page.goto(
-		'https://yerc-rivernet.firebaseapp.com/' 
+		'http://localhost:8080' 
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	//or https://yerc-rivernet.firebaseapp.com/
 	// or for local changes: http://localhost:8080/
@@ -216,7 +216,7 @@ test('should navigate to quantity page and submit inputted data', async (done) =
 //Edit Page:
 test('should navigate to edit page and edit jar 1s data', async (done) => {
 	const browser = await puppeteer.launch({
-		headless: true,
+		headless: false,
 		slowMo: 80,
 		args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1920,1080'] //'--window-size=1920,1080' USE:'--no-sandbox', '--disable-setuid-sandbox', 
 	});
@@ -228,6 +228,9 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 		if (dialog.message() == 'Switched to Jar 3') {
 			//await dialog.accept(); //Handle the Dialog popup.
 		}
+		else if (dialog.message() == 'Switched to Jar 3') {
+			
+		} 
 		else {expect(dialog.message()).toBe('Edits applied to data queue');}
 
 		await dialog.accept(); //Handle the Dialog popup.
@@ -236,7 +239,7 @@ test('should navigate to edit page and edit jar 1s data', async (done) => {
 	});
 
 	await page.goto(
-		'https://yerc-rivernet.firebaseapp.com/'
+		'http://localhost:8080'
 	);//file:///C:/dev/AppliedSoftwareEngineering/Rivernet/dist/index.html can be used.
 	//or https://yerc-rivernet.firebaseapp.com/
 
